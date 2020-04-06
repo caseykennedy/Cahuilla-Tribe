@@ -1,8 +1,8 @@
 import auth0 from 'auth0-js'
 
-const AUTH0_DOMAIN = 'dev-bl8r-g8t.auth0.com'
-const AUTH0_CLIENTID = 'btZTclCUUPxEUd19dVN69eVBWqrylo7q'
-const AUTH0_CALLBACK = 'http://localhost:8000/callback'
+// const AUTH0_DOMAIN = 'dev-bl8r-g8t.auth0.com'
+// const AUTH0_CLIENTID = 'btZTclCUUPxEUd19dVN69eVBWqrylo7q'
+// const AUTH0_CALLBACK = 'http://localhost:8000/callback'
 
 export const isBrowser = typeof window !== 'undefined'
 
@@ -19,9 +19,9 @@ export const isAuthenticated = () => {
 
 const auth = isBrowser
   ? new auth0.WebAuth({
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENTID,
-      redirectUri: process.env.AUTH0_CALLBACK,
+      domain: process.env.GATSBY_AUTH0_DOMAIN,
+      clientID: process.env.GATSBY_AUTH0_CLIENTID,
+      redirectUri: process.env.GATSBY_AUTH0_CALLBACK,
       responseType: 'token id_token',
       scope: 'openid profile email'
     })
