@@ -1,9 +1,5 @@
 import auth0 from 'auth0-js'
 
-// const AUTH0_DOMAIN = 'dev-bl8r-g8t.auth0.com'
-// const AUTH0_CLIENTID = 'btZTclCUUPxEUd19dVN69eVBWqrylo7q'
-// const AUTH0_CALLBACK = 'http://localhost:8000/callback'
-
 export const isBrowser = typeof window !== 'undefined'
 
 const tokens = {

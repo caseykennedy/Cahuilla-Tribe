@@ -26,6 +26,7 @@ import theme from '../../config/theme'
 // ___________________________________________________________________
 
 const AccountPage = () => {
+  // Check if authenticated
   if (!isAuthenticated()) {
     login()
     return <p>Redirecting to login...</p>
