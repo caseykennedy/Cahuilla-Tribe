@@ -1,6 +1,6 @@
-require('dotenv').config({
-  path: `.env`,
-});
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 const config = require('./config')
 const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
@@ -111,6 +111,10 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/account/*`] },
+    },
   ],
 }
 

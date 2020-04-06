@@ -193,7 +193,7 @@ const Typography = css`
 
     transition: ${theme.transition.all};
 
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.primary};
 
     &:hover,
     &:focus {

@@ -1,6 +1,6 @@
 # Cahuilla Band of Indians Tribal Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0b920f7b-e7b5-4667-b360-eb55e7d0fc9f/deploy-status)](https://app.netlify.com/sites/serene-boyd-31333b/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8eef4c51-ad30-48f9-9dd4-169a5d568132/deploy-status)](https://app.netlify.com/sites/trusting-wiles-38de65/deploys)
 
 ## Features
 

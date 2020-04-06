@@ -36,7 +36,7 @@ const Header: React.FC<HeaderShape> = () => {
             <Link to="/">Enterprises</Link>
             <Link to="/">Resources</Link>
           </S.Nav>
-          <S.Btn to="/">Sign In</S.Btn>
+          <S.Btn to="/account">Sign In</S.Btn>
         </Flex>
       </S.Header>
     </Headroom>
