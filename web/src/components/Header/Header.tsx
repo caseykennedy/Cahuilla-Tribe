@@ -7,6 +7,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
 
+import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
+
 import { Box, Flex, Text } from '../../elements'
 
 import theme from '../../../config/theme'
@@ -36,7 +38,19 @@ const Header: React.FC<HeaderShape> = () => {
             <Link to="/">Enterprises</Link>
             <Link to="/">Resources</Link>
           </S.Nav>
-          <S.Btn to="/account">Sign In</S.Btn>
+          {!isAuthenticated() ? (
+            <S.Btn to="/account">Sign In</S.Btn>
+          ) : (
+            <S.Btn
+              to="/"
+              onClick={e => {
+                logout()
+                e.preventDefault()
+              }}
+            >
+              Sign out
+            </S.Btn>
+          )}
         </Flex>
       </S.Header>
     </Headroom>

@@ -1,4 +1,4 @@
-# CAHUILLA.NET built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io)
+# CAHUILLA.NET built with [Gatsby](https://www.gatsbyjs.org/) [Sanity.io](https://www.sanity.io) & [Auth0](https://www.auth0.com)
 
 This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website. Read [the blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) and [see the getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ).
 

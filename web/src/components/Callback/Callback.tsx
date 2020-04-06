@@ -25,7 +25,7 @@ const Callback: React.FC<Props> = () => {
           Callback
         </Heading>
         <nav>
-          <Link to="/">Home</Link> <Link to="/account/">My Account</Link>{' '}
+          <Link to="/">Home</Link> <Link to="/account">My Account</Link>{' '}
           <a
             href="#logout"
             onClick={e => {

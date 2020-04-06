@@ -25,15 +25,17 @@ const Account: React.FC<Props> = () => {
           Account
         </Heading>
         <nav>
-          <a
-            href="#logout"
-            onClick={e => {
-              logout()
-              e.preventDefault()
-            }}
-          >
-            Log Out
-          </a>
+          {!isAuthenticated() ? <span>log in</span> : (
+            <a
+              href="#logout"
+              onClick={e => {
+                logout()
+                e.preventDefault()
+              }}
+            >
+              Log Out
+            </a>
+          )}
         </nav>
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </S.WelcomeBox>
