@@ -73,8 +73,5 @@ export default {
     {
       type: 'figure'
     },
-    {
-      type: 'slideshow'
-    }
   ]
 }

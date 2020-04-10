@@ -18,22 +18,18 @@ export default () =>
         )
         .icon(MdSettings),
       S.listItem()
-        .title('Company Info')
+        .title('Announcements')
+        .schemaType('announcement')
+        .child(S.documentTypeList('announcement').title('Announcement')),
+      S.listItem()
+        .title('Home Page')
         .child(
           S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
+            .id('homePage')
+            .schemaType('homePage')
+            .documentId('homePage')
         )
-        .icon(MdBusiness),
-      S.listItem()
-        .title('Projects')
-        .schemaType('project')
-        .child(S.documentTypeList('project')),
-      S.listItem()
-        .title('Blog posts')
-        .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
+        .icon(FaFile),
       S.listItem()
         .title('Pages')
         .child(
@@ -55,9 +51,4 @@ export default () =>
         .title('People')
         .schemaType('person')
         .child(S.documentTypeList('person').title('People')),
-      S.listItem()
-        .title('Categories')
-        .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
-      ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ])

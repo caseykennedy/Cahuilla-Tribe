@@ -21,9 +21,29 @@ export const HomePage = styled(Flex)`
 `
 
 export const WelcomeBox = styled(Box)`
+  position: relative;
   background: ${theme.colors.secondary};
   border-right: ${theme.border};
-  padding: ${theme.space[4]};
+
+  .inner {
+    padding: ${theme.space[4]};
+    position: relative;
+    z-index: 9;
+  }
+
+  .decorator {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 0;
+
+    svg {
+      width: 100%;
+      fill: ${theme.colors.background};
+    }
+  }
 `
 
 export const ImageBox = styled(Flex)`
@@ -37,9 +57,8 @@ export const ImageBox = styled(Flex)`
   }
 `
 
-export const BulletinBox = styled(Flex)`
+export const BulletinBoard = styled(Flex)`
   background: ${theme.colors.black};
-  padding: ${theme.space[4]};
 `
 
 export const IntroBox = styled(Flex)`

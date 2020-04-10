@@ -4,8 +4,10 @@
 
 import React, { useRef } from 'react'
 import { Router } from '@reach/router'
-import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
 import { Link } from 'gatsby'
+
+// @ts-ignore
+import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
 
 import { Text, Heading, Box, Flex } from '../../elements'
 

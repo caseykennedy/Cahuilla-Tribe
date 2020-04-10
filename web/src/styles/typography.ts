@@ -91,6 +91,7 @@ const Typography = css`
     font-family: ${theme.fonts.heading};
     font-weight: ${theme.fontWeights.medium};
     line-height: ${theme.root.font.headingLineHeight};
+    letter-spacing: 2px;
     margin: 0 0 0.25em;
     transition: ${theme.transition.all};
   }

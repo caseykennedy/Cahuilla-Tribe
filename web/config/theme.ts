@@ -81,6 +81,12 @@ const theme: ThemeShape = {
     primary: '#CF9336',
     secondary: '#3B745F',
     tertiary: '#E19898',
+    quaternary: '#742F37',
+
+    goldenrod: '#CF9336',
+    royaldank: '#3B745F',
+    pinkpuffer: '#E19898',
+    bloodshot: '#742F37',
 
     black: '#000000',
     white: '#ffffff',
@@ -167,7 +173,7 @@ const theme: ThemeShape = {
     }
   },
 
-  border: '1px solid #132B59',
+  border: '1px solid #000000',
   shadow: '2rem 1.5rem 1rem #8a8a7c',
 
   root: {

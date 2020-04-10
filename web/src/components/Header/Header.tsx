@@ -7,6 +7,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
 
+// @ts-ignore
 import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
 
 import { Box, Flex, Text } from '../../elements'

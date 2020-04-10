@@ -33,6 +33,7 @@
     "@types/lodash": "^4.14.149",
     "@types/react-headroom": "^2.2.1",
     "@types/react-slick": "^0.23.4",
+    "@types/react-youtube": "^7.6.2",
     "@types/rebass": "^3.0.4",
     "auth0-js": "^9.13.1",
     "babel-plugin-styled-components": "^1.10.7",

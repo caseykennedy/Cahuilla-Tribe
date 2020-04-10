@@ -1,3 +1,6 @@
+// Authentication service
+// TODO: convert to ts
+
 import auth0 from 'auth0-js'
 
 export const isBrowser = typeof window !== 'undefined'

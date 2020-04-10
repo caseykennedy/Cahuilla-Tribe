@@ -6,6 +6,7 @@
 import React from 'react'
 import { useSpring, config } from 'react-spring'
 
+// @ts-ignore
 import { isAuthenticated, login } from '../utils/auth'
 
 // Hooks

@@ -12,6 +12,8 @@ export const Footer = styled(Flex)`
   flex-direction: row;
   position: relative;
 
+  margin-bottom: calc(${theme.headerHeight} / 1);
+
   background: ${theme.colors.black};
   color: ${theme.colors.background};
   border-top: ${theme.border};

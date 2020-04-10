@@ -23,7 +23,7 @@ import theme from '../../config/theme'
 
 // ___________________________________________________________________
 
-const IndexPage = () => {
+const Index = () => {
   // Overlay toggle
   const {isShowing, toggleOverlay} = useOverlay()
   const data = useContentYaml()
@@ -37,13 +37,13 @@ const IndexPage = () => {
   return (
     <Layout isShowing={isShowing} toggleOverlay={toggleOverlay}>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Home />
       </AnimatedBox>
     </Layout>
   )
 }
 
-export default IndexPage
+export default Index
 
 // ___________________________________________________________________
