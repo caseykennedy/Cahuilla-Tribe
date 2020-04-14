@@ -8,7 +8,6 @@ import { ThemeProvider } from 'styled-components'
 
 import Header from '../Header'
 import Footer from '../Footer'
-import Overlay from '../Header/Overlay'
 import { Box } from '../../elements'
 
 import theme from '../../../config/theme'
@@ -19,15 +18,11 @@ import * as S from './styles.scss'
 
 type LayoutProps = {
   children: React.ReactNode
-  isShowing: boolean
-  toggleOverlay: () => void
+  isShowing?: boolean
+  toggleOverlay?: () => void
 }
 
-const Layout: React.FC<LayoutProps> = ({
-  children,
-  isShowing,
-  toggleOverlay
-}) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   // Ref <main> to lock body for modal/overlay
   const mainRef = useRef<HTMLDivElement>(null)
   // eslint-disable-next-line no-console

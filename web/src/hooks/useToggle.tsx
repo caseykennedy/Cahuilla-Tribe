@@ -1,21 +1,21 @@
-// useOverlay toggle hook
-// Toggles the overlay currently used for the reservation form
+// useToggle
+// toggle visibility
 
 import { useState } from 'react'
 
 // ___________________________________________________________________
 
-const useOverlay = () => {
+const useToggle = () => {
   const [isShowing, setIsShowing] = useState(false)
 
-  function toggleOverlay() {
+  function toggle() {
     setIsShowing(!isShowing)
   }
 
   return {
     isShowing,
-    toggleOverlay
+    toggle
   }
 }
 
-export default useOverlay
+export default useToggle

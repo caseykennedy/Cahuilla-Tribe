@@ -10,6 +10,7 @@ import Headroom from 'react-headroom'
 // @ts-ignore
 import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
 
+import Navigation from './Navigation'
 import { Box, Flex, Text } from '../../elements'
 
 import theme from '../../../config/theme'
@@ -21,10 +22,7 @@ type HeaderShape = {}
 
 const Header: React.FC<HeaderShape> = () => {
   return (
-    <Headroom
-      onPin={() => console.log('pinned')}
-      onUnpin={() => console.log('unpinned')}
-    >
+    <Headroom>
       <S.Header as="header">
         <S.Logo>
           <S.Symbol />
@@ -33,12 +31,7 @@ const Header: React.FC<HeaderShape> = () => {
           </Link>
         </S.Logo>
         <Flex alignItems="center">
-          <S.Nav>
-            <Link to="/">Government</Link>
-            <Link to="/">Departments</Link>
-            <Link to="/">Enterprises</Link>
-            <Link to="/">Resources</Link>
-          </S.Nav>
+          <Navigation />
           {!isAuthenticated() ? (
             <S.Btn to="/account">Sign In</S.Btn>
           ) : (

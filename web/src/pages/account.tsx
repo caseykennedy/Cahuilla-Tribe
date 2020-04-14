@@ -10,8 +10,7 @@ import { useSpring, config } from 'react-spring'
 import { isAuthenticated, login } from '../utils/auth'
 
 // Hooks
-import useContentYaml from '../hooks/useContentYaml'
-import useOverlay from '../hooks/useOverlay'
+import useToggle from '../hooks/useToggle'
 
 // Elements
 import { AnimatedBox } from '../elements'
@@ -32,9 +31,6 @@ const AccountPage = () => {
     login()
     return <p>Redirecting to login...</p>
   }
-  // Overlay toggle
-  const { isShowing, toggleOverlay } = useOverlay()
-  const data = useContentYaml()
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,
@@ -43,7 +39,7 @@ const AccountPage = () => {
     to: { transform: theme.transform.matrix.to }
   })
   return (
-    <Layout isShowing={isShowing} toggleOverlay={toggleOverlay}>
+    <Layout>
       <SEO />
       <AnimatedBox style={pageAnimation}>
         <Account />

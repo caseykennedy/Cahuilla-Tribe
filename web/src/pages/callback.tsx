@@ -8,7 +8,6 @@ import { useSpring, config } from 'react-spring'
 
 // Hooks
 import useContentYaml from '../hooks/useContentYaml'
-import useOverlay from '../hooks/useOverlay'
 
 // Elements
 import { AnimatedBox } from '../elements'
@@ -24,8 +23,6 @@ import theme from '../../config/theme'
 // ___________________________________________________________________
 
 const CallbackPage = () => {
-  // Overlay toggle
-  const { isShowing, toggleOverlay } = useOverlay()
   const data = useContentYaml()
   // Page animation
   const pageAnimation = useSpring({
@@ -35,7 +32,7 @@ const CallbackPage = () => {
     to: { transform: theme.transform.matrix.to }
   })
   return (
-    <Layout isShowing={isShowing} toggleOverlay={toggleOverlay}>
+    <Layout>
       <SEO />
       <AnimatedBox style={pageAnimation}>
         <Callback />

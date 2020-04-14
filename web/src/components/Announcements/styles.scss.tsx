@@ -39,7 +39,7 @@ export const Announcements = styled(AnimatedBox)`
 export const Inner = styled(Box)`
   padding: ${theme.space[4]};
   position: relative;
-  z-index: 9;
+  /* z-index: 9; */
 
   .slick-slider {
     .slick-arrow {
