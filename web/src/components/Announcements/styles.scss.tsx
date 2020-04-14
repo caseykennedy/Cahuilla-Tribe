@@ -43,14 +43,39 @@ export const Inner = styled(Box)`
 
   .slick-slider {
     .slick-arrow {
+      display: block;
+      position: absolute;
+      top: ${theme.space[11]};
+      bottom: 0;
+      right: 0;
+
       &.slick-prev {
-        display: none;
+        /* top: initial; */
+        bottom: 0;
+        left: 0;
+
+        svg {
+          transform: rotate(-180deg);
+          width: ${theme.space[3]};
+        }
+
+        @media ${theme.mq.medium} {
+        }
+
+        &::before {
+          display: none;
+        }
       }
 
       &.slick-next {
-        top: initial;
+        /* top: initial; */
+        left: ${theme.space[4]};
 
         @media ${theme.mq.medium} {
+        }
+
+        svg {
+          width: ${theme.space[3]};
         }
 
         &::before {

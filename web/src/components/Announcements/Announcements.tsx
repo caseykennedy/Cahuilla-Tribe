@@ -16,7 +16,7 @@ import Icon from '../Icons'
 // Styles
 import * as S from './styles.scss'
 import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+// import 'slick-carousel/slick/slick-theme.css'
 
 // Elements
 import { Box, Heading, Text } from '../../elements'
@@ -59,7 +59,11 @@ function SampleNextArrow(props: SlickProps) {
 // tslint:disable-next-line: function-name
 function SamplePrevArrow(props: SlickProps) {
   const { className, onClick } = props
-  return <div className={className} onClick={onClick} />
+  return (
+    <div className={className} onClick={onClick}>
+      <Icon name="carat" color={theme.colors.white} />
+    </div>
+  )
 }
 
 const Announcements: React.FC = () => {
@@ -99,14 +103,19 @@ const Announcements: React.FC = () => {
         <MountainMed />
       </Box>
       <S.Inner>
-        <Box mb={8}>
+        <Box mb={7}>
           <Heading as="h4">Announcements</Heading>
         </Box>
         <Slider {...settings}>
           {query.map(({ node: item }) => (
-            <Text as="p" color="white" key={item._id}>
-              {item.message}
-            </Text>
+            <>
+              <Text as="p" fontSize={1} color="white" key={item._id}>
+                {item._updatedAt}
+              </Text>
+              <Text as="p" color="white" key={item._id}>
+                {item.message}
+              </Text>
+            </>
           ))}
         </Slider>
       </S.Inner>

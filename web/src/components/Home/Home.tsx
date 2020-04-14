@@ -3,13 +3,14 @@
 // ___________________________________________________________________
 
 import React, { useRef } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import ImgMatch from '../ImgMatch'
 import { Text, Heading, Box, Flex } from '../../elements'
 
 import Announcements from '../Announcements'
 import MountainLarge from '../MountainLarge'
+import Icon from '../Icons'
 
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
@@ -74,12 +75,13 @@ const Home: React.FC = () => {
         />
       </S.ImageBox>
       <S.IntroBox width={[1, 2 / 3]}>
-        <Text as="p" fontSize={3}>
+        <Text as="p" fontSize={3} p={4}>
           {query.message}
         </Text>
-        <Flex mt={10}>
-          <Text as="p">{query.linkTitle}</Text>
-        </Flex>
+        <Link to="/about">
+          {query.linkTitle}
+          <div className="ico"><Icon name="nextArrow" /></div>
+        </Link>
       </S.IntroBox>
     </S.HomePage>
   )

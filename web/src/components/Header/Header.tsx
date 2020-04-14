@@ -7,9 +7,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Headroom from 'react-headroom'
 
-// @ts-ignore
-import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
-
 import Navigation from './Navigation'
 import { Box, Flex, Text } from '../../elements'
 
@@ -22,29 +19,17 @@ type HeaderShape = {}
 
 const Header: React.FC<HeaderShape> = () => {
   return (
-    <Headroom>
+    <Headroom style={{ zIndex: 999 }}>
       <S.Header as="header">
-        <S.Logo>
-          <S.Symbol />
-          <Link to="/" aria-label="Cahuilla, back to home">
-            CAHUILLA
-          </Link>
-        </S.Logo>
+        <Link to="/" aria-label="Cahuilla, back to home">
+          <S.Symbol as="span" />
+          <S.Logo>
+            <Box>CAHUILLA</Box>
+            <span>band of indians</span>
+          </S.Logo>
+        </Link>
         <Flex alignItems="center">
           <Navigation />
-          {!isAuthenticated() ? (
-            <S.Btn to="/account">Sign In</S.Btn>
-          ) : (
-            <S.Btn
-              to="/"
-              onClick={e => {
-                logout()
-                e.preventDefault()
-              }}
-            >
-              Sign out
-            </S.Btn>
-          )}
         </Flex>
       </S.Header>
     </Headroom>

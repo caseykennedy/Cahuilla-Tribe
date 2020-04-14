@@ -28,17 +28,28 @@ export const Header = styled(AnimatedFlex)`
   padding-left: ${theme.space[3]};
 
   transition: all 0.333s ease-in-out;
-  z-index: 30;
 
   @media ${theme.mq.small} {
     padding-left: ${theme.space[4]};
   }
+
+  a {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+     span {
+      background: ${theme.colors.bloodshot};
+     } 
+    }
+  }
 `
 
 export const Logo = styled(AnimatedFlex)`
-  align-items: center;
-  margin: ${theme.space[3]} ${theme.space[3]} ${theme.space[3]} 0;
+  flex-direction: column;
+  /* margin: ${theme.space[3]} ${theme.space[3]} ${theme.space[3]} 0; */
 
+  color: ${theme.colors.text};
   font-family: ${theme.fonts.heading};
   font-size: 1rem;
   line-height: 0;
@@ -48,11 +59,13 @@ export const Logo = styled(AnimatedFlex)`
     font-size: 1.4rem;
   }
 
-  a {
-    display: flex;
-    position: relative;
-    top: -1px;
-    color: ${theme.colors.text};
+  span {
+    font-family: ${theme.fonts.body};
+    font-size: calc(${theme.fontSizes[1]} / 1.5);
+    text-transform: uppercase;
+    letter-spacing: 0px;
+
+    margin-top: ${theme.space[4]};
   }
 `
 
@@ -66,60 +79,12 @@ export const Symbol = styled(AnimatedFlex)`
 
   background: ${theme.colors.primary};
   border-radius: 50%;
+  transition: ${theme.transition.all};
 
   @media ${theme.mq.small} {
     width: ${theme.headerHeight};
     height: ${theme.headerHeight};
     margin-right: ${theme.space[3]};
-  }
-`
-
-export const Nav = styled.nav`
-  display: none;
-  align-items: center;
-
-  height: ${theme.headerHeight};
-  margin-right: ${theme.space[5]};
-
-  @media ${theme.mq.small} {
-    display: flex;
-  }
-
-  a {
-    color: ${theme.colors.text};
-    font-size: ${theme.fontSizes[1]};
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-
-    margin-left: ${theme.space[5]};
-
-    &:first-child {
-      margin-left: 0;
-    }
-
-    &:hover {
-      color: ${theme.colors.primary};
-    }
-  }
-`
-
-export const Btn = styled(Link)`
-  color: ${theme.colors.text};
-  display: flex;
-  align-items: center;
-  box-sizing: content-box;
-
-  height: ${theme.headerHeight};
-  padding: ${theme.space[2]} ${theme.space[5]};
-  border-left: ${theme.border};
-
-  @media ${theme.mq.small} {
-    padding: ${theme.space[3]} ${theme.space[6]};
-  }
-
-  &:hover {
-    color: inherit;
-    background: ${theme.colors.tertiary};
   }
 `
 

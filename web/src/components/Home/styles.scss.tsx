@@ -65,7 +65,33 @@ export const IntroBox = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
 
-  padding: ${theme.space[4]};
   background: ${theme.colors.background};
   border-top: ${theme.border};
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: ${theme.space[4]};
+
+    color: ${theme.colors.text};
+    text-transform: uppercase;
+
+    &:hover {
+      color: ${theme.colors.background};
+      background: ${theme.colors.bloodshot};
+    }
+
+    .ico {
+      background: ${theme.colors.black};
+      padding: ${theme.space[4]};
+      display: block;
+
+      svg {
+        fill: white;
+        width: ${theme.space[5]};
+      }
+    }
+  }
 `
