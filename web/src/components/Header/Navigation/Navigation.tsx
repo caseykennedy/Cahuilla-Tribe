@@ -6,7 +6,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import useToggle from '../../../hooks/useToggle'
-
 import { Box, Text } from '../../../elements'
 
 import theme from '../../../../config/theme'
@@ -24,20 +23,20 @@ const Navigation: React.FC = () => {
   return (
     <S.Nav>
       {data.map((item, idx) => (
-        <div className="nav-link" key={idx}>
+        <Box className="nav-link" key={idx}>
           <span className="nav-link__title">
             {item.name}
           </span>
           {item.subPage && (
-            <div className="sub-nav">
+            <Box className="sub-nav">
               {item.subPage.map((subItem, idx) => (
                 <Link to={subItem.link} key={idx}>
                   {subItem.name}
                 </Link>
               ))}
-            </div>
+            </Box>
           )}
-        </div>
+        </Box>
       ))}
     </S.Nav>
   )

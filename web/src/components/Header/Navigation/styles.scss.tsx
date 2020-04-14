@@ -14,7 +14,7 @@ import theme from '../../../../config/theme'
 export const Nav = styled.nav`
   display: none;
   align-items: center;
-    z-index: 999;
+  z-index: 999;
 
   height: ${theme.headerHeight};
   margin-right: ${theme.space[5]};
@@ -76,20 +76,3 @@ export const Nav = styled.nav`
     }
   }
 `
-
-// export const SubNav = styled(Box)`
-//   position: absolute;
-//   top: ${theme.space[6]};
-//   padding: ${theme.space[4]};
-
-//   width: auto;
-
-//   background: ${theme.colors.background};
-//   border: ${theme.border};
-
-//   a {
-//     margin: 0;
-//     padding: ${theme.space[2]} 0;
-//     white-space: nowrap;
-//   }
-// `
