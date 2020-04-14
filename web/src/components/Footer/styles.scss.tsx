@@ -64,14 +64,8 @@ export const Nav = styled(Flex)`
 `
 
 export const Callout = styled(Flex)`
-  background: ${theme.colors.tertiary};
-  border-right: none;
-  padding: ${theme.space[8]} ${theme.space[3]};
-
-  @media ${theme.mq.small} {
-    border-right: ${theme.border};
-    padding: ${theme.space[4]};
-  }
+  background: ${theme.colors.background};
+  /* color: ${theme.colors.text}; */
 `
 
 export const Indent = styled(Flex)`
