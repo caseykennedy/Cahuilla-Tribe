@@ -108,14 +108,14 @@ const Announcements: React.FC = () => {
         </Box>
         <Slider {...settings}>
           {query.map(({ node: item }) => (
-            <>
-              <Text as="p" fontSize={1} color="white" key={item._id}>
+            <div key={item._id}>
+              <Text as="p" fontSize={1} color="white">
                 {item._updatedAt}
               </Text>
               <Text as="p" color="white" key={item._id}>
                 {item.message}
               </Text>
-            </>
+            </div>
           ))}
         </Slider>
       </S.Inner>

@@ -1,52 +1,103 @@
-// graphql function doesn't throw an error so we have to check to check for the result.errors to throw manually
-// const wrapper = promise =>
-//   promise.then(result => {
-//     if (result.errors) {
-//       throw result.errors
-//     }
-//     return result
-//   })
+// graphql function doesn't throw an error so we have to
+// check for the result.errors to throw manually
 
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
+// Department pages
+// ___________________________________________________________________
 
-//   const projectTemplate = require.resolve('./src/templates/project.tsx')
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
 
-//   const result = await wrapper(
-//     graphql(`
-//       {
-//         projects: allProjectsYaml {
-//           edges {
-//             next {
-//               slug
-//               title
-//               services
-//               id
-//               desc
-//               title_detail
-//               color
-//               category
-//             }
-//             node {
-//               slug
-//               images
-//             }
-//           }
-//         }
-//       }
-//     `)
-//   )
+  const departmentTemplate = require.resolve('./src/templates/department.tsx')
+  const governmentTemplate = require.resolve('./src/templates/government.tsx')
 
-//   result.data.projects.edges.forEach(edge => {
+  const department = graphql(`
+    {
+      department: allSanityDepartment(filter: { government: { eq: false } }) {
+        edges {
+          node {
+            cell
+            department
+            email
+            fax
+            government
+            id
+            name
+            pageTitle
+            slug {
+              current
+            }
+            telephone
+          }
+          next {
+            slug {
+              current
+            }
+            pageTitle
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      Promise.reject(result.errors)
+    }
+    result.data.department.edges.forEach(edge => {
+      createPage({
+        path: `/departments/${edge.node.slug.current}`,
+        component: departmentTemplate,
+        context: {
+          slug: edge.node.slug.current,
+          next: edge.next,
+          data: edge.node
+        }
+      })
+    })
+  })
 
-//     createPage({
-//       path: edge.node.slug,
-//       component: projectTemplate,
-//       context: {
-//         slug: edge.node.slug,
-//         images: `/${edge.node.images}/`,
-//         next: edge.next
-//       }
-//     })
-//   })
-// }
+  const government = graphql(`
+    {
+      government: allSanityDepartment(filter: { government: { eq: true } }) {
+        edges {
+          node {
+            cell
+            department
+            email
+            fax
+            government
+            id
+            name
+            pageTitle
+            slug {
+              current
+            }
+            telephone
+          }
+          next {
+            slug {
+              current
+            }
+            pageTitle
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      Promise.reject(result.errors)
+    }
+    result.data.government.edges.forEach(edge => {
+      createPage({
+        path: `/government/${edge.node.slug.current}`,
+        component: governmentTemplate,
+        context: {
+          slug: edge.node.slug.current,
+          next: edge.next,
+          data: edge.node
+        }
+      })
+    })
+  })
+
+  // Return a Promise which would wait for both the queries to resolve
+  return Promise.all([department, government])
+}

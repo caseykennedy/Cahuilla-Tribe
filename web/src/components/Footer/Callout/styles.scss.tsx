@@ -42,15 +42,15 @@ export const Inner = styled(Flex)`
   position: relative;
   color: ${theme.colors.text};
 
-  h4 {
+  h3 {
     color: ${theme.colors.secondary};
-    font-size: ${theme.fontSizes[4]};
-    padding: ${theme.space[4]};
+    font-size: ${theme.fontSizes[5]};
+    padding: ${theme.space[4]} ${theme.space[4]} 0 ${theme.space[4]};
+    margin-bottom: 0;
   }
 
   p {
-
-    padding: ${theme.space[4]};
+    padding: 0 ${theme.space[4]} ${theme.space[4]} ${theme.space[4]};
   }
 
   a {

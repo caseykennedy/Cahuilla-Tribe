@@ -54,7 +54,7 @@ const Callout: React.FC = () => {
       </Box>
       <S.Inner>
         <Box mb={7}>
-          <Heading as="h4">Join our team</Heading>
+          <Heading as="h3">Join our team</Heading>
         </Box>
         <Text as="p">
           We are interdependent. We trust one another and work as a team toward
