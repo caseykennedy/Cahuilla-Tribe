@@ -1,10 +1,10 @@
-import { MdPerson } from 'react-icons/md'
+import { MdPerson, MdAccountBalance } from 'react-icons/md'
 
 export default {
-  name: 'person',
-  title: 'Person',
+  name: 'department',
+  title: 'Department',
   type: 'document',
-  icon: MdPerson,
+  icon: MdAccountBalance,
   liveEdit: false,
   fields: [
     {
@@ -13,13 +13,13 @@ export default {
       type: 'string'
     },
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string'
+      title: 'Is this a government department?',
+      name: 'government',
+      type: 'boolean'
     },
     {
-      name: 'seated',
-      title: 'Seated',
+      name: 'pageTitle',
+      title: 'Page Title',
       type: 'string'
     },
     {
@@ -29,7 +29,8 @@ export default {
       description: 'Some frontend will require a slug to be set to be able to show the person',
       options: {
         source: 'name',
-        maxLength: 96
+        maxLength: 96,
+        slugify: input => input.toLowerCase()
       }
     },
     {
@@ -41,8 +42,8 @@ export default {
       }
     },
     {
-      name: 'bio',
-      title: 'Bio',
+      name: 'content',
+      title: 'Content',
       type: 'array',
       of: [
         {
@@ -85,7 +86,7 @@ export default {
           {title: 'Cahuilla Gaming Agency', value: 'cahuillaGamingAgency'},
           {title: 'Tribal Administration', value: 'tribalAdmin'},
           {title: 'Family and Social Services', value: 'socialServices'},
-          {title: 'EPA', value: 'epa'},
+          {title: 'Environmental Protection Agency', value: 'epa'},
           {title: 'Public Works', value: 'publicWorks'},
           {title: 'Cultural', value: 'cultural'},
           {title: 'Public Safety', value: 'publicSafety'},

@@ -6,9 +6,6 @@
 import React from 'react'
 import { useSpring, config } from 'react-spring'
 
-// Hooks
-import useContentYaml from '../hooks/useContentYaml'
-
 // Elements
 import { AnimatedBox } from '../elements'
 
@@ -23,7 +20,6 @@ import theme from '../../config/theme'
 // ___________________________________________________________________
 
 const CallbackPage = () => {
-  const data = useContentYaml()
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,

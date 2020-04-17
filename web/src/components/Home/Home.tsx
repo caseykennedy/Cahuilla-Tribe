@@ -12,6 +12,8 @@ import Announcements from '../Announcements'
 import MountainLarge from '../MountainLarge'
 import Icon from '../Icons'
 
+import useSanityDepartment from '../../hooks/useSanityDepartment'
+
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
@@ -45,19 +47,24 @@ const Home: React.FC = () => {
   `)
   const query = data.allSanityHomePage.edges[0].node
   // Ref <main> to lock body for modal/overlay
-  const mainRef = useRef<HTMLDivElement>(null)
+  // const mainRef = useRef<HTMLDivElement>(null)
+
+  const sanity = useSanityDepartment()
+  console.log('—————|— SANITY —|—————')
+  console.log(sanity)
+  
   return (
     <S.HomePage>
       <S.WelcomeBox width={[1, 1 / 3]}>
-        <Box className="decorator">
+        <div className="decorator">
           <MountainLarge />
-        </Box>
-        <Box className="inner">
+        </div>
+        <div className="inner">
           <Text as="p">Cahuilla: (kəˊwi:e/)</Text>
           <Heading as="h2" color="primary" mt={10}>
             Welcome Paxam
           </Heading>
-        </Box>
+        </div>
       </S.WelcomeBox>
       <S.ImageBox width={[1, 1 / 3]}>
         <ImgMatch

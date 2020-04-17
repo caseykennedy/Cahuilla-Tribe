@@ -7,6 +7,7 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 
 import { Heading, Text, Box } from '../../elements'
+import Callout from './Callout'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -24,7 +25,9 @@ const Footer: React.FC = () => {
         <Box className="marker">&copy;{Year()} • All rights</Box>
       </S.Indent>
       <S.Inner>
-        <S.Callout width={[1, 1 / 3]}>Careers callout</S.Callout>
+        <S.Callout width={[1, 1 / 3]}>
+          <Callout />
+        </S.Callout>
         <S.Nav width={[1, 2 / 3]}>
           <ul>
             <Link to="/">Homepage</Link>

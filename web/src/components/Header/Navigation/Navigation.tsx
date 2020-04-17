@@ -73,15 +73,15 @@ const data = [
     subPage: [
       {
         name: 'Tribal Council',
-        link: '/tribal-council'
+        link: '/government/tribal-council'
       },
       {
         name: 'Economic Development',
-        link: '/economic-development'
+        link: '/government/economic-development'
       },
       {
         name: 'Cahuilla Gaming Agency',
-        link: '/cahuilla-gaming-agency'
+        link: '/government/cahuilla-gaming-agency'
       }
     ]
   },
@@ -91,23 +91,23 @@ const data = [
     subPage: [
       {
         name: 'Tribal Administration',
-        link: '/tribal-administration'
+        link: '/departments/tribal-admin'
       },
       {
         name: 'Family & Social Services',
-        link: '/family-social-services'
+        link: '/departments/family-social-services'
       },
       {
         name: 'Environmental Protection',
-        link: '/environmental-protection'
+        link: '/departments/environmental-protection-agency'
       },
       {
         name: 'Public Works',
-        link: '/public-works'
+        link: '/departments/public-works'
       },
       {
         name: 'Cultural',
-        link: '/cultural'
+        link: '/departments/cultural'
       }
     ]
   },
