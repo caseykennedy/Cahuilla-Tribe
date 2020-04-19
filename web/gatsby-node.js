@@ -6,7 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
   const departmentTemplate = require.resolve('./src/templates/department.tsx')
   const governmentTemplate = require.resolve('./src/templates/government.tsx')
 
-  // Government pages
+  // Department pages
   // ___________________________________________________________________
   const department = graphql(`
     {

@@ -128,9 +128,8 @@ const Typography = css`
 
   h3,
   .text--lg {
-    font-size: ${theme.root.font.md};
+    font-size: ${theme.root.font.lg};
     line-height: ${theme.root.font.bodyLineHeight};
-    margin: 0 0 1em;
 
     @media ${theme.mq.small} {
     }

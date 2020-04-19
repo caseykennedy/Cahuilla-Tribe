@@ -32,7 +32,7 @@ export const Inner = styled(Flex)`
 
   @media ${theme.mq.small} {
     flex-direction: row-reverse;
-    width: calc(calc(${theme.siteWidth} - ${theme.headerHeight}) + 2px);
+    /* width: calc(calc(${theme.siteWidth} - ${theme.headerHeight}) + 2px); */
     min-width: inherit;
   }
 `
@@ -75,6 +75,7 @@ export const Indent = styled(Flex)`
 
   width: calc(${theme.headerHeight} - 2px);
   max-width: calc(${theme.headerHeight} - 2px);
+  min-width: calc(${theme.headerHeight} - 2px);
   height: auto;
   padding: ${theme.space[4]} 0;
   background: ${theme.colors.primary};
