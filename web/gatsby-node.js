@@ -34,6 +34,31 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allSanityPerson {
+        edges {
+          node {
+            cell
+            department
+            email
+            fax
+            id
+            name
+            seated
+            telephone
+            title
+            slug {
+              current
+            }
+            _rawBio
+            bio {
+              _key
+              _type
+              style
+              list
+            }
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
