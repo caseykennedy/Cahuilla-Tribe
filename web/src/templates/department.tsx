@@ -21,7 +21,7 @@ import theme from '../../config/theme'
 
 type ContextShape = {
   pageContext: {
-    data: {
+    page: {
       cell: number
       department: string
       email: string
@@ -34,6 +34,20 @@ type ContextShape = {
         current: string
       }
       telephone: number
+      _rawContent: {
+        _key: string
+        children: {
+          _key: string
+          text: string
+        }[]
+      }[]
+      _rawIntro: {
+        _key: string
+        children: {
+          _key: string
+          text: string
+        }[]
+      }[]
     }
     next: {
       pageTitle: string

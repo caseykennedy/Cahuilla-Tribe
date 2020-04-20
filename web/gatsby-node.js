@@ -25,6 +25,8 @@ exports.createPages = ({ graphql, actions }) => {
               current
             }
             telephone
+            _rawContent
+            _rawIntro
           }
           next {
             slug {
@@ -71,7 +73,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug.current,
           next: edge.next,
-          data: edge.node
+          page: edge.node
         }
       })
     })
@@ -96,6 +98,8 @@ exports.createPages = ({ graphql, actions }) => {
               current
             }
             telephone
+            _rawContent
+            _rawIntro
           }
           next {
             slug {
@@ -117,7 +121,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug.current,
           next: edge.next,
-          data: edge.node
+          page: edge.node
         }
       })
     })
