@@ -98,11 +98,11 @@ const Department: React.FC<Props> = ({ pageContext }) => {
           ))}
         </S.Team>
 
-        {page._rawContent.map(para => (
+        {/* {page._rawContent.map(para => (
           <Text as="p" key={para._key}>
             {para.children[0].text}
           </Text>
-        ))}
+        ))} */}
       </S.Main>
 
       <S.Sidebar as="aside" width={[1, 1 / 3]}>
