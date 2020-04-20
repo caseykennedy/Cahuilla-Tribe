@@ -42,6 +42,19 @@ export default {
       }
     },
     {
+      name: 'intro',
+      title: 'Introduction',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: []
+        }
+      ]
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'array',

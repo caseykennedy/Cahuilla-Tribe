@@ -42,21 +42,6 @@ module.exports = {
         overlayDrafts: true
       }
     },
-    'gatsby-transformer-yaml',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/content`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'projects',
-        path: `${__dirname}/content/projects`,
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

@@ -1,15 +1,13 @@
-// graphql function doesn't throw an error so we have to
-// check for the result.errors to throw manually
+// Template pages
 
-// Department pages
-// ___________________________________________________________________
-
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const departmentTemplate = require.resolve('./src/templates/department.tsx')
   const governmentTemplate = require.resolve('./src/templates/government.tsx')
 
+  // Government pages
+  // ___________________________________________________________________
   const department = graphql(`
     {
       department: allSanityDepartment(filter: { government: { eq: false } }) {
@@ -36,6 +34,31 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allSanityPerson {
+        edges {
+          node {
+            cell
+            department
+            email
+            fax
+            id
+            name
+            seated
+            telephone
+            title
+            slug {
+              current
+            }
+            _rawBio
+            bio {
+              _key
+              _type
+              style
+              list
+            }
+          }
+        }
+      }
     }
   `).then(result => {
     if (result.errors) {
@@ -54,6 +77,8 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
+  // Government pages
+  // ___________________________________________________________________
   const government = graphql(`
     {
       government: allSanityDepartment(filter: { government: { eq: true } }) {
@@ -98,6 +123,6 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // Return a Promise which would wait for both the queries to resolve
+  // Return a Promise which will wait for both the queries to resolve
   return Promise.all([department, government])
 }
