@@ -19,6 +19,19 @@ exports.createPages = ({ graphql, actions }) => {
             fax
             government
             id
+            image {
+              asset {
+                fluid(maxWidth: 1080) {
+                  src
+                  aspectRatio
+                  base64
+                  sizes
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
+              }
+            }
             name
             pageTitle
             slug {
@@ -34,30 +47,11 @@ exports.createPages = ({ graphql, actions }) => {
             }
             pageTitle
           }
-        }
-      }
-      allSanityPerson {
-        edges {
-          node {
-            cell
-            department
-            email
-            fax
-            id
-            name
-            seated
-            telephone
-            title
+          previous {
             slug {
               current
             }
-            _rawBio
-            bio {
-              _key
-              _type
-              style
-              list
-            }
+            pageTitle
           }
         }
       }
@@ -73,6 +67,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug.current,
           next: edge.next,
+          prev: edge.previous,
           page: edge.node
         }
       })
@@ -92,6 +87,19 @@ exports.createPages = ({ graphql, actions }) => {
             fax
             government
             id
+            image {
+              asset {
+                fluid(maxWidth: 1080) {
+                  src
+                  aspectRatio
+                  base64
+                  sizes
+                  srcSet
+                  srcSetWebp
+                  srcWebp
+                }
+              }
+            }
             name
             pageTitle
             slug {
@@ -102,6 +110,12 @@ exports.createPages = ({ graphql, actions }) => {
             _rawIntro
           }
           next {
+            slug {
+              current
+            }
+            pageTitle
+          }
+          previous {
             slug {
               current
             }
@@ -121,6 +135,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           slug: edge.node.slug.current,
           next: edge.next,
+          prev: edge.previous,
           page: edge.node
         }
       })

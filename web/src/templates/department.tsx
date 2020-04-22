@@ -19,46 +19,7 @@ import theme from '../../config/theme'
 
 // ___________________________________________________________________
 
-type ContextShape = {
-  pageContext: {
-    page: {
-      cell: number
-      department: string
-      email: string
-      fax: number
-      government: boolean
-      id: string
-      name: string
-      pageTitle: string
-      slug: {
-        current: string
-      }
-      telephone: number
-      _rawContent: {
-        _key: string
-        children: {
-          _key: string
-          text: string
-        }[]
-      }[]
-      _rawIntro: {
-        _key: string
-        children: {
-          _key: string
-          text: string
-        }[]
-      }[]
-    }
-    next: {
-      pageTitle: string
-      slug: {
-        current: string
-      }
-    }
-  }
-}
-
-const DepartmentTemplate: React.FC<ContextShape> = ({ pageContext }) => {
+const DepartmentTemplate: React.FC<DepartmentShape> = ({ pageContext }) => {
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,

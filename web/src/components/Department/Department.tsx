@@ -2,71 +2,42 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
-import { Router } from '@reach/router'
-import { Link } from 'gatsby'
+import React, { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image/withIEPolyfill'
 
 import { Text, Heading, Box, Flex } from '../../elements'
-import ImgMatch from '../ImgMatch'
-import MountainLarge from '../MountainLarge'
+import HeadingStroked from '../../elements/HeadingStroked'
+
+import MountainFlat from '../MountainFlat'
+import Staff from './Staff'
+import PrevNext from './PrevNext'
 
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type Props = {
-  pageContext: {
-    page: {
-      cell: number
-      department: string
-      email: string
-      fax: number
-      government: boolean
-      id: string
-      name: string
-      pageTitle: string
-      slug: {
-        current: string
-      }
-      telephone: number
-      _rawContent: {
-        _key: string
-        children: {
-          _key: string
-          text: string
-        }[]
-      }[]
-      _rawIntro: {
-        _key: string
-        children: {
-          _key: string
-          text: string
-        }[]
-      }[]
-    }
-    next: {
-      pageTitle: string
-      slug: {
-        current: string
-      }
-    }
-  }
-}
-
-const Department: React.FC<Props> = ({ pageContext }) => {
-  console.log('—————|— SANITY —|—————')
-  console.log(pageContext.page)
+const Department: React.FC<DepartmentShape> = ({ pageContext }) => {
   const page = pageContext.page
-
+  // console.log('—————|— PAGE —|—————')
+  // console.log(page)
   return (
     <S.Department>
       <S.PageTitle width={[1]}>
-        <Box className="title" width={[1, 1 / 2]}>
+        <Box className="title" width={[1, 6 / 12]}>
           <Heading as="h2">{page.pageTitle}</Heading>
         </Box>
-        <Box className="image" width={[1, 1 / 2]}>
-          <ImgMatch src="joshua-trees.jpg" altText="sometext" />
+        <Box className="image" width={[1, 6 / 12]}>
+          {/* <ImgMatch src="pagetitle.jpg" objectFit="contain" altText="sometext" /> */}
+          {page.image !== null ? (
+            <Img
+              fluid={page.image.asset.fluid}
+              objectFit="cover"
+              objectPosition="50% 50%"
+              alt={page.pageTitle}
+            />
+          ) : null}
         </Box>
         {/* {pageContext.next && (
           <Link to={`/departments/${pageContext.next.slug.current}`}>
@@ -80,38 +51,29 @@ const Department: React.FC<Props> = ({ pageContext }) => {
           {page._rawIntro[0].children[0].text}
         </Text>
 
-        <S.Team>
-          {data.map((mate, idx) => (
-            <Flex width={1 / 2} className="team-member" key={idx}>
-              <Box width={1 / 3}>
-                <ImgMatch src={mate.avatar} altText="Saul" />
-              </Box>
-              <Flex width={2 / 3} className="team-member__detail">
-                <Text as="p">{mate.name}</Text>
-                <Text>
-                  {mate.title}
-                  <br />
-                  Seated: {mate.seated}
-                </Text>
-              </Flex>
-            </Flex>
-          ))}
-        </S.Team>
+        <Staff pageContext={pageContext} />
 
-        {/* {page._rawContent.map(para => (
+        {page._rawContent.map(para => (
           <Text as="p" key={para._key}>
             {para.children[0].text}
           </Text>
-        ))} */}
+        ))}
       </S.Main>
 
       <S.Sidebar as="aside" width={[1, 1 / 3]}>
         <Box className="decorator">
-          <MountainLarge />
+          <MountainFlat />
         </Box>
         <S.Inner>
           <Box mb={7} color="background">
-            <Heading as="h3">Contact</Heading>
+            <HeadingStroked
+              as="h3"
+              fillColor="transparent"
+              strokeColor={theme.colors.background}
+              strokeWidth="2px"
+            >
+              Contact
+            </HeadingStroked>
             <Text>Please contact us for more information.</Text>
           </Box>
           <Text as="p">
@@ -121,29 +83,9 @@ const Department: React.FC<Props> = ({ pageContext }) => {
           </Text>
         </S.Inner>
       </S.Sidebar>
+      <PrevNext pageContext={pageContext} />
     </S.Department>
   )
 }
 
 export default Department
-
-const data = [
-  {
-    name: 'Daniel Salgado',
-    title: 'Tribal Council Chairman',
-    seated: '2020',
-    avatar: 'cahuilla-cactus.jpg'
-  },
-  {
-    name: 'Daniel Salgado',
-    title: 'Tribal Council Chairman',
-    seated: '2020',
-    avatar: 'cahuilla-cactus.jpg'
-  },
-  {
-    name: 'Daniel Salgado',
-    title: 'Tribal Council Chairman',
-    seated: '2020',
-    avatar: 'cahuilla-cactus.jpg'
-  }
-]

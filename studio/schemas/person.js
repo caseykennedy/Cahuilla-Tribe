@@ -80,15 +80,15 @@ export default {
       of: [{type: 'string'}],
       options: {
         list: [
-          {title: 'Tribal Council', value: 'tribalCouncil'},
-          {title: 'Economic Development', value: 'ecoDevelopment'},
-          {title: 'Cahuilla Gaming Agency', value: 'cahuillaGamingAgency'},
-          {title: 'Tribal Administration', value: 'tribalAdmin'},
-          {title: 'Family and Social Services', value: 'socialServices'},
-          {title: 'EPA', value: 'epa'},
-          {title: 'Public Works', value: 'publicWorks'},
-          {title: 'Cultural', value: 'cultural'},
-          {title: 'Public Safety', value: 'publicSafety'},
+          {title: 'Tribal Council', value: 'Tribal Council'},
+          {title: 'Economic Development', value: 'Economic Development'},
+          {title: 'Cahuilla Gaming Agency', value: 'Cahuilla Gaming Agency'},
+          {title: 'Tribal Administration', value: 'Tribal Administration'},
+          {title: 'Family and Social Services', value: 'Family and Social Services'},
+          {title: 'Environmental Protection Agency', value: 'Environmental Protection Agency'},
+          {title: 'Public Works', value: 'Public Works'},
+          {title: 'Cultural', value: 'Cultural'},
+          {title: 'Public Safety', value: 'Public Safety'},
         ]
       }
     },

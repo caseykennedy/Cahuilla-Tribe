@@ -23,7 +23,7 @@ export const Department = styled(Flex)`
 
 export const PageTitle = styled(Flex)`
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: stretch;
 
   background: ${theme.colors.secondary};
@@ -34,11 +34,11 @@ export const PageTitle = styled(Flex)`
   }
 
   .image {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    max-height: 260px;
-    overflow: hidden;
+    overflow: hidden; */
 
+    background: #A17632;
     border-left: none;
     border-top: ${theme.border};
 
@@ -46,18 +46,26 @@ export const PageTitle = styled(Flex)`
       border-left: ${theme.border};
       border-top: none;
     }
+
+    div {
+      mix-blend-mode: luminosity;
+    }
   }
 
   h2 {
-    color: ${theme.colors.primary};
-    font-size: calc(${theme.fontSizes[5]} / 1.2);
     margin-bottom: 0;
+    color: ${theme.colors.primary};
+    font-size: 9vw;
+
+    @media ${theme.mq.small} {
+      font-size: 6vw;
+    }
   }
 `
 
 export const Main = styled(Flex)`
   flex-direction: column;
-  padding: ${theme.space[7]} ${theme.space[4]};
+  padding: ${theme.space[6]} ${theme.space[4]};
 
   background: ${theme.colors.background};
   border-top: ${theme.border};
@@ -129,14 +137,14 @@ export const Inner = styled(Flex)`
   }
 `
 
-export const Team = styled(Flex)`
+export const Staff = styled(Flex)`
   flex-wrap: wrap;
   position: relative;
   left: -${theme.space[4]};
 
   border-top: ${theme.border};
   width: calc(100% + calc(${theme.space[4]} * 2));
-  margin: ${theme.space[7]} 0;
+  margin: ${theme.space[6]} 0;
 
   .team-member {
     padding: ${theme.space[4]};

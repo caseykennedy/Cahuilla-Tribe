@@ -163,7 +163,7 @@ const Typography = css`
   p {
     font-size: ${theme.root.font.baseSize};
     line-height: ${theme.root.font.bodyLineHeight};
-    margin-bottom: 0.8em;
+    margin-bottom: 1.5em;
 
     &:last-child {
       margin-bottom: 0;
