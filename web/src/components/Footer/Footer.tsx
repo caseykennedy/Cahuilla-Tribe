@@ -30,27 +30,29 @@ const Footer: React.FC = () => {
             <Box className="marker">&copy;{Year()} • All rights</Box>
           </S.Indent>
           <S.Nav>
-            <ul>
-              <Link to="/">Homepage</Link>
-              <Link to="/">About our tribe</Link>
-              <Link to="/">Contact</Link>
-              <Link to="/">Careers</Link>
-            </ul>
-            <ul>
-              <Link to="/">Tribal Admin</Link>
-              <Link to="/">Family &amp; Social Services</Link>
-              <Link to="/">EPA</Link>
-              <Link to="/">Public Works</Link>
-              <Link to="/">Cultural</Link>
-              <Link to="/">Public Safety</Link>
-            </ul>
-            <ul>
-              <Link to="/">Tribal Council</Link>
-              <Link to="/">Economic Development</Link>
-              <Link to="/">Cahuilla Gaming Agency</Link>
-              <Link to="/">Tribal Enterprises</Link>
-            </ul>
-            <Box mt={10} width={1}>
+            <Box width={1}>
+              <ul>
+                <Link to="/">Homepage</Link>
+                <Link to="/">About our tribe</Link>
+                <Link to="/">Contact</Link>
+                <Link to="/">Careers</Link>
+              </ul>
+              <ul>
+                <Link to="/">Tribal Admin</Link>
+                <Link to="/">Family &amp; Social Services</Link>
+                <Link to="/">EPA</Link>
+                <Link to="/">Public Works</Link>
+                <Link to="/">Cultural</Link>
+                <Link to="/">Public Safety</Link>
+              </ul>
+              <ul>
+                <Link to="/">Tribal Council</Link>
+                <Link to="/">Economic Development</Link>
+                <Link to="/">Cahuilla Gaming Agency</Link>
+                <Link to="/">Tribal Enterprises</Link>
+              </ul>
+            </Box>
+            <Box width={1}>
               <Text as="p" fontSize={1}>
                 Cahuilla Band of Indians, Anza, CA 92539.
               </Text>

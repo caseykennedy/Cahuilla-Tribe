@@ -24,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 
     &::-webkit-scrollbar {
       display: none;

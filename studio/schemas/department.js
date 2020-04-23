@@ -75,17 +75,17 @@ export default {
     {
       name: 'telephone',
       title: 'Telephone',
-      type: 'number'
+      type: 'string'
     },
     {
       name: 'cell',
       title: 'Cell Phone',
-      type: 'number'
+      type: 'string'
     },
     {
       name: 'fax',
       title: 'Fax',
-      type: 'number'
+      type: 'string'
     },
     {
       title: 'Department',

@@ -145,11 +145,12 @@ const Typography = css`
 
   h5,
   .text--sm {
-    font-size: calc(${theme.root.font.sm} / 1);
-    letter-spacing: 1.5px;
+    font-family: ${theme.fonts.body};
+    font-size: calc(${theme.fontSizes[1]} * 1);
+    letter-spacing: 0.5px;
     line-height: ${theme.root.font.bodyLineHeight};
     text-transform: uppercase;
-    margin: 0;
+    margin: 0 0 0.5em;
   }
 
   small {

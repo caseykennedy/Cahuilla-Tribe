@@ -16,10 +16,10 @@ type ChildImageSharp = {
 type DepartmentShape = {
   pageContext: {
     page: {
-      cell: number
+      cell: string
       department: string
       email: string
-      fax: number
+      fax: string
       government: boolean
       id: string
       image: {
@@ -40,7 +40,7 @@ type DepartmentShape = {
       slug: {
         current: string
       }
-      telephone: number
+      telephone: string
       _rawContent: {
         _key: string
         children: {
@@ -75,10 +75,10 @@ type PeopleShape = {
   people: {
     edges: {
       node: {
-        cell: number
+        cell: string
         department: string
         email: string
-        fax: number
+        fax: string
         id: string
         image: {
           asset: {
@@ -95,7 +95,7 @@ type PeopleShape = {
         }
         name: string
         seated: string
-        telephone: number
+        telephone: string
         title: string
         slug: {
           current: string

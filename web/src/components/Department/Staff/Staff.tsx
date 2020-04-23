@@ -1,4 +1,4 @@
-// Department:
+// Staff members:
 
 // ___________________________________________________________________
 
@@ -56,35 +56,32 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
       }
     }
   `)
-  const query = data
-  const [items, setItems] = useState(query)
-  const filterResults = items.people.edges.filter(
-    item => item.node.department === 'tribalCouncil'
+  const filteredPeople = data.people.edges.filter(
+    person =>
+      person.node.department === pageContext.page.department[0] ||
+      pageContext.page.department[1]
   )
-
-  console.log('—————|— People —|—————')
-  console.log(filterResults)
-  console.log(items)
-
+  // console.log('—————|— People —|—————')
+  // console.log(filterResults)
+  // console.log(items)
   return (
     <S.Staff>
-      {filterResults.map(mate => (
-        <S.StaffMember width={[1, 1 / 2]} key={mate.node.id}>
+      {filteredPeople.map(person => (
+        <S.StaffMember width={[1, 1 / 2]} key={person.node.id}>
           <Box width={1 / 3}>
             <Img
-              fluid={mate.node.image.asset.fluid}
+              fluid={person.node.image.asset.fluid}
               objectFit="cover"
               objectPosition="50% 50%"
-              alt={mate.node.name}
+              alt={person.node.name}
             />
-            {/* <ImgMatch src="cahuilla-cactus.jpg" altText={mate.node.name} /> */}
           </Box>
           <Flex width={2 / 3} className="team-member__detail">
-            <Text as="p">{mate.node.name}</Text>
+            <Text as="p">{person.node.name}</Text>
             <Text mt={7}>
-              {mate.node.title}
+              {person.node.title}
               <br />
-              {mate.node.seated !== null ? `Seated: ${mate.node.seated}` : null}
+              {person.node.seated ? `Seated: ${person.node.seated}` : null}
             </Text>
           </Flex>
         </S.StaffMember>

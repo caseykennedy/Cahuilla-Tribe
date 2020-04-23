@@ -27,8 +27,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const mainRef = useRef<HTMLDivElement>(null)
   // eslint-disable-next-line no-console
   console.log(
-    `%c CAHUILLA | Band of Indians `,
-    `background: #CF9336; color: #3B745F`
+    `%c Site by CaseyKennedy.me `,
+    `background: darkgoldenrod; color: #000000`
   )
   return (
     <ThemeProvider theme={theme}>

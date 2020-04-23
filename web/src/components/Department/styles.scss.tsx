@@ -34,13 +34,11 @@ export const PageTitle = styled(Flex)`
   }
 
   .image {
-    /* display: flex;
-    align-items: center;
-    overflow: hidden; */
-
-    background: #A17632;
+    background: #a17632;
     border-left: none;
     border-top: ${theme.border};
+    max-height: 300px;
+    overflow: hidden;
 
     @media ${theme.mq.small} {
       border-left: ${theme.border};
@@ -73,91 +71,5 @@ export const Main = styled(Flex)`
 
   @media ${theme.mq.sm} {
     border-right: ${theme.border};
-  }
-`
-
-export const Sidebar = styled(Flex)`
-  flex-direction: column;
-  position: relative;
-  padding: ${theme.space[3]} ${theme.space[4]};
-  background: ${theme.colors.background};
-  border-top: ${theme.border};
-
-  .decorator {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    z-index: 0;
-
-    svg {
-      width: 100%;
-      fill: ${theme.colors.bloodshot};
-    }
-  }
-`
-
-export const Inner = styled(Flex)`
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  color: ${theme.colors.text};
-
-  h3 {
-    font-size: ${theme.fontSizes[5]};
-    margin-bottom: 0;
-  }
-
-  a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding-left: ${theme.space[4]};
-
-    color: ${theme.colors.text};
-    text-transform: uppercase;
-
-    &:hover {
-      color: ${theme.colors.background};
-      background: ${theme.colors.bloodshot};
-    }
-
-    .ico {
-      background: ${theme.colors.black};
-      padding: ${theme.space[4]};
-      display: block;
-
-      svg {
-        fill: white;
-        width: ${theme.space[5]};
-      }
-    }
-  }
-`
-
-export const Staff = styled(Flex)`
-  flex-wrap: wrap;
-  position: relative;
-  left: -${theme.space[4]};
-
-  border-top: ${theme.border};
-  width: calc(100% + calc(${theme.space[4]} * 2));
-  margin: ${theme.space[6]} 0;
-
-  .team-member {
-    padding: ${theme.space[4]};
-    border-bottom: ${theme.border};
-
-    &:nth-child(odd) {
-      border-right: ${theme.border};
-    }
-
-    &__detail {
-      flex-direction: column;
-      justify-content: space-between;
-      margin-left: ${theme.space[4]};
-    }
   }
 `

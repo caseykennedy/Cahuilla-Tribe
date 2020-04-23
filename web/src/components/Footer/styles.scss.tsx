@@ -34,7 +34,8 @@ export const Inner = styled(Flex)`
 `
 
 export const Nav = styled(Flex)`
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   padding: ${theme.space[3]};
 
   @media ${theme.mq.small} {

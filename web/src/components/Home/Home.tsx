@@ -45,14 +45,12 @@ const Home: React.FC = () => {
       }
     }
   `)
-  const query = data.allSanityHomePage.edges[0].node
+  const homePage = data.allSanityHomePage.edges[0].node
   // Ref <main> to lock body for modal/overlay
   // const mainRef = useRef<HTMLDivElement>(null)
-
-  const sanity = useSanityDepartment()
-  console.log('—————|— SANITY —|—————')
-  console.log(sanity)
-  
+  // const sanity = useSanityDepartment()
+  // console.log('—————|— SANITY —|—————')
+  // console.log(sanity)
   return (
     <S.HomePage>
       <S.WelcomeBox width={[1, 1 / 3]}>
@@ -83,10 +81,10 @@ const Home: React.FC = () => {
       </S.ImageBox>
       <S.IntroBox width={[1, 2 / 3]}>
         <Text as="p" fontSize={3} p={4}>
-          {query.message}
+          {homePage.message}
         </Text>
         <Link to="/about">
-          {query.linkTitle}
+          {homePage.linkTitle}
           <div className="ico"><Icon name="nextArrow" /></div>
         </Link>
       </S.IntroBox>
