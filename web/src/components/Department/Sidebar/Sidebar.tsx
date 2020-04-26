@@ -15,9 +15,9 @@ import theme from '../../../../config/theme'
 // ___________________________________________________________________
 
 const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
-  const sidebar = pageContext.page
-  console.log('—————|— Sidebar —|—————')
-  console.log(pageContext)
+  const page = pageContext.page
+  // console.log('—————|— Sidebar —|—————')
+  // console.log(pageContext)
 
   return (
     <S.Sidebar as="aside" width={[1, 1 / 3]}>
@@ -39,25 +39,29 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
         </Box>
         <Box mb={7}>
           <Heading as="h5">Email</Heading>
-          <a href={`mailto:${sidebar.email}`}>{sidebar.email}</a>
+          <a href={`mailto:${page.email}`}>{page.email}</a>
         </Box>
         <Box mb={7}>
           <Heading as="h5">Telephone</Heading>
-          <a href={`tel:${sidebar.telephone}`}>{sidebar.telephone}</a>
+          <a href={`tel:${page.telephone}`}>{page.telephone}</a>
         </Box>
-        {sidebar.fax && (
+        {page.fax && (
           <Box mb={7}>
             <Heading as="h5">Fax</Heading>
-            <a href={`tel:${sidebar.fax}`}>{sidebar.fax}</a>
+            <a href={`tel:${page.fax}`}>{page.fax}</a>
           </Box>
         )}
         <Box>
           <Heading as="h5">Address</Heading>
-          <a href="#">
-            52701 CA Hwy 371
-            <br />
-            Anza, CA 92539
-          </a>
+          {!page.address ? (
+            <a href="#">
+              52701 CA Hwy 371
+              <br />
+              Anza, CA 92539
+            </a>
+          ) : (
+            <a href="#">{page.address}</a>
+          )}
         </Box>
       </S.Inner>
     </S.Sidebar>

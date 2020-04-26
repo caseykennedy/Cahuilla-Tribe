@@ -11,6 +11,7 @@ declare module 'react-text-scrambler'
 declare module 'react-id-swiper'
 declare module 'smooth-scrollbar-react'
 declare module 'utils/auth'
+declare module '@sanity/block-content-to-react'
 
 function createRef<T>(): RefObject<T>
 interface RefObject<T> {

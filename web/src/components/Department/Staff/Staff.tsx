@@ -27,13 +27,7 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
             image {
               asset {
                 fluid(maxWidth: 1080) {
-                  src
-                  aspectRatio
-                  base64
-                  sizes
-                  srcSet
-                  srcSetWebp
-                  srcWebp
+                  ...GatsbySanityImageFluid
                 }
               }
             }
@@ -56,14 +50,15 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
       }
     }
   `)
+  const pageDep = pageContext.page.department
   const filteredPeople = data.people.edges.filter(
     person =>
-      person.node.department === pageContext.page.department[0] ||
-      pageContext.page.department[1]
+      pageDep === person.node.department[0] ||
+      pageDep === person.node.department[1]
   )
   // console.log('—————|— People —|—————')
-  // console.log(filterResults)
-  // console.log(items)
+  // console.log(filteredPeople)
+  // console.log(data)
   return (
     <S.Staff>
       {filteredPeople.map(person => (

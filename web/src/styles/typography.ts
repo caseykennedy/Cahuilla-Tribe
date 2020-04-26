@@ -75,7 +75,7 @@ const Typography = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-feature-settings: 'pnum';
-    
+
     text-rendering: geometricPrecision;
     font-feature-settings: 'pnum';
     font-variant-numeric: proportional-nums;
@@ -138,7 +138,7 @@ const Typography = css`
 
   h4,
   .text--md {
-    font-size: ${theme.root.font.md};
+    font-size: ${theme.root.font.sm};
     line-height: ${theme.root.font.bodyLineHeight};
     margin: 0 0 1em;
   }
@@ -233,6 +233,18 @@ const Typography = css`
       &::after {
         mix-blend-mode: difference;
       }
+    }
+  }
+
+  ul {
+    font-size: calc(${theme.root.font.baseSize} / 1.2);
+    line-height: ${theme.root.font.bodyLineHeight};
+    margin-bottom: 1.5em;
+
+    list-style-type: disc;
+
+    li {
+      list-style-position: inside;
     }
   }
 `

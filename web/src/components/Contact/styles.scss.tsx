@@ -1,4 +1,4 @@
-// Department Styles:
+// Homepage Styles:
 
 // ___________________________________________________________________
 
@@ -11,11 +11,16 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const Department = styled(Flex)`
+export const Contact = styled(Flex)`
   flex-wrap: wrap;
-  justify-content: stretch;
   width: 100%;
-  border-left: none;
+`
+
+export const Enterprise = styled(Flex)`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 
   @media ${theme.mq.small} {
   }

@@ -2,7 +2,7 @@ import { MdPerson, MdAccountBalance } from 'react-icons/md'
 
 export default {
   name: 'department',
-  title: 'Department',
+  title: 'Department Page',
   type: 'document',
   icon: MdAccountBalance,
   liveEdit: false,
@@ -57,15 +57,7 @@ export default {
     {
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: []
-        }
-      ]
+      type: 'blockContent',
     },
     {
       name: 'email',
@@ -85,6 +77,11 @@ export default {
     {
       name: 'fax',
       title: 'Fax',
+      type: 'string'
+    },
+    {
+      name: 'address',
+      title: 'Address',
       type: 'string'
     },
     {

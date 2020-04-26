@@ -1,4 +1,4 @@
-// Department Styles:
+// Homepage Styles:
 
 // ___________________________________________________________________
 
@@ -11,12 +11,7 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const Department = styled(Flex)`
+export const Careers = styled(Flex)`
   flex-wrap: wrap;
-  justify-content: stretch;
   width: 100%;
-  border-left: none;
-
-  @media ${theme.mq.small} {
-  }
 `

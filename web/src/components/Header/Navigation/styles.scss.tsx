@@ -47,10 +47,19 @@ export const Nav = styled.nav`
       }
     }
 
+    a {
+      &:hover {
+        color: ${theme.colors.primary};
+      }
+    }
+
     &__title {
       display: flex;
-      line-height: 3;
       position: relative;
+
+      color: ${theme.colors.text};
+      line-height: 3;
+
       transition: ${theme.transition.all};
 
       span {

@@ -14,8 +14,6 @@ import person from './person'
 import siteSettings from './siteSettings'
 
 // Pages
-import tribalCouncil from './tribalCouncil'
-import economicDevCorp from './economicDevCorp'
 import department from './department'
 
 import blockText from './blockText'
@@ -43,8 +41,6 @@ export default createSchema({
     person,
     page,
     siteSettings,
-    tribalCouncil,
-    economicDevCorp,
     department
 
     // When added to this list, object types can be used as

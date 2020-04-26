@@ -19,20 +19,8 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type QueryShape = {
-  allSanityHomePage: {
-    edges: {
-      node: {
-        message: string
-        linkTo: string
-        linkTitle: string
-      }
-    }[]
-  }
-}
-
 const Home: React.FC = () => {
-  const data = useStaticQuery<QueryShape>(graphql`
+  const data = useStaticQuery<HomePageShape>(graphql`
     query HomePageQuery {
       allSanityHomePage {
         edges {

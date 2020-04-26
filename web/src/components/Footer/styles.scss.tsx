@@ -23,7 +23,6 @@ export const Inner = styled(Flex)`
   flex-wrap: wrap;
   justify-content: flex-end;
   width: 100%;
-  border-left: ${theme.border};
   z-index: 99;
 
   @media ${theme.mq.small} {

@@ -13,9 +13,25 @@ type ChildImageSharp = {
   }
 }
 
+type HomePageShape = {
+  allSanityHomePage: {
+    edges: {
+      node: {
+        message: string
+        linkTo: string
+        linkTitle: string
+      }
+    }[]
+  }
+}
+
+// Department page template shape
+// ___________________________________________________________________
+
 type DepartmentShape = {
   pageContext: {
     page: {
+      address: string
       cell: string
       department: string
       email: string
@@ -70,6 +86,9 @@ type DepartmentShape = {
     }
   }
 }
+
+// People / Staff / Council shape
+// ___________________________________________________________________
 
 type PeopleShape = {
   people: {

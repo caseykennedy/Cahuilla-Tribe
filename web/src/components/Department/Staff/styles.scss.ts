@@ -18,7 +18,7 @@ export const Staff = styled(Flex)`
 
   border-top: ${theme.border};
   width: calc(100% + calc(${theme.space[4]} * 2));
-  margin: ${theme.space[7]} 0;
+  margin: ${theme.space[7]} 0 ${theme.space[7]};
 `
 
 export const StaffMember = styled(Flex)`

@@ -29,10 +29,16 @@ const Navigation: React.FC = () => {
       <S.Nav>
         {data.map((item, idx) => (
           <Box className="nav-link" key={idx}>
-            <span className="nav-link__title">
-              {item.name}
-              {item.subPage && <Icon name="carat" />}
-            </span>
+            {!item.link ? (
+              <span className="nav-link__title">
+                {item.name}
+                {item.subPage && <Icon name="carat" />}
+              </span>
+            ) : (
+              <Link to={item.link} className="nav-link__title">
+                {item.name}
+              </Link>
+            )}
             {item.subPage && (
               <Box className="sub-nav">
                 {item.subPage.map((subItem, idx) => (
@@ -69,7 +75,6 @@ export default Navigation
 const data = [
   {
     name: 'Government',
-    link: '/government',
     subPage: [
       {
         name: 'Tribal Council',
@@ -87,7 +92,6 @@ const data = [
   },
   {
     name: 'Departments',
-    link: '/departments',
     subPage: [
       {
         name: 'Tribal Administration',
@@ -117,7 +121,6 @@ const data = [
   },
   {
     name: 'Resources',
-    link: '/resources',
     subPage: [
       {
         name: 'Contact',

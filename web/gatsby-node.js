@@ -4,7 +4,6 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const departmentTemplate = require.resolve('./src/templates/department.tsx')
-  const governmentTemplate = require.resolve('./src/templates/government.tsx')
 
   // Government pages
   // ___________________________________________________________________
@@ -13,6 +12,7 @@ exports.createPages = ({ graphql, actions }) => {
       department: allSanityDepartment(filter: { government: { eq: false } }) {
         edges {
           node {
+            address
             cell
             department
             email
@@ -81,6 +81,7 @@ exports.createPages = ({ graphql, actions }) => {
       government: allSanityDepartment(filter: { government: { eq: true } }) {
         edges {
           node {
+            address
             cell
             department
             email
@@ -131,7 +132,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.government.edges.forEach(edge => {
       createPage({
         path: `/government/${edge.node.slug.current}`,
-        component: governmentTemplate,
+        component: departmentTemplate,
         context: {
           slug: edge.node.slug.current,
           next: edge.next,
