@@ -53,12 +53,14 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
   const pageDep = pageContext.page.department
   const filteredPeople = data.people.edges.filter(
     person =>
-      pageDep === person.node.department[0] ||
-      pageDep === person.node.department[1]
+      // tslint:disable-next-line: triple-equals
+      pageDep == person.node.department[0] ||
+      // tslint:disable-next-line: triple-equals
+      pageDep == person.node.department[1]
   )
-  // console.log('—————|— People —|—————')
-  // console.log(filteredPeople)
-  // console.log(data)
+  console.log('—————|— People —|—————')
+  console.log(pageDep)
+  console.log(data.people)
   return (
     <S.Staff>
       {filteredPeople.map(person => (
