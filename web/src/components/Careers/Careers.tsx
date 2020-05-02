@@ -20,13 +20,13 @@ const Careers: React.FC = () => {
     <S.Careers>
       <PageTitle width={[1]}>
         <Box className="title" width={[1, 1 / 2]}>
-          <Heading as="h2">Contact</Heading>
+          <Heading as="h2">Careers</Heading>
         </Box>
         <Box className="image" width={[1, 1 / 2]}>
           <ImgMatch src="cahuilla-cactus.jpg" altText="Cahuilla Casino Hotel" />
         </Box>
       </PageTitle>
-      <Main width={1}>Contact</Main>
+      <Main width={1}>Careers</Main>
     </S.Careers>
   )
 }
