@@ -23,7 +23,11 @@ export const HomePage = styled(Flex)`
 export const WelcomeBox = styled(Box)`
   position: relative;
   background: ${theme.colors.secondary};
-  border-right: ${theme.border};
+  border-right: none;
+
+  @media ${theme.mq.small} {
+    border-right: ${theme.border};
+  }
 
   .inner {
     padding: ${theme.space[4]};
@@ -48,7 +52,14 @@ export const WelcomeBox = styled(Box)`
 
 export const ImageBox = styled(Flex)`
   justify-content: stretch;
+  border-top: ${theme.border};
   border-right: ${theme.border};
+  border-bottom: ${theme.border};
+
+  @media ${theme.mq.small} {
+    border-top: none;
+    border-bottom: none;
+  }
 
   &.border {
     &--top {

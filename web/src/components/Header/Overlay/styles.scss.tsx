@@ -14,36 +14,35 @@ import theme from '../../../../config/theme'
 const overlayWidth = '100vw'
 
 export const Overlay = styled(Flex)`
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-direction: column;
 
   position: fixed;
   overflow: auto;
 
   width: ${overlayWidth};
-  height: calc(100vh - ${theme.headerHeight});
-  padding: 0;
+  height: calc(100vh);
 
-  top: calc(${theme.headerHeight});
+  top: 85px;
   right: 0;
   bottom: 0;
 
-  background: ${theme.colors.background};
+  background: ${theme.colors.secondary};
   visibility: hidden;
   opacity: 0;
   transition: all 0.333s ease-in-out;
+  z-index: 9999;
 
-  @media ${theme.mq.small} {
+  /* @media ${theme.mq.small} {
     width: calc(${overlayWidth} / 2);
     right: calc(-${overlayWidth} / 2);
     border-left: ${theme.border};
 
     visibility: visible;
     opacity: 1;
-  }
+  } */
 
   &.nav-bg--open {
-    right: 0;
     visibility: visible;
     opacity: 1;
   }

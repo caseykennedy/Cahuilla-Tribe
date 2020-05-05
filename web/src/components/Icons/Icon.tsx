@@ -9,6 +9,7 @@ import React from 'react'
 import IconStyle from './styles.scss'
 
 // Icons
+import Menu from './SVG/Menu'
 import Carat from './SVG/Carat'
 import Pin from './SVG/Pin'
 import Facebook from './SVG/Facebook'
@@ -28,6 +29,12 @@ type Props = {
 
 const Icon: React.FC<Props> = ({ name, className, color, fas }) => {
   switch (name) {
+    case 'menu':
+      return (
+        <IconStyle color={color} className={className}>
+          <Menu />
+        </IconStyle>
+      )
     case 'carat':
       return (
         <IconStyle color={color} className={className}>

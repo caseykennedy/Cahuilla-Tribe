@@ -19,6 +19,7 @@ export const Header = styled(AnimatedFlex)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   background: ${theme.colors.background};
   border-top: ${theme.border};
@@ -38,9 +39,9 @@ export const Header = styled(AnimatedFlex)`
     align-items: center;
 
     &:hover {
-     span {
-      background: ${theme.colors.bloodshot};
-     } 
+      span {
+        background: ${theme.colors.bloodshot};
+      }
     }
   }
 `
@@ -51,9 +52,15 @@ export const Logo = styled(AnimatedFlex)`
 
   color: ${theme.colors.text};
   font-family: ${theme.fonts.heading};
-  font-size: 1rem;
+  font-size: 1.4rem;
   line-height: 0;
   letter-spacing: 2px;
+
+  display: none;
+
+  @media (min-width: 400px) {
+    display: flex;
+  }
 
   @media ${theme.mq.small} {
     font-size: 1.4rem;
@@ -88,45 +95,27 @@ export const Symbol = styled(AnimatedFlex)`
   }
 `
 
-export const ReserveBtn = styled(Flex)`
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-
-  color: ${theme.colors.white};
-  text-transform: uppercase;
-  font-weight: ${theme.fontWeights.medium};
-  text-align: center;
-  line-height: 1;
-  letter-spacing: 1.5px;
-
-  background: ${theme.colors.secondary};
-  height: calc(${theme.headerHeight} - 2px);
-  padding: 0 ${theme.space[4]};
-
+export const Toggle = styled.div`
+  color: ${theme.colors.text};
+  font-size: calc(${theme.fontSizes[2]});
+  font-weight: 400;
   cursor: pointer;
-  transition: all 0.333s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+
+  height: ${theme.headerHeight};
+  padding: ${theme.space[2]} ${theme.space[5]};
+  border-left: ${theme.border};
+
+  @media ${theme.mq.small} {
+    display: none;
+  }
 
   span {
-    font-size: ${theme.fontSizes[2]};
-    position: relative;
-    top: -2px;
-    margin-left: ${theme.space[2]};
-
-    transition: ${theme.transition.all};
-  }
-
-  &:hover {
-    background: ${darken(0.05, `${theme.colors.secondary}`)};
-
-    span {
-      margin-left: ${theme.space[4]};
+    svg {
+      width: ${theme.space[5]};
     }
   }
-
-  &.active {
-    background: ${theme.colors.primary};
-  }
 `
-
-// ___________________________________________________________________
