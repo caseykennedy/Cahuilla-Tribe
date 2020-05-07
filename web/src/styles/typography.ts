@@ -162,9 +162,13 @@ const Typography = css`
   }
 
   p {
-    font-size: ${theme.root.font.baseSize};
+    font-size: calc(${theme.root.font.baseSize} / 1);
     line-height: ${theme.root.font.bodyLineHeight};
     margin-bottom: 1.5em;
+
+    @media ${theme.mq.small} {
+      font-size: calc(${theme.root.font.baseSize} / 1.25);
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -237,14 +241,17 @@ const Typography = css`
   }
 
   ul {
-    font-size: calc(${theme.root.font.baseSize} / 1.2);
-    line-height: ${theme.root.font.bodyLineHeight};
-    margin-bottom: 1.5em;
-
+    margin: 0 0 1.5em 1.75rem;
     list-style-type: disc;
 
     li {
-      list-style-position: inside;
+      list-style-position: outside;
+      font-size: calc(${theme.root.font.baseSize} / 1);
+      line-height: ${theme.root.font.bodyLineHeight};
+
+      @media ${theme.mq.small} {
+        font-size: calc(${theme.root.font.baseSize} / 1.25);
+      }
     }
   }
 `

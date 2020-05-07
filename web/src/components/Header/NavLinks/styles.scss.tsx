@@ -14,24 +14,34 @@ import { Flex, AnimatedFlex } from '../../../elements'
 // ___________________________________________________________________
 
 export const NavLinks = styled(Flex)`
+  flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
   width: 100%;
+  overflow: auto;
+  padding-bottom: ${theme.fontSizes[4]};
 `
 
 export const NavLink = styled(AnimatedFlex)`
+  flex-direction: column;
   width: 50%;
   /* padding: ${theme.space[2]} 0; */
 
-  a {
-    color: ${theme.colors.primary};
-    font-size: ${theme.fontSizes[3]};
+  .nav-mobile {
+    &__link {
+      color: ${theme.colors.text};
+      font-size: ${theme.fontSizes[2]};
+      text-transform: uppercase;
+      padding: ${theme.space[4]};
+    }
 
-    padding: ${theme.space[4]};
+    &-sub {
+      padding-bottom: ${theme.fontSizes[2]};
 
-    &:hover {
-      color: ${theme.colors.background};
+      &__link {
+        display: block;
+        padding: ${theme.space[3]} 0 ${theme.space[3]} ${theme.space[4]};
+        font-size: calc(${theme.fontSizes[2]} / 1.25);
+      }
     }
   }
 `

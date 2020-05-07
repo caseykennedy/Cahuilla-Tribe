@@ -12,8 +12,6 @@ import Announcements from '../Announcements'
 import MountainLarge from '../MountainLarge'
 import Icon from '../Icons'
 
-import useSanityDepartment from '../../hooks/useSanityDepartment'
-
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
 

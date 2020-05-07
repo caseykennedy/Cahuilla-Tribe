@@ -21,13 +21,13 @@ export const Overlay = styled(Flex)`
   overflow: auto;
 
   width: ${overlayWidth};
-  height: calc(100vh);
+  height: calc(100vh - ${theme.headerHeight});
 
   top: 85px;
   right: 0;
   bottom: 0;
 
-  background: ${theme.colors.secondary};
+  background: ${theme.colors.background};
   visibility: hidden;
   opacity: 0;
   transition: all 0.333s ease-in-out;

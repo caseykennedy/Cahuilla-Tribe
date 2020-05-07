@@ -58,9 +58,9 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
       // tslint:disable-next-line: triple-equals
       pageDep == person.node.department[1]
   )
-  console.log('—————|— People —|—————')
-  console.log(pageDep)
-  console.log(data.people)
+  // console.log('—————|— People —|—————')
+  // console.log(pageDep)
+  // console.log(data.people)
   return (
     <S.Staff>
       {filteredPeople.map(person => (
@@ -74,7 +74,7 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
             />
           </Box>
           <Flex width={2 / 3} className="team-member__detail">
-            <Text as="p">{person.node.name}</Text>
+            <Text as="p" fontSize={2}>{person.node.name}</Text>
             <Text mt={7}>
               {person.node.title}
               <br />
