@@ -7,7 +7,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useTransition } from 'react-spring'
 
-import { Box } from '../../../elements'
+import { Box, Text } from '../../../elements'
 
 import theme from '../../../../config/theme'
 import * as S from './styles.scss'
@@ -48,7 +48,7 @@ const NavLink = ({ item, transition, handleExitOnClick }: LinkProps) => {
 
   return (
     <S.NavLink onClick={handleExitOnClick}>
-      <Link to={item.link && item.link} className="nav-mobile__link">{item.name}</Link>
+      <Text className="nav-mobile__link">{item.name}</Text>
       {item.subPage && (
         <Box className="nav-mobile-sub">
           {item.subPage.map((subItem, idx) => (

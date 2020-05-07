@@ -18,6 +18,7 @@ export const NavLinks = styled(Flex)`
   flex-wrap: wrap;
   width: 100%;
   overflow: auto;
+  padding-top: ${theme.fontSizes[2]};
   padding-bottom: ${theme.fontSizes[4]};
 `
 
@@ -39,8 +40,8 @@ export const NavLink = styled(AnimatedFlex)`
 
       &__link {
         display: block;
-        padding: ${theme.space[3]} 0 ${theme.space[3]} ${theme.space[4]};
-        font-size: calc(${theme.fontSizes[2]} / 1.25);
+        padding: ${theme.space[3]} ${theme.space[4]} ${theme.space[3]} ${theme.space[4]};
+        font-size: calc(${theme.fontSizes[2]} / 1.15);
       }
     }
   }
