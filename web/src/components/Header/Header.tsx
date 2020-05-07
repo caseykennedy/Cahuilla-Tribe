@@ -54,7 +54,7 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
           <Flex alignItems="center">
             <Navigation />
             <S.Toggle onClick={toggleModal} aria-label="toggle menu">
-              <Icon name="menu" color="black" />
+              <Icon name="hamburger" color="black" />
             </S.Toggle>
           </Flex>
         </S.Header>

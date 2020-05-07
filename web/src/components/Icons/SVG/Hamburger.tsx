@@ -1,10 +1,10 @@
-// Menu Icon:
+// Hamburger Icon:
 
 import React from 'react'
 
 // ___________________________________________________________________
 
-const Menu = () => (
+const Hamburger = () => (
   <svg version="1.1" width="100%" viewBox="0 0 32 23">
     <path
       stroke="#000"
@@ -30,4 +30,4 @@ const Menu = () => (
   </svg>
 )
 
-export default Menu
+export default Hamburger
