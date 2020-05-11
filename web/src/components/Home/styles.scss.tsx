@@ -20,7 +20,8 @@ export const HomePage = styled(Flex)`
   }
 `
 
-export const WelcomeBox = styled(Box)`
+export const WelcomeBox = styled(Flex)`
+justify-content: stretch;
   position: relative;
   background: ${theme.colors.secondary};
   border-right: none;
@@ -30,6 +31,10 @@ export const WelcomeBox = styled(Box)`
   }
 
   .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     padding: ${theme.space[4]};
     position: relative;
     z-index: 9;

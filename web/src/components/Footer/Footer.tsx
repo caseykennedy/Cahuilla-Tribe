@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             <Box className="marker">&copy;{Year()} • All rights</Box>
           </S.Indent>
           <S.Nav>
-            <Box width={1}>
+            <Flex flexWrap="wrap" width={1}>
               <ul>
                 <Link to="/">Homepage</Link>
                 <Link to="/">About our tribe</Link>
@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                 <Link to="/">Cahuilla Gaming Agency</Link>
                 <Link to="/">Tribal Enterprises</Link>
               </ul>
-            </Box>
+            </Flex>
             <Box width={1}>
               <Text as="p" fontSize={1}>
                 Cahuilla Band of Indians, Anza, CA 92539.

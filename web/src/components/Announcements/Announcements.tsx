@@ -16,7 +16,7 @@ import Icon from '../Icons'
 // Styles
 import * as S from './styles.scss'
 import 'slick-carousel/slick/slick.css'
-// import 'slick-carousel/slick/slick-theme.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 // Elements
 import { Box, Heading, Text } from '../../elements'
@@ -89,7 +89,8 @@ const Announcements: React.FC = () => {
     speed: 1200,
     accessibility: true,
     infinite: true,
-    arrows: true,
+    arrows: false,
+    dots: true,
     autoplay: false,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -103,17 +104,17 @@ const Announcements: React.FC = () => {
         <MountainMed />
       </Box>
       <S.Inner>
-        <Box mb={7}>
-          <Heading as="h4">Announcements</Heading>
+        <Box mb={[8, 8]}>
+          <Heading as="h3">Announcements</Heading>
         </Box>
         <Slider {...settings}>
           {query.map(({ node: item }) => (
             <div key={item._id}>
+              <Text as="p" color="white" className="announcement" key={item._id}>
+                {item.message}
+              </Text>
               <Text as="p" fontSize={1} color="white">
                 {item._updatedAt}
-              </Text>
-              <Text as="p" color="white" key={item._id}>
-                {item.message}
               </Text>
             </div>
           ))}

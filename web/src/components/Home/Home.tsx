@@ -45,7 +45,13 @@ const Home: React.FC = () => {
         </div>
         <div className="inner">
           <Text as="p">Cahuilla: (kəˊwi:e/)</Text>
-          <Heading as="h2" color="primary" mt={10}>
+          <Heading
+            as="h2"
+            fontSize={['16vw', '5vw']}
+            color="primary"
+            mt={8}
+            mb={0}
+          >
             Welcome Paxam
           </Heading>
         </div>
@@ -71,7 +77,9 @@ const Home: React.FC = () => {
         </Text>
         <Link to="/about">
           {homePage.linkTitle}
-          <div className="ico"><Icon name="nextArrow" /></div>
+          <div className="ico">
+            <Icon name="nextArrow" />
+          </div>
         </Link>
       </S.IntroBox>
     </S.HomePage>

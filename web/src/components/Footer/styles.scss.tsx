@@ -45,6 +45,7 @@ export const Nav = styled(Flex)`
     display: inline-block;
     margin-right: ${theme.space[5]};
     margin-bottom: ${theme.space[5]};
+    margin-left: 0;
 
     a {
       display: block;

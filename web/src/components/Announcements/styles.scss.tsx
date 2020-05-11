@@ -9,7 +9,7 @@ import { readableColor } from 'polished'
 // Components
 
 // Elements
-import { AnimatedBox, Box } from '../../elements'
+import { AnimatedFlex, Box } from '../../elements'
 
 // Theme
 import theme from '../../../config/theme'
@@ -17,7 +17,8 @@ import { Rotate } from '../../styles/transitions'
 
 // ___________________________________________________________________
 
-export const Announcements = styled(AnimatedBox)`
+export const Announcements = styled(AnimatedFlex)`
+  justify-content: stretch;
   position: relative;
   width: 100%;
 
@@ -39,15 +40,17 @@ export const Announcements = styled(AnimatedBox)`
 export const Inner = styled(Box)`
   padding: ${theme.space[4]};
   position: relative;
+  width: 100%;
   /* z-index: 9; */
+
+  .announcement {
+    min-height: 220px;
+  }
 
   .slick-slider {
     .slick-arrow {
       display: block;
-      position: absolute;
-      top: ${theme.space[11]};
-      bottom: 0;
-      right: 0;
+      
 
       &.slick-prev {
         /* top: initial; */
@@ -114,21 +117,28 @@ export const Inner = styled(Box)`
   }
 
   .slick-dots {
+    position: relative;
+    bottom: 0;
+    display: block;
+    float: right;
+    width: 50%;
+    top: -1.6rem;
+
     li {
-      margin: 0;
+      margin: 0 ${theme.space[2]};
 
       &.slick-active {
         button {
           &:before {
-            color: magenta;
+            color: white;
           }
         }
       }
 
       button {
         &:before {
-          color: magenta;
-          font-size: 8px;
+          color: white;
+          font-size: 14px;
         }
       }
     }
