@@ -21,7 +21,6 @@ export const HomePage = styled(Flex)`
 `
 
 export const WelcomeBox = styled(Flex)`
-justify-content: stretch;
   position: relative;
   background: ${theme.colors.secondary};
   border-right: none;
