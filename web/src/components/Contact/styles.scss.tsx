@@ -71,9 +71,6 @@ export const Enterprise = styled(Flex)`
   justify-content: center;
   align-items: center;
   min-height: 300px;
-
-  @media ${theme.mq.small} {
-  }
 `
 
 export const Contact = styled(Flex)`
@@ -86,7 +83,8 @@ export const Contact = styled(Flex)`
     justify-content: space-between;
     border-top: ${theme.border};
     border-right: ${theme.border};
-    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]} ${theme.space[4]};
+    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]}
+      ${theme.space[4]};
 
     a {
       color: ${theme.colors.text};
@@ -111,11 +109,12 @@ export const Careers = styled(Flex)`
     flex-direction: column;
     justify-content: space-between;
     border-top: ${theme.border};
-    border-left: ${theme.border};
-    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]} ${theme.space[4]};
+    border-left: 0;
+    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]}
+      ${theme.space[4]};
 
-    a {
-      color: ${theme.colors.background};
+    @media ${theme.mq.small} {
+      border-left: ${theme.border};
     }
   }
 `
@@ -123,15 +122,23 @@ export const Careers = styled(Flex)`
 export const JobPost = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
-
-  background: ${theme.colors.secondary};
   padding: ${theme.space[4]};
   margin-right: ${theme.space[4]};
 
+  background: ${theme.colors.secondary};
+  border: ${theme.border};
+  color: ${theme.colors.background};
+
   &:hover {
-    background: ${theme.colors.tertiary};
+    background: ${theme.colors.primary};
+    color: ${theme.colors.text};
   }
 
-  @media ${theme.mq.small} {
+  &:nth-child(1) {
+    margin-bottom: ${theme.space[4]};
+
+    @media ${theme.mq.small} {
+      margin-bottom: 0;
+    }
   }
 `

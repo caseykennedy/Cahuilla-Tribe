@@ -21,9 +21,9 @@ const JobPost: React.FC = () => {
   return (
     <>
       {jobs.map((job, idx) => (
-        <S.JobPost as="a" width={1 / 3} key={idx} href={job.link} target="_blank">
-          <Heading as="h5" fontSize={3}>{job.title}</Heading>
-            <Text mt={7}>learn more</Text>
+        <S.JobPost as="a" key={idx} href={job.link} target="_blank" width={[1, 1 / 3]}>
+          <Text fontSize={3}>{job.title}</Text>
+          <Text mt={7}>learn more</Text>
         </S.JobPost>
       ))}
     </>
@@ -95,9 +95,9 @@ const Contact: React.FC = () => {
       <S.Careers>
         <Flex width={[1, 6 / 8]} className="content">
           <Heading as="h3" mb={8}>
-            Careers
+            Career Opportunities
           </Heading>
-          <Flex>
+          <Flex flexWrap="wrap">
             <JobPost />
           </Flex>
         </Flex>
@@ -114,7 +114,7 @@ export default Contact
 
 const jobs = [
   {
-    title: 'Water Quality pecialist',
+    title: 'Water Quality Specialist',
     desc: 'Details',
     link:
       'https://5633c9d2-fb5c-4a30-a327-22f139409dfb.filesusr.com/ugd/5f5888_52c3bfb70575465db98502a161a06ec9.pdf'
