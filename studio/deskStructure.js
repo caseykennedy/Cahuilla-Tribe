@@ -59,7 +59,7 @@ export default () =>
       // _________________________________________________________________
 
       S.listItem()
-        .title('Job Post')
+        .title('Job Posts')
         .schemaType('jobPost')
         .child(S.documentTypeList('jobPost').title('Job')),
 

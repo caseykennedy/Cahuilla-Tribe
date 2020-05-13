@@ -6,9 +6,11 @@ import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import GoogleMapReact from 'google-map-react'
+import Marker from './Marker'
 
 import { Text, Heading, Box, Flex } from '../../elements'
 import ImgMatch from '../ImgMatch'
+import Icon from '../Icons'
 import PageTitle from '../PageTitle'
 import Main from '../Main'
 
@@ -46,7 +48,7 @@ const JobPost: React.FC = () => {
   const jobs = data.allSanityJobPost.edges
   return (
     <>
-      {jobs.map(({node: job}) => (
+      {jobs.map(({ node: job }) => (
         <S.JobPost
           as="a"
           key={job.id}
@@ -54,8 +56,10 @@ const JobPost: React.FC = () => {
           target="_blank"
           width={[1, 1 / 3]}
         >
-          <Text fontSize={3}>{job.title}</Text>
-          <Text mt={7}>learn more</Text>
+          {job.title}
+          <Text mt={7}>
+            <Icon name="nextArrow" />
+          </Text>
         </S.JobPost>
       ))}
     </>
@@ -118,8 +122,9 @@ const Contact: React.FC = () => {
               lng: -116.7422544
             }}
             defaultZoom={10}
+            yesIWantToUseGoogleMapApiInternals={true}
           >
-            <div />
+            <Marker lat={33.5407404} lng={-116.7422544} text="Test" />
           </GoogleMapReact>
         </Box>
       </S.Contact>

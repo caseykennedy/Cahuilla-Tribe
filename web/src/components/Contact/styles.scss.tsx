@@ -128,10 +128,15 @@ export const JobPost = styled(Flex)`
   background: ${theme.colors.secondary};
   border: ${theme.border};
   color: ${theme.colors.background};
+  font-size: ${theme.fontSizes[3]};
 
   &:hover {
-    background: ${theme.colors.primary};
+    background: ${theme.colors.tertiary};
     color: ${theme.colors.text};
+
+    svg {
+      fill: ${theme.colors.text};
+    }
   }
 
   &:nth-child(1) {
@@ -139,6 +144,15 @@ export const JobPost = styled(Flex)`
 
     @media ${theme.mq.small} {
       margin-bottom: 0;
+    }
+  }
+
+  span {
+    float: right;
+
+    svg {
+      fill: ${theme.colors.background};
+      width: ${theme.space[4]};
     }
   }
 `
