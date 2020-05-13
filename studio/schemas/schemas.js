@@ -15,6 +15,7 @@ import siteSettings from './siteSettings'
 
 // Pages
 import department from './department'
+import jobPost from './jobPost'
 
 import blockText from './blockText'
 import category from './category'
@@ -36,12 +37,13 @@ export default createSchema({
     // in the studio.
     announcement,
     blockContent,
+    department,
     figure,
+    jobPost,
     homePage,
     person,
     page,
-    siteSettings,
-    department
+    siteSettings
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -54,4 +54,15 @@ export default () =>
         .title('People')
         .schemaType('person')
         .child(S.documentTypeList('person').title('People')),
+
+      // Job Post
+      // _________________________________________________________________
+
+      S.listItem()
+        .title('Job Post')
+        .schemaType('jobPost')
+        .child(S.documentTypeList('jobPost').title('Job')),
+
+      // End
+      // _________________________________________________________________
     ])

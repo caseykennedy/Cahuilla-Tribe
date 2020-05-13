@@ -3,7 +3,7 @@
 // ___________________________________________________________________
 
 import React, { useRef } from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import GoogleMapReact from 'google-map-react'
 
@@ -17,11 +17,43 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
+type QueryShape = {
+  allSanityJobPost: {
+    edges: {
+      node: {
+        id: string
+        link: string
+        title: string
+      }
+    }[]
+  }
+}
+
 const JobPost: React.FC = () => {
+  const data: QueryShape = useStaticQuery(graphql`
+    query JobPostQuery {
+      allSanityJobPost {
+        edges {
+          node {
+            id
+            link
+            title
+          }
+        }
+      }
+    }
+  `)
+  const jobs = data.allSanityJobPost.edges
   return (
     <>
-      {jobs.map((job, idx) => (
-        <S.JobPost as="a" key={idx} href={job.link} target="_blank" width={[1, 1 / 3]}>
+      {jobs.map(({node: job}) => (
+        <S.JobPost
+          as="a"
+          key={job.id}
+          href={job.link}
+          target="_blank"
+          width={[1, 1 / 3]}
+        >
           <Text fontSize={3}>{job.title}</Text>
           <Text mt={7}>learn more</Text>
         </S.JobPost>
@@ -111,18 +143,3 @@ const Contact: React.FC = () => {
 }
 
 export default Contact
-
-const jobs = [
-  {
-    title: 'Water Quality Specialist',
-    desc: 'Details',
-    link:
-      'https://5633c9d2-fb5c-4a30-a327-22f139409dfb.filesusr.com/ugd/5f5888_52c3bfb70575465db98502a161a06ec9.pdf'
-  },
-  {
-    title: 'Environmental Manager',
-    desc: 'Details',
-    link:
-      'https://5633c9d2-fb5c-4a30-a327-22f139409dfb.filesusr.com/ugd/5f5888_abdbd839bf48413a9b7053f3c38eae9e.pdf'
-  }
-]
