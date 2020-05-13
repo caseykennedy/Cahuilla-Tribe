@@ -6,9 +6,11 @@ import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import GoogleMapReact from 'google-map-react'
-import Marker from './Marker'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import { Text, Heading, Box, Flex } from '../../elements'
+
+import Marker from './Marker'
 import ImgMatch from '../ImgMatch'
 import Icon from '../Icons'
 import PageTitle from '../PageTitle'
@@ -72,32 +74,36 @@ const Contact: React.FC = () => {
       <S.PageTitle width={[1]}>
         <Box className="title" width={[1, 1 / 2]}>
           <Heading as="h2">Resources</Heading>
-          <nav>
-            <a href="#">contact</a>
-            <a href="#">careers</a>
-          </nav>
+          <Flex as="nav" mt={4}>
+            <Text mr={4}>
+              <AnchorLink href="#contact">contact</AnchorLink>
+            </Text>
+            <AnchorLink href="#careers">careers</AnchorLink>
+          </Flex>
         </Box>
         <Box className="image" width={[1, 1 / 2]}>
-          <ImgMatch src="desert-night.jpg" altText="Cahuilla Casino Hotel" />
+          <ImgMatch src="cactus.jpg" altText="Cahuilla Casino Hotel" />
         </Box>
       </S.PageTitle>
 
-      <S.Contact>
+      <S.Contact id="contact">
         <Flex width={[1, 2 / 3]} className="content">
           <Box>
-            <Heading as="h3">Contact Us</Heading>
-            <Text as="p" fontSize={2}>
+            <Heading as="h3" mb={8}>
+              Contact Us
+            </Heading>
+            {/* <Text as="p" fontSize={2}>
               <a href="#">info@cahuilla.net</a>
-            </Text>
+            </Text> */}
           </Box>
-          <Flex width={1}>
-            <Box width={[1, 1 / 3]}>
+          <Flex width={1} flexWrap="wrap">
+            <Box width={[1, 1 / 3]} mb={[6, 0]}>
               <Heading as="h5">Tel / Fax</Heading>
               <a href="#">951-763-5549</a> — Tel
               <br />
               <a href="#">951-763-2808</a> — Fax
             </Box>
-            <Box width={[1, 1 / 3]}>
+            <Box width={[1, 1 / 3]} mb={[6, 0]}>
               <Heading as="h5">Address</Heading>
               <a href="#">
                 52701 CA Hwy 371
@@ -129,7 +135,7 @@ const Contact: React.FC = () => {
         </Box>
       </S.Contact>
 
-      <S.Careers>
+      <S.Careers id="careers">
         <Flex width={[1, 6 / 8]} className="content">
           <Heading as="h3" mb={8}>
             Career Opportunities
@@ -139,8 +145,8 @@ const Contact: React.FC = () => {
           </Flex>
         </Flex>
 
-        <Box bg="black" width={[1, 2 / 8]} style={{ borderTop: theme.border }}>
-          <ImgMatch src="cahuilla-cactus.jpg" altText="Cahuilla Casino Hotel" />
+        <Box bg="black" width={[1, 2 / 8]} className="image">
+          <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
         </Box>
       </S.Careers>
     </S.Resources>

@@ -94,7 +94,7 @@ export const Contact = styled(Flex)`
   }
 
   .map {
-    min-height: 500px;
+    min-height: 40vh;
     border-top: ${theme.border};
   }
 `
@@ -117,18 +117,26 @@ export const Careers = styled(Flex)`
       border-left: ${theme.border};
     }
   }
+
+  .image {
+    border-top: ${theme.border};
+  }
 `
 
 export const JobPost = styled(Flex)`
   flex-direction: column;
   justify-content: space-between;
   padding: ${theme.space[4]};
-  margin-right: ${theme.space[4]};
+  margin-right: 0;
 
   background: ${theme.colors.secondary};
   border: ${theme.border};
   color: ${theme.colors.background};
-  font-size: ${theme.fontSizes[3]};
+  font-size: ${theme.fontSizes[2]};
+
+  @media ${theme.mq.small} {
+    margin-right: ${theme.space[4]};
+  }
 
   &:hover {
     background: ${theme.colors.tertiary};

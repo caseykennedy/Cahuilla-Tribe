@@ -77,7 +77,7 @@ export const Indent = styled(Flex)`
   background: ${theme.colors.primary};
 
   .marker {
-    color: ${theme.colors.background};
+    color: ${theme.colors.text};
     font-size: ${theme.fontSizes[1]};
     font-weight: 500;
     letter-spacing: 1.5px;

@@ -121,15 +121,6 @@ const data = [
   },
   {
     name: 'Resources',
-    subPage: [
-      {
-        name: 'Contact',
-        link: '/contact'
-      },
-      {
-        name: 'Careers',
-        link: '/careers'
-      }
-    ]
+    link: '/contact'
   }
 ]
