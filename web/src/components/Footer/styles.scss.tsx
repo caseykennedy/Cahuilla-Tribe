@@ -61,8 +61,24 @@ export const Nav = styled(Flex)`
 `
 
 export const Callout = styled(Flex)`
+  flex-direction: column;
   background: ${theme.colors.background};
   /* color: ${theme.colors.text}; */
+`
+
+export const Contact = styled(Flex)`
+  justify-content: space-between;
+  padding: ${theme.space[4]};
+
+  background: ${theme.colors.primary};
+  border-top: ${theme.border};
+  border-bottom: ${theme.border};
+  color: ${theme.colors.text};
+  font-size: ${theme.fontSizes[1]};
+
+  @media ${theme.mq.small} {
+    border-bottom: none;
+  }
 `
 
 export const Indent = styled(Flex)`

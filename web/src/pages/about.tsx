@@ -1,4 +1,4 @@
-// Careers page
+// About page
 
 // ___________________________________________________________________
 
@@ -9,13 +9,13 @@ import { AnimatedBox } from '../elements'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Careers from '../components/Careers'
+import About from '../components/About'
 
 import theme from '../../config/theme'
 
 // ___________________________________________________________________
 
-const CareersPage = () => {
+const AboutPage = () => {
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,
@@ -27,10 +27,10 @@ const CareersPage = () => {
     <Layout>
       <SEO />
       <AnimatedBox style={pageAnimation}>
-        <Careers />
+        <About />
       </AnimatedBox>
     </Layout>
   )
 }
 
-export default CareersPage
+export default AboutPage

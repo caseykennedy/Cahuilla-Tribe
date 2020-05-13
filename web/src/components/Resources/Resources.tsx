@@ -1,4 +1,4 @@
-// Contact
+// Resources
 
 // ___________________________________________________________________
 
@@ -68,7 +68,7 @@ const JobPost: React.FC = () => {
   )
 }
 
-const Contact: React.FC = () => {
+const Resources: React.FC = () => {
   return (
     <S.Resources>
       <S.PageTitle width={[1]}>
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
       <S.Contact id="contact">
         <Flex width={[1, 2 / 3]} className="content">
           <Box>
-            <Heading as="h3" mb={8}>
+            <Heading as="h3" mt={3} mb={8}>
               Contact Us
             </Heading>
             {/* <Text as="p" fontSize={2}>
@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
 
       <S.Careers id="careers">
         <Flex width={[1, 6 / 8]} className="content">
-          <Heading as="h3" mb={8}>
+          <Heading as="h3" mt={3} mb={8}>
             Career Opportunities
           </Heading>
           <Flex flexWrap="wrap">
@@ -153,4 +153,4 @@ const Contact: React.FC = () => {
   )
 }
 
-export default Contact
+export default Resources

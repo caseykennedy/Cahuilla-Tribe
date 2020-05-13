@@ -36,7 +36,7 @@ const Enterprises: React.FC = () => {
         </S.Enterprise>
       </Flex>
       <Flex width={1} flexDirection={['row', 'row-reverse']} flexWrap="wrap">
-        <S.EnterpriseBox bg="royaldank" width={[1, 1 / 2]} className="mountain-sky">
+        <S.EnterpriseBox bg="black" width={[1, 1 / 2]} className="mountain-sky">
           <div className="inner">
             <Text as="p">Cahuilla Enterprises</Text>
             <Heading as="h2" color="primary" mt={10}>

@@ -9,6 +9,7 @@ import Headroom from 'react-headroom'
 
 import { Box, Flex, Text } from '../../elements'
 
+import ImgMatch from '../ImgMatch'
 import Navigation from './Navigation'
 import NavLinks from './NavLinks'
 import Overlay from './Overlay'
@@ -45,7 +46,9 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
       <Headroom style={{ zIndex: 999 }}>
         <S.Header as="header">
           <Link to="/" aria-label="Cahuilla, back to home">
-            <S.Symbol as="span" />
+            <S.Symbol as="span">
+              <ImgMatch src="logo@4x.png" altText="Cahuilla Band of Indians" />
+            </S.Symbol>
             <S.Logo>
               <Box>CAHUILLA</Box>
               <span>band of indians</span>
@@ -67,19 +70,23 @@ export default Header
 
 const navData = [
   {
+    name: 'About',
+    link: '/about'
+  },
+  {
     name: 'Government',
     subPage: [
       {
-        name: 'Tribal Council',
-        link: '/government/tribal-council'
+        name: 'Cahuilla Gaming Agency',
+        link: '/government/cahuilla-gaming-agency'
       },
       {
         name: 'Economic Development',
         link: '/government/economic-development'
       },
       {
-        name: 'Cahuilla Gaming Agency',
-        link: '/government/cahuilla-gaming-agency'
+        name: 'Tribal Council',
+        link: '/government/tribal-council'
       }
     ]
   },
@@ -87,24 +94,24 @@ const navData = [
     name: 'Departments',
     subPage: [
       {
-        name: 'Tribal Administration',
-        link: '/departments/tribal-admin'
-      },
-      {
-        name: 'Family & Social Services',
-        link: '/departments/family-social-services'
+        name: 'Cultural',
+        link: '/departments/cultural'
       },
       {
         name: 'Environmental Protection',
         link: '/departments/environmental-protection-agency'
       },
       {
+        name: 'Family & Social Services',
+        link: '/departments/family-social-services'
+      },
+      {
         name: 'Public Works',
         link: '/departments/public-works'
       },
       {
-        name: 'Cultural',
-        link: '/departments/cultural'
+        name: 'Tribal Administration',
+        link: '/departments/tribal-admin'
       }
     ]
   },
@@ -114,6 +121,6 @@ const navData = [
   },
   {
     name: 'Resources',
-    link: '/contact'
+    link: '/resources'
   }
 ]

@@ -87,21 +87,24 @@ export const IntroBox = styled(Flex)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-left: ${theme.space[4]};
 
+    border-top: ${theme.border};
     color: ${theme.colors.text};
     text-transform: uppercase;
 
     &:hover {
-      color: ${theme.colors.background};
-      background: ${theme.colors.bloodshot};
+      background: ${theme.colors.primary};
     }
 
     .ico {
       background: ${theme.colors.black};
-      padding: ${theme.space[4]};
+      padding: ${theme.space[3]};
       display: block;
+
+      @media ${theme.mq.small} {
+        padding: ${theme.space[4]};
+      }
 
       svg {
         fill: white;

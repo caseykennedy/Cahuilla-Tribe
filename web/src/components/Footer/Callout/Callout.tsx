@@ -53,14 +53,14 @@ const Callout: React.FC = () => {
         <MountainLarge />
       </Box>
       <S.Inner>
-        <Box mb={7}>
+        <Box mb={4}>
           <Heading as="h3">Join our team</Heading>
         </Box>
         <Text as="p">
           We are interdependent. We trust one another and work as a team toward
           our common goals.
         </Text>
-        <Link to="/about">
+        <Link to="/resources#careers">
           Open positions
           <div className="ico"><Icon name="nextArrow" /></div>
         </Link>

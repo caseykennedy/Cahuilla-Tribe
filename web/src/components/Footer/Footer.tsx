@@ -24,6 +24,18 @@ const Footer: React.FC = () => {
       <S.Inner>
         <S.Callout width={[1, 1 / 3]}>
           <Callout />
+          <S.Contact>
+            <Box>
+              Tel: 951-763-5549
+              <br />
+              Fax: 951-763-2808
+            </Box>
+            <Box>
+              52701 US Hwy 371
+              <br />
+              Anza, CA 92539
+            </Box>
+          </S.Contact>
         </S.Callout>
         <Flex width={[1, 2 / 3]}>
           <S.Indent>
@@ -33,23 +45,23 @@ const Footer: React.FC = () => {
             <Flex flexWrap="wrap" width={1}>
               <ul>
                 <Link to="/">Homepage</Link>
-                <Link to="/">About our tribe</Link>
-                <Link to="/">Contact</Link>
-                <Link to="/">Careers</Link>
+                <Link to="/about">About our tribe</Link>
+                <Link to="/resources#contact">Contact</Link>
+                <Link to="/resources#careers">Careers</Link>
               </ul>
               <ul>
-                <Link to="/">Tribal Admin</Link>
-                <Link to="/">Family &amp; Social Services</Link>
-                <Link to="/">EPA</Link>
-                <Link to="/">Public Works</Link>
-                <Link to="/">Cultural</Link>
-                <Link to="/">Public Safety</Link>
+                <Link to="/departments/tribal-admin">Tribal Admin</Link>
+                <Link to="/departments/family-social-services">Family &amp; Social Services</Link>
+                <Link to="/departments/environmental-protection-agency">EPA</Link>
+                <Link to="/departments/public-works">Public Works</Link>
+                <Link to="/departments/cultural">Cultural</Link>
+                <Link to="/departments/public-safety">Public Safety</Link>
               </ul>
               <ul>
-                <Link to="/">Tribal Council</Link>
-                <Link to="/">Economic Development</Link>
-                <Link to="/">Cahuilla Gaming Agency</Link>
-                <Link to="/">Tribal Enterprises</Link>
+                <Link to="/government/tribal-council">Tribal Council</Link>
+                <Link to="/government/economic-development">Economic Development</Link>
+                <Link to="/government/cahuilla-gaming-agency">Cahuilla Gaming Agency</Link>
+                <Link to="/government/tribal-enterprises">Tribal Enterprises</Link>
               </ul>
             </Flex>
             <Box width={1}>

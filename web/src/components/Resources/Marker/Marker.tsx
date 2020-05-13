@@ -2,12 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
-
-import GoogleMapReact from 'google-map-react'
-
-import { Text, Heading, Box, Flex } from '../../../elements'
-
+import React from 'react'
 import * as S from './styles.scss'
 import theme from '../../../../config/theme'
 

@@ -24,16 +24,20 @@ const PrevNext: React.FC<DepartmentShape> = ({ pageContext }) => {
   // console.log(next)
   return (
     <S.PrevNext width={1}>
-      {prev ? (
+      {!prev ? (
+        <S.Button to="/resources">Resources</S.Button>
+      ) : (
         <S.Button to={`/${path}/${prev.slug.current}`}>
           {prev.pageTitle}
         </S.Button>
-      ) : null}
-      {next ? (
+      )}
+      {!next ? (
+        <S.Button to="/resources">Resources</S.Button>
+      ) : (
         <S.Button to={`/${path}/${next.slug.current}`}>
           {next.pageTitle}
         </S.Button>
-      ) : null}
+      )}
     </S.PrevNext>
   )
 }

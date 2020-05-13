@@ -9,7 +9,10 @@ exports.createPages = ({ graphql, actions }) => {
   // ___________________________________________________________________
   const department = graphql(`
     {
-      department: allSanityDepartment(filter: { government: { eq: false } }) {
+      department: allSanityDepartment(
+        filter: { government: { eq: false } }
+        sort: { fields: name, order: ASC }
+      ) {
         edges {
           node {
             address
@@ -78,7 +81,10 @@ exports.createPages = ({ graphql, actions }) => {
   // ___________________________________________________________________
   const government = graphql(`
     {
-      government: allSanityDepartment(filter: { government: { eq: true } }) {
+      government: allSanityDepartment(
+        filter: { government: { eq: true } }
+        sort: { fields: name, order: ASC }
+      ) {
         edges {
           node {
             address

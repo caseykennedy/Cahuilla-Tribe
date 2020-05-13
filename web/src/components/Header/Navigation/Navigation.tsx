@@ -74,44 +74,49 @@ export default Navigation
 
 const data = [
   {
+    name: 'About',
+    link: '/about'
+  },
+  {
     name: 'Government',
     subPage: [
       {
-        name: 'Tribal Council',
-        link: '/government/tribal-council'
+        name: 'Cahuilla Gaming Agency',
+        link: '/government/cahuilla-gaming-agency'
       },
       {
         name: 'Economic Development',
         link: '/government/economic-development'
       },
       {
-        name: 'Cahuilla Gaming Agency',
-        link: '/government/cahuilla-gaming-agency'
+        name: 'Tribal Council',
+        link: '/government/tribal-council'
       }
     ]
   },
   {
     name: 'Departments',
     subPage: [
+
       {
-        name: 'Tribal Administration',
-        link: '/departments/tribal-admin'
-      },
-      {
-        name: 'Family & Social Services',
-        link: '/departments/family-social-services'
+        name: 'Cultural',
+        link: '/departments/cultural'
       },
       {
         name: 'Environmental Protection',
         link: '/departments/environmental-protection-agency'
       },
       {
+        name: 'Family & Social Services',
+        link: '/departments/family-social-services'
+      },
+      {
         name: 'Public Works',
         link: '/departments/public-works'
       },
       {
-        name: 'Cultural',
-        link: '/departments/cultural'
+        name: 'Tribal Administration',
+        link: '/departments/tribal-admin'
       }
     ]
   },
@@ -121,6 +126,6 @@ const data = [
   },
   {
     name: 'Resources',
-    link: '/contact'
+    link: '/resources'
   }
 ]

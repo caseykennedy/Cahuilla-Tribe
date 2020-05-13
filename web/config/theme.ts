@@ -55,7 +55,7 @@ type ThemeShape = {
 // Begin theme
 // ___________________________________________________________________
 
-const breakpoints: string[] = ['1024px']
+const breakpoints: string[] = ['900px']
 // Aliases - FUTURE ENHANCEMENT
 // breakpoints.xs = breakpoints[0];
 // breakpoints.sm = breakpoints[1];
@@ -68,7 +68,8 @@ const theme: ThemeShape = {
 
   breakpoints,
   mq: {
-    small: `(min-width: calc(${breakpoints[0]} + 1px))`
+    small: `(min-width: calc(${breakpoints[0]} + 1px))`,
+    medium: `(min-width: 1100px)`
   },
 
   // Color palette

@@ -1,4 +1,4 @@
-// Contact page
+// Resources page
 
 // ___________________________________________________________________
 
@@ -9,13 +9,13 @@ import { AnimatedBox } from '../elements'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Contact from '../components/Contact'
+import Resources from '../components/Resources'
 
 import theme from '../../config/theme'
 
 // ___________________________________________________________________
 
-const ContactPage = () => {
+const ResourcesPage = () => {
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,
@@ -27,10 +27,10 @@ const ContactPage = () => {
     <Layout>
       <SEO />
       <AnimatedBox style={pageAnimation}>
-        <Contact />
+        <Resources />
       </AnimatedBox>
     </Layout>
   )
 }
 
-export default ContactPage
+export default ResourcesPage

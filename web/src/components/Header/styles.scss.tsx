@@ -109,7 +109,7 @@ export const Toggle = styled.div`
   padding: ${theme.space[2]} ${theme.space[5]};
   border-left: ${theme.border};
 
-  @media ${theme.mq.small} {
+  @media ${theme.mq.medium} {
     display: none;
   }
 

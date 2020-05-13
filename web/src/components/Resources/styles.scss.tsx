@@ -1,4 +1,4 @@
-// Homepage Styles:
+// Resources Styles:
 
 // ___________________________________________________________________
 
@@ -83,8 +83,7 @@ export const Contact = styled(Flex)`
     justify-content: space-between;
     border-top: ${theme.border};
     border-right: ${theme.border};
-    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]}
-      ${theme.space[4]};
+    padding: ${theme.space[4]};
 
     a {
       color: ${theme.colors.text};
@@ -110,8 +109,7 @@ export const Careers = styled(Flex)`
     justify-content: space-between;
     border-top: ${theme.border};
     border-left: 0;
-    padding: ${theme.space[6]} ${theme.space[4]} ${theme.space[4]}
-      ${theme.space[4]};
+    padding: ${theme.space[4]};
 
     @media ${theme.mq.small} {
       border-left: ${theme.border};

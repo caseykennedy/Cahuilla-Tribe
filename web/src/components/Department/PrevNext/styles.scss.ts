@@ -22,22 +22,24 @@ export const Button = styled(Link)`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  background: ${theme.colors.secondary};
-  padding: ${theme.space[8]} ${theme.space[6]};
+  padding: ${theme.space[7]} ${theme.space[6]};
   width: 100%;
 
+  background: ${theme.colors.secondary};
   color: ${theme.colors.background};
   font-family: MediaSans;
-  font-size: ${theme.fontSizes[3]};
+  font-size: ${theme.fontSizes[2]};
   letter-spacing: 2px;
 
   @media ${theme.mq.small} {
+    padding: ${theme.space[8]} ${theme.space[4]};
     width: 50%;
+    font-size: ${theme.fontSizes[3]};
   }
 
   &:hover {
     background: ${theme.colors.primary};
+    color: ${theme.colors.text};
   }
 
   &:nth-child(1) {

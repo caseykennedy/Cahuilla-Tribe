@@ -1,4 +1,4 @@
-// Homepage Styles:
+// About Styles:
 
 // ___________________________________________________________________
 
@@ -11,7 +11,7 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const Careers = styled(Flex)`
+export const About = styled(Flex)`
   flex-wrap: wrap;
   width: 100%;
 `

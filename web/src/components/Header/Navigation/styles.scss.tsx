@@ -20,16 +20,16 @@ export const Nav = styled.nav`
   height: ${theme.headerHeight};
   margin-right: ${theme.space[5]};
 
-  @media ${theme.mq.small} {
+  @media ${theme.mq.medium} {
     display: flex;
   }
 
   .nav-link {
     font-size: ${theme.fontSizes[1]};
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.25px;
 
-    margin-left: ${theme.space[5]};
+    margin-left: ${theme.space[4]};
     position: relative;
     cursor: pointer;
 
@@ -101,7 +101,7 @@ export const Nav = styled.nav`
 
         &:hover {
           background: ${theme.colors.primary};
-          color: ${theme.colors.white};
+          /* color: ${theme.colors.white}; */
         }
       }
     }
@@ -122,9 +122,9 @@ export const SignIn = styled(Link)`
   padding: ${theme.space[2]} ${theme.space[5]};
   border-left: ${theme.border};
 
-  @media ${theme.mq.small} {
+  /* @media ${theme.mq.medium} {
     padding: ${theme.space[3]} ${theme.space[6]};
-  }
+  } */
 
   &:hover {
     color: ${theme.colors.white};
