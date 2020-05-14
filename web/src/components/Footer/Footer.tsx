@@ -55,13 +55,12 @@ const Footer: React.FC = () => {
                 <Link to="/departments/environmental-protection-agency">EPA</Link>
                 <Link to="/departments/public-works">Public Works</Link>
                 <Link to="/departments/cultural">Cultural</Link>
-                <Link to="/departments/public-safety">Public Safety</Link>
               </ul>
               <ul>
                 <Link to="/government/tribal-council">Tribal Council</Link>
                 <Link to="/government/economic-development">Economic Development</Link>
                 <Link to="/government/cahuilla-gaming-agency">Cahuilla Gaming Agency</Link>
-                <Link to="/government/tribal-enterprises">Tribal Enterprises</Link>
+                <Link to="/enterprises">Enterprises</Link>
               </ul>
             </Flex>
             <Box width={1}>

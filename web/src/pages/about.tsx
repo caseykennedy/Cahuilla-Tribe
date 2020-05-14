@@ -25,7 +25,12 @@ const AboutPage = () => {
   })
   return (
     <Layout>
-      <SEO />
+      <SEO
+        pathname="/about"
+        title="About the Cahuilla Band of Indians"
+        desc="The Mission of the Cahuilla Tribal Administration is to bring about a better way of life for Cahuilla people, Tribal People, and the surrounding Communities by protecting and exercising self-governing rights."
+        individual={true}
+      />
       <AnimatedBox style={pageAnimation}>
         <About />
       </AnimatedBox>

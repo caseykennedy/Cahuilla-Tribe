@@ -20,6 +20,13 @@ import theme from '../../config/theme'
 // ___________________________________________________________________
 
 const DepartmentTemplate: React.FC<DepartmentShape> = ({ pageContext }) => {
+  const page = pageContext.page
+  let path
+  if (!page.government) {
+    path = 'departments'
+  } else {
+    path = 'government'
+  }
   // Page animation
   const pageAnimation = useSpring({
     config: config.molasses,
@@ -29,7 +36,12 @@ const DepartmentTemplate: React.FC<DepartmentShape> = ({ pageContext }) => {
   })
   return (
     <Layout>
-      <SEO />
+      <SEO
+        pathname={`/${path}/${page.slug.current}`}
+        title={`${page.department} | Cahuilla Band of Indians`}
+        desc={`${page.pageTitle} | The Mission of the Cahuilla Tribal Administration is to bring about a better way of life for Cahuilla people, Tribal People, and the surrounding Communities by protecting and exercising self-governing rights.`}
+        individual={false}
+      />
       <AnimatedBox style={pageAnimation}>
         <Department pageContext={pageContext} />
       </AnimatedBox>
