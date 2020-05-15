@@ -8,11 +8,15 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-const Main = styled(Flex)`
+type Props = {
+  bg?: string
+}
+
+const Main = styled(Flex)<Props>`
   flex-direction: column;
   padding: ${theme.space[6]} ${theme.space[4]};
 
-  background: ${theme.colors.background};
+  background: ${p => !p.bg ? theme.colors.background : p.bg};
   border-top: ${theme.border};
   border-right: none;
 

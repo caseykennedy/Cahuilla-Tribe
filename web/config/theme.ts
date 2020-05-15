@@ -82,12 +82,12 @@ const theme: ThemeShape = {
     primary: '#CF9336',
     secondary: '#3B745F',
     tertiary: '#E19898',
-    quaternary: '#742F37',
+    quaternary: '#863640',
 
     goldenrod: '#CF9336',
     royaldank: '#3B745F',
     pinkpuffer: '#E19898',
-    bloodshot: '#742F37',
+    bloodshot: '#863640',
 
     black: '#000000',
     white: '#ffffff',

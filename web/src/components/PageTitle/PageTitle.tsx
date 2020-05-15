@@ -8,12 +8,17 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-const PageTitle = styled(Flex)`
+type Props = {
+  bg?: string
+  color?: string
+}
+
+const PageTitle = styled(Flex)<Props>`
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: stretch;
 
-  background: ${theme.colors.secondary};
+  background: ${p => !p.bg ? theme.colors.secondary : p.bg};
   padding: 0;
 
   .title {
@@ -39,9 +44,9 @@ const PageTitle = styled(Flex)`
     }
   }
 
-  h2 {
+  h1, h2 {
     margin-bottom: 0;
-    color: ${theme.colors.primary};
+    color: ${p => !p.color ? theme.colors.primary : p.color};
     font-size: 9vw;
 
     @media ${theme.mq.small} {

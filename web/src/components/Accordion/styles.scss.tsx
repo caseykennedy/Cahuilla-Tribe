@@ -4,7 +4,7 @@
 
 // Core
 import styled from 'styled-components'
-import { readableColor } from 'polished'
+import { darken } from 'polished'
 
 import Icon from '../Icons'
 
@@ -19,9 +19,14 @@ import { Box, Flex } from '../../elements'
 
 // export const AccordionContainer = styled.div<{ chevronColor: string }>`
 
-export const AccordionContainer = styled.div`
+export const AccordionContainer = styled(Box)`
   width: 100%;
   position: relative;
+  border-top: ${theme.border};
+
+  &:first-child {
+    border-top: none;
+  }
 `
 
 export const AccordionInner = styled.div`
@@ -33,16 +38,16 @@ export const AccordionInner = styled.div`
   }
 `
 
-export const AccordionToggle = styled(Box)<{ colorActive: string, color: string }>`
+export const AccordionToggle = styled(Box)<{ bg: string, colorActive: string, color: string }>`
   align-items: center;
-  background: transparent;
+  background: ${p => p.bg};
   color: ${p => p.color};
-  text-transform: uppercase;
   cursor: pointer;
+
   display: flex;
   border: none;
   outline: none;
-  padding: ${theme.space[4]} ${theme.space[4]};
+  padding: ${theme.space[8]} ${theme.space[4]};
   transition: background-color 0.6s ease;
 
   &:last-child {
@@ -50,7 +55,8 @@ export const AccordionToggle = styled(Box)<{ colorActive: string, color: string 
   }
 
   &:hover {
-    color: ${p => p.colorActive}
+    color: ${p => p.colorActive};
+    background: ${p => p.bg && darken(.08, p.bg)};
   }
 
   &.active {
@@ -61,7 +67,7 @@ export const AccordionToggle = styled(Box)<{ colorActive: string, color: string 
 export const AccordionContent = styled(Box)<{ borderColor: string }>`
   overflow: hidden;
   transition: max-height 0.3s ease;
-  border-bottom: 2px solid ${p => p.borderColor};
+  /* border-bottom: 2px solid ${p => p.borderColor}; */
 `
 
 export const Carat = styled(Icon)<{ chevronColor: string }>`
@@ -70,6 +76,7 @@ export const Carat = styled(Icon)<{ chevronColor: string }>`
 
   svg {
     fill: ${p => p.chevronColor};
+    width: 3rem;
   }
 `
 

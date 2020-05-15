@@ -18,6 +18,7 @@ type AccordionProps = {
   chevronColor: string
   borderColor: string
   colorActive: string
+  bg: string
 }
 
 // ___________________________________________________________________
@@ -28,7 +29,8 @@ const Accordion: React.FC<AccordionProps> = ({
   chevronColor,
   color,
   borderColor,
-  colorActive
+  colorActive,
+  bg
 }) => {
   // Accordion hooks
   const [setActive, setActiveState] = useState('')
@@ -49,15 +51,16 @@ const Accordion: React.FC<AccordionProps> = ({
     )
   }
   return (
-    <S.AccordionContainer>
+    <S.AccordionContainer bg={bg}>
       <S.AccordionInner>
         <S.AccordionToggle
           className={setActive}
           onClick={toggleAccordion}
           color={color}
           colorActive={colorActive}
+          bg={bg}
         >
-          <Heading as="h5">
+          <Heading as="h2" mb={0}>
             {title}
           </Heading>
           <S.Carat
@@ -72,7 +75,7 @@ const Accordion: React.FC<AccordionProps> = ({
           style={{ maxHeight: `${setHeight}` }}
           borderColor={borderColor}
         >
-          <Box pb={4}>{children}</Box>
+          <Box>{children}</Box>
         </S.AccordionContent>
       </S.AccordionInner>
     </S.AccordionContainer>
