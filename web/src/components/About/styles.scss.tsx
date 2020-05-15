@@ -31,6 +31,17 @@ export const Careers = styled(Flex)`
     @media ${theme.mq.small} {
       border-left: ${theme.border};
     }
+
+    ul {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+      list-style: none;
+
+      div {
+        padding: ${theme.space[4]} 0;
+      }
+    }
   }
 
   .image {

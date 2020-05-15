@@ -47,7 +47,7 @@ export const AccordionToggle = styled(Box)<{ bg: string, colorActive: string, co
   display: flex;
   border: none;
   outline: none;
-  padding: ${theme.space[8]} ${theme.space[4]};
+  padding: ${theme.space[7]} ${theme.space[4]};
   transition: background-color 0.6s ease;
 
   &:last-child {

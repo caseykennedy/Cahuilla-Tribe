@@ -40,6 +40,8 @@ const Accordion: React.FC<AccordionProps> = ({
   // Reference the accordion content height
   const content = useRef(null)
 
+  
+
   // Toggle classes / height
   function toggleAccordion() {
     setActiveState(setActive === '' ? 'active' : '')

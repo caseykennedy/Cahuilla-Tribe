@@ -29,7 +29,7 @@ const About: React.FC = () => {
       <Box bg="background" width={1}>
         <Accordion
           title="About Us"
-          bg={theme.colors.tertiary}
+          bg={theme.colors.background}
           {...AccordionProps}
         >
           <S.Careers id="careers">
@@ -59,7 +59,7 @@ const About: React.FC = () => {
         </Accordion>
         <Accordion
           title="Our Mission"
-          bg={theme.colors.royaldank}
+          bg={theme.colors.tertiary}
           {...AccordionProps}
         >
           <S.Contact id="careers">
@@ -86,35 +86,47 @@ const About: React.FC = () => {
           bg={theme.colors.primary}
           {...AccordionProps}
         >
-          <S.Careers id="contact">
+          <S.Careers>
             <Flex width={[1, 2 / 3]} className="content">
               <Flex width={1} flexWrap="wrap">
-                <Text as="ul">
-                  <li>
-                    We are interdependent. We trust one another and work as a
-                    team toward our common goals. We recognize that each of us
-                    has an equally important role in the community, and that we
-                    are stronger together than as individuals.
-                  </li>
-                  <li>
-                    We are resilient. We look to the future with steadfast
-                    optimism, hope and faith in Our People. We adapt to change
-                    with persistence and determination. We engage in creative
-                    solutions and endure adversity with courage.
-                  </li>
-                  <li>
-                    We are accountable. We are ultimately responsible for
-                    fulfilling our mission and serving Our People. We are
-                    reliable, work with integrity and lead by example. We honor
-                    our obligations and correct our mistakes.
-                  </li>
-                  <li>
-                    We are respectful. We treat one another with dignity and
-                    kindness. We value and embrace our diversity, respect
-                    ourselves and understand boundaries. We approach each
-                    experience with gratitude and humility.
-                  </li>
-                </Text>
+                <Flex as="ul">
+                  <Box>
+                    <Heading as="h4" mb={4}>
+                      We are interdependent.
+                    </Heading>
+                    We trust one another and work as a team toward our common
+                    goals. We recognize that each of us has an equally important
+                    role in the community, and that we are stronger together
+                    than as individuals.
+                  </Box>
+                  <Box>
+                    <Heading as="h4" mb={4}>
+                      We are resilient.
+                    </Heading>
+                    We look to the future with steadfast optimism, hope and
+                    faith in Our People. We adapt to change with persistence and
+                    determination. We engage in creative solutions and endure
+                    adversity with courage.
+                  </Box>
+                  <Box>
+                    <Heading as="h4" mb={4}>
+                      We are accountable.
+                    </Heading>
+                    We are ultimately responsible for fulfilling our mission and
+                    serving Our People. We are reliable, work with integrity and
+                    lead by example. We honor our obligations and correct our
+                    mistakes.
+                  </Box>
+                  <Box>
+                    <Heading as="h4" mb={4}>
+                      We are respectful.
+                    </Heading>
+                    We treat one another with dignity and kindness. We value and
+                    embrace our diversity, respect ourselves and understand
+                    boundaries. We approach each experience with gratitude and
+                    humility.
+                  </Box>
+                </Flex>
               </Flex>
             </Flex>
 
@@ -125,7 +137,7 @@ const About: React.FC = () => {
         </Accordion>
         <Accordion
           title="A Sovereign Tribe"
-          bg={theme.colors.quaternary}
+          bg={theme.colors.royaldank}
           {...AccordionProps}
         >
           <S.Contact id="careers">
