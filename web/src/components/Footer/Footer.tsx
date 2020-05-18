@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             <Flex flexWrap="wrap" width={1}>
               <ul>
                 <Link to="/">Homepage</Link>
-                <Link to="/about">About our tribe</Link>
+                <Link to="/about">About Us</Link>
                 <Link to="/resources#contact">Contact</Link>
                 <Link to="/resources#careers">Careers</Link>
               </ul>

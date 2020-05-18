@@ -62,6 +62,14 @@ export const AccordionToggle = styled(Box)<{ bg: string, colorActive: string, co
   &.active {
     color: ${p => p.colorActive};
   }
+
+  h2 {
+    font-size: ${theme.fontSizes[3]};
+
+    @media ${theme.mq.small} {
+      font-size: ${theme.fontSizes[4]};
+    }
+  }
 `
 
 export const AccordionContent = styled(Box)<{ borderColor: string }>`
@@ -72,12 +80,20 @@ export const AccordionContent = styled(Box)<{ borderColor: string }>`
 
 export const Carat = styled(Icon)<{ chevronColor: string }>`
   margin-left: auto;
-  margin-right: ${theme.space[4]};
+  margin-right: ${theme.space[2]};
   transition: transform 0.3s ease;
+
+  @media ${theme.mq.small} {
+    margin-right: ${theme.space[4]};
+  }
 
   svg {
     fill: ${p => p.chevronColor};
-    width: 3rem;
+    width: ${theme.space[4]};
+
+    @media ${theme.mq.small} {
+      width: ${theme.space[6]};
+    }
   }
 `
 

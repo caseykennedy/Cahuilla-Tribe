@@ -106,7 +106,7 @@ export const Toggle = styled.div`
   box-sizing: content-box;
 
   height: ${theme.headerHeight};
-  padding: ${theme.space[2]} ${theme.space[5]};
+  padding: 0 ${theme.space[4]};
   border-left: ${theme.border};
 
   @media ${theme.mq.medium} {
