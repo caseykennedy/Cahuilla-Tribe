@@ -32,7 +32,7 @@ const About: React.FC = () => {
           bg={theme.colors.background}
           {...AccordionProps}
         >
-          <S.Careers id="careers">
+          <S.Careers>
             <Flex width={[1, 6 / 8]} className="content">
               <Text as="p" fontSize={3}>
                 The Cahuilla Band of Indians are Mountain Cahuilla (Qawishpa
@@ -53,7 +53,7 @@ const About: React.FC = () => {
             </Flex>
 
             <Box bg="black" width={[1, 2 / 8]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
+              <ImgMatch src="ca-vintage-water.jpg" altText="Cahuilla Casino Hotel" />
             </Box>
           </S.Careers>
         </Accordion>
@@ -62,7 +62,7 @@ const About: React.FC = () => {
           bg={theme.colors.tertiary}
           {...AccordionProps}
         >
-          <S.Contact id="careers">
+          <S.Contact>
             <Flex width={[1, 5 / 8]} className="content">
               <Text as="p" fontSize={3}>
                 The Mission of the Cahuilla Tribal Administration is to bring
@@ -77,7 +77,7 @@ const About: React.FC = () => {
             </Flex>
 
             <Box bg="black" width={[1, 3 / 8]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
+              <ImgMatch src="ca-vintage-man.jpg" altText="Cahuilla Casino Hotel" />
             </Box>
           </S.Contact>
         </Accordion>
@@ -131,17 +131,17 @@ const About: React.FC = () => {
             </Flex>
 
             <Box bg="black" width={[1, 1 / 3]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
+              <ImgMatch src="ca-vintage-woman.jpg" altText="Cahuilla Casino Hotel" />
             </Box>
           </S.Careers>
         </Accordion>
         <Accordion
-          title="A Sovereign Tribe"
+          title="A Sovereign People"
           bg={theme.colors.royaldank}
           {...AccordionProps}
         >
           <S.Contact id="careers">
-            <Flex width={[1, 5 / 8]} className="content">
+            <Flex width={[1, 6 / 8]} className="content">
               <Text as="p" fontSize={3}>
                 The Cahuilla Band of Indians exercises its authority as a
                 sovereign nation in order to provide for the welfare of its
@@ -163,8 +163,8 @@ const About: React.FC = () => {
               </Text>
             </Flex>
 
-            <Box bg="black" width={[1, 3 / 8]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
+            <Box bg="black" width={[1, 2 / 8]} className="image">
+              <ImgMatch src="native-man.jpg" altText="Cahuilla Casino Hotel" />
             </Box>
           </S.Contact>
         </Accordion>

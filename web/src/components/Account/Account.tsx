@@ -31,8 +31,8 @@ const Account: React.FC = () => {
       <S.Main width={[1, 7 / 10]}>
         {/* <ImgMatch src="pagetitle.jpg" altText="" /> */}
         <Box width={1} pt={10} pb={4} px={4} bg="black">
-          <Text as="p" fontSize={2} color="background" mb={0}>
-            Please find all forms and resources below.
+          <Text as="p" fontSize={1} color="background" mb={0}>
+            Your forms and resources:
           </Text>
         </Box>
         {/* <Text as="p" fontSize={2} px={4} py={6} mb={0}>

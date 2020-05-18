@@ -36,6 +36,14 @@ export const Aside = styled(Flex)`
 
     &:hover {
       background: ${theme.colors.background};
+
+      .ico {
+        background: ${theme.colors.black};
+
+        svg {
+          fill: ${theme.colors.primary};
+        }
+      }
     }
 
     .ico {
@@ -43,6 +51,8 @@ export const Aside = styled(Flex)`
       border-left: ${theme.border};
       padding: ${theme.space[3]};
       display: block;
+
+      transition: ${theme.transition.all};
 
       @media ${theme.mq.small} {
         padding: ${theme.space[4]};

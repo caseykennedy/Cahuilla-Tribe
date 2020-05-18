@@ -43,7 +43,8 @@ export const EnterpriseBox = styled(Flex)`
     flex-direction: column;
     justify-content: space-between;
 
-    padding: ${theme.space[4]};
+    width: 100%;
+    padding: 0;
     position: relative;
     z-index: 9;
   }
@@ -69,6 +70,48 @@ export const EnterpriseBox = styled(Flex)`
 
     @media ${theme.mq.small} {
       border-left: ${theme.border};
+    }
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: ${theme.space[4]};
+
+    border-top: ${theme.border};
+    color: ${theme.colors.primary};
+    text-transform: uppercase;
+
+    &:hover {
+      background: ${theme.colors.primary};
+    color: ${theme.colors.text};
+
+      .ico {
+        background: ${theme.colors.black};
+
+        svg {
+          fill: ${theme.colors.primary};
+        }
+      }
+    }
+
+    .ico {
+      background: ${theme.colors.primary};
+      border-left: ${theme.border};
+      padding: ${theme.space[4]};
+      display: block;
+
+      transition: ${theme.transition.all};
+
+      @media ${theme.mq.small} {
+        padding: ${theme.space[4]};
+      }
+
+      svg {
+        fill: ${theme.colors.black};
+        width: ${theme.space[5]};
+      }
     }
   }
 `

@@ -46,6 +46,7 @@ export const Careers = styled(Flex)`
 
   .image {
     border-top: ${theme.border};
+    mix-blend-mode: luminosity;
   }
 `
 
@@ -69,5 +70,6 @@ export const Contact = styled(Flex)`
 
   .image {
     border-top: ${theme.border};
+    mix-blend-mode: luminosity;
   }
 `

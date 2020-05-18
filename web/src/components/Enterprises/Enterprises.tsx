@@ -7,6 +7,7 @@ import { Link } from 'gatsby'
 
 import { Text, Heading, Box, Flex } from '../../elements'
 import ImgMatch from '../ImgMatch'
+import Icon from '../Icons'
 import MountainLarge from '../MountainLarge'
 
 import * as S from './styles.scss'
@@ -23,12 +24,20 @@ const Enterprises: React.FC = () => {
             <MountainLarge />
           </div>
           <div className="inner">
-            <Text as="p">Cahuilla Enterprises</Text>
-            <Heading as="h2" color="primary" mt={10}>
-              Cahuilla
-              <br />
-              Casino
-            </Heading>
+            <Box />
+            <Box width={1}>
+              <Heading as="h2" color="primary" px={4} mt={10} mb={6}>
+                Cahuilla
+                <br />
+                Casino
+              </Heading>
+              <Text as="a" href="//cahuillacasinohotel.com/" target="_blank">
+                visit the website
+                <div className="ico">
+                  <Icon name="document" />
+                </div>
+              </Text>
+            </Box>
           </div>
         </S.EnterpriseBox>
         <S.Enterprise width={[1, 1 / 2]}>
@@ -36,12 +45,28 @@ const Enterprises: React.FC = () => {
         </S.Enterprise>
       </Flex>
       <Flex width={1} flexDirection={['row', 'row-reverse']} flexWrap="wrap">
-        <S.EnterpriseBox bg="black" width={[1, 1 / 2]} className="mountain-sky">
+        <S.EnterpriseBox
+          bg="secondary"
+          width={[1, 1 / 2]}
+          className="mountain-sky"
+        >
           <div className="inner">
-            <Text as="p">Cahuilla Enterprises</Text>
-            <Heading as="h2" color="primary" mt={10}>
-              Mountain Sky Travel Center
-            </Heading>
+            <Box />
+            <Box width={1}>
+              <Heading as="h2" color="primary" px={4} mt={10} mb={6}>
+                Mountain Sky Travel Center
+              </Heading>
+              <Text
+                as="a"
+                href="//cahuillacasinohotel.com/travel-center/"
+                target="_blank"
+              >
+                visit the website
+                <div className="ico">
+                  <Icon name="document" />
+                </div>
+              </Text>
+            </Box>
           </div>
         </S.EnterpriseBox>
         <S.Enterprise width={[1, 1 / 2]}>

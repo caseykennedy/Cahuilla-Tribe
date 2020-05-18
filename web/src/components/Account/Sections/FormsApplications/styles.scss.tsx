@@ -32,6 +32,14 @@ export const FormItem = styled.a`
     margin-right: ${theme.space[4]};
   }
 
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:nth-last-child(2) {
+    border-bottom: none;
+  }
+
   span {
     margin-right: ${theme.space[3]};
 

@@ -5,6 +5,8 @@
 import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import { Router } from '@reach/router'
+
+// @ts-ignore
 import { login, logout, isAuthenticated, getProfile } from '../../../utils/auth'
 
 import { Text, Heading, Box, Flex } from '../../../elements'
@@ -26,7 +28,7 @@ const Account: React.FC = () => {
             <MountainLarge />
           </div>
           <div className="inner">
-            <Text as="p" color="secondary">You are signed in</Text>
+            {/* <Text as="p" color="secondary">You are signed in</Text> */}
             <Heading as="h3" mt={10} mb={0}>
               Welcome{user.nickname && `, ${user.nickname}`}
             </Heading>
@@ -48,12 +50,18 @@ const Account: React.FC = () => {
         {/* {JSON.stringify(user, null, 2)} */}
         <Box className="updates">
           <Text as="p" fontSize={3}>
-            Want to receive alerts and updates on your phone?
+            Get alerts sent directly to your phone
           </Text>
           <Text as="p" fontSize={1} mt={8}>
             Text "Cahuilla" to <span className="t-underline">31996</span>
           </Text>
         </Box>
+        <a href="#logout">
+          Take a survey
+          <div className="ico">
+            <Icon name="document" />
+          </div>
+        </a>
         {!isAuthenticated() ? (
           <span>log in</span>
         ) : (
@@ -70,12 +78,6 @@ const Account: React.FC = () => {
             </div>
           </a>
         )}
-        <a href="#logout">
-          Take a survey
-          <div className="ico">
-            <Icon name="document" />
-          </div>
-        </a>
       </S.Tools>
     </S.Aside>
   )
