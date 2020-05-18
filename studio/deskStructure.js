@@ -63,6 +63,14 @@ export default () =>
         .schemaType('jobPost')
         .child(S.documentTypeList('jobPost').title('Job')),
 
+      // Job Post
+      // _________________________________________________________________
+
+      S.listItem()
+        .title('Forms')
+        .schemaType('form')
+        .child(S.documentTypeList('form').title('Form')),
+
       // End
       // _________________________________________________________________
     ])

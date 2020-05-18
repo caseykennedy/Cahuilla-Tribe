@@ -16,7 +16,7 @@ import Facebook from './SVG/Facebook'
 import Instagram from './SVG/Instagram'
 import Twitter from './SVG/Twitter'
 import NextArrow from './SVG/NextArrow'
-import ArrowRightAngle from './SVG/ArrowRightAngle'
+import Document from './SVG/Document'
 
 // ___________________________________________________________________
 
@@ -53,10 +53,10 @@ const Icon: React.FC<Props> = ({ name, className, color, fas }) => {
           <NextArrow />
         </IconStyle>
       )
-    case 'arrowRightAngle':
+    case 'document':
       return (
         <IconStyle color={color} className={className}>
-          <ArrowRightAngle />
+          <Document />
         </IconStyle>
       )
     case 'facebook':

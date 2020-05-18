@@ -15,10 +15,10 @@ import siteSettings from './siteSettings'
 
 // Pages
 import department from './department'
+import form from './form'
 import jobPost from './jobPost'
 
 import blockText from './blockText'
-import category from './category'
 import companyInfo from './companyInfo'
 import mainImage from './mainImage'
 import post from './post'
@@ -39,6 +39,7 @@ export default createSchema({
     blockContent,
     department,
     figure,
+    form,
     jobPost,
     homePage,
     person,

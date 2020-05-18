@@ -72,6 +72,7 @@ export const AccordionContent = styled(Box)<{ borderColor: string }>`
 
 export const Carat = styled(Icon)<{ chevronColor: string }>`
   margin-left: auto;
+  margin-right: ${theme.space[4]};
   transition: transform 0.3s ease;
 
   svg {

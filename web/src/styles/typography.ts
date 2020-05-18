@@ -179,6 +179,10 @@ const Typography = css`
     font-weight: 500;
   }
 
+  .t-underline {
+    text-decoration: underline;
+  }
+
   .t--dual-col {
     column-count: 1;
 

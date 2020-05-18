@@ -27,16 +27,7 @@ const Callback: React.FC<Props> = () => {
           Callback
         </Heading>
         <nav>
-          <Link to="/">Home</Link> <Link to="/account">My Account</Link>{' '}
-          <a
-            href="#logout"
-            onClick={e => {
-              logout()
-              e.preventDefault()
-            }}
-          >
-            Log Out
-          </a>
+          <Link to="/account">My Account</Link>{' '}
         </nav>
         <pre>{JSON.stringify(user, null, 2)}</pre>
       </S.WelcomeBox>

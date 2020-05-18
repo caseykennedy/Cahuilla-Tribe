@@ -19,6 +19,7 @@ type AccordionProps = {
   borderColor: string
   colorActive: string
   bg: string
+  fontSize?: number
 }
 
 // ___________________________________________________________________
@@ -30,7 +31,8 @@ const Accordion: React.FC<AccordionProps> = ({
   color,
   borderColor,
   colorActive,
-  bg
+  bg,
+  fontSize
 }) => {
   // Accordion hooks
   const [setActive, setActiveState] = useState('')
@@ -62,7 +64,7 @@ const Accordion: React.FC<AccordionProps> = ({
           colorActive={colorActive}
           bg={bg}
         >
-          <Heading as="h2" mb={0}>
+          <Heading as="h2" fontSize={fontSize} mb={0}>
             {title}
           </Heading>
           <S.Carat
