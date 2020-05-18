@@ -2,6 +2,7 @@
 // TODO: convert to ts
 
 import auth0 from 'auth0-js'
+import { navigateTo } from 'gatsby-link'
 
 export const isBrowser = typeof window !== 'undefined'
 
@@ -60,6 +61,10 @@ const setSession = (cb = () => {}) => (err, authResult) => {
       window.localStorage.setItem('isLoggedIn', true)
 
       cb()
+
+      // navigateTo to the home route
+      // TODO: this seems hacky........
+      navigateTo('/account')
     })
   }
 }
