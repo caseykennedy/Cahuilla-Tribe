@@ -91,8 +91,8 @@ const About: React.FC = () => {
               <Flex width={1} flexWrap="wrap">
                 <Flex as="ul">
                   <Box>
-                    <Heading as="h4" mb={4}>
-                      We are interdependent.
+                    <Heading as="h3" mb={4}>
+                      We are interdependent
                     </Heading>
                     We trust one another and work as a team toward our common
                     goals. We recognize that each of us has an equally important
@@ -100,8 +100,8 @@ const About: React.FC = () => {
                     than as individuals.
                   </Box>
                   <Box>
-                    <Heading as="h4" mb={4}>
-                      We are resilient.
+                    <Heading as="h3" mb={4}>
+                      We are resilient
                     </Heading>
                     We look to the future with steadfast optimism, hope and
                     faith in Our People. We adapt to change with persistence and
@@ -109,8 +109,8 @@ const About: React.FC = () => {
                     adversity with courage.
                   </Box>
                   <Box>
-                    <Heading as="h4" mb={4}>
-                      We are accountable.
+                    <Heading as="h3" mb={4}>
+                      We are accountable
                     </Heading>
                     We are ultimately responsible for fulfilling our mission and
                     serving Our People. We are reliable, work with integrity and
@@ -118,8 +118,8 @@ const About: React.FC = () => {
                     mistakes.
                   </Box>
                   <Box>
-                    <Heading as="h4" mb={4}>
-                      We are respectful.
+                    <Heading as="h3" mb={4}>
+                      We are respectful
                     </Heading>
                     We treat one another with dignity and kindness. We value and
                     embrace our diversity, respect ourselves and understand

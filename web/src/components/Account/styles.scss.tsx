@@ -41,9 +41,21 @@ export const Main = styled(Flex)`
 `
 
 export const Section = styled(Flex)`
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
   width: 100%;
+
+  .maint-date {
+    width: 100%;
+    padding: ${theme.space[4]};
+    margin-top: ${theme.space[4]};
+    margin-bottom: ${theme.space[6]};
+
+    border: ${theme.border};
+    background: ${darken(0.05, `${theme.colors.background}`)};
+
+    @media ${theme.mq.small} {
+      width: 48%;
+    }
+  }
 
   .content {
     flex-direction: row;
@@ -82,9 +94,9 @@ export const Survey = styled.a`
   color: ${theme.colors.text};
   font-size: ${theme.fontSizes[2]};
   text-align: center;
-  
+
   &:hover {
-    background: ${darken (0, `${theme.colors.primary}`)};
+    background: ${darken(0, `${theme.colors.primary}`)};
     color: ${theme.colors.text};
   }
 `

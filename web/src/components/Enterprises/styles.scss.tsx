@@ -85,7 +85,7 @@ export const EnterpriseBox = styled(Flex)`
 
     &:hover {
       background: ${theme.colors.primary};
-    color: ${theme.colors.text};
+      color: ${theme.colors.text};
 
       .ico {
         background: ${theme.colors.black};
