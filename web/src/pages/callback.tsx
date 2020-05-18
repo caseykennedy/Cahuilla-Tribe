@@ -4,7 +4,10 @@
 
 // Libraries
 import React from 'react'
+import { Link } from 'gatsby'
 import { useSpring, config } from 'react-spring'
+
+import { login, logout, isAuthenticated, getProfile } from '../utils/auth'
 
 // Elements
 import { AnimatedBox } from '../elements'
@@ -28,12 +31,21 @@ const CallbackPage = () => {
     to: { transform: theme.transform.matrix.to }
   })
   return (
-    <Layout>
-      <SEO />
-      <AnimatedBox style={pageAnimation}>
-        <Callback />
-      </AnimatedBox>
-    </Layout>
+    <>
+      <p>Callback</p>
+      <nav>
+        <Link to="/">Home</Link> <Link to="/account/">My Account</Link>{' '}
+        <a
+          href="#logout"
+          onClick={e => {
+            logout()
+            e.preventDefault()
+          }}
+        >
+          Log Out
+        </a>
+      </nav>
+    </>
   )
 }
 

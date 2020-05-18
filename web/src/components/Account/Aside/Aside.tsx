@@ -54,7 +54,7 @@ const Account: React.FC = () => {
             Text "Cahuilla" to <span className="t-underline">31996</span>
           </Text>
         </Box>
-        {/* {!isAuthenticated() ? (
+        {!isAuthenticated() ? (
           <span>log in</span>
         ) : (
           <a
@@ -69,7 +69,7 @@ const Account: React.FC = () => {
               <Icon name="nextArrow" />
             </div>
           </a>
-        )} */}
+        )}
         <a href="#logout">
           Take a survey
           <div className="ico">
