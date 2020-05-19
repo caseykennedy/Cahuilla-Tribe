@@ -34,7 +34,7 @@ const Enterprises: React.FC = () => {
               <Text as="a" href="//cahuillacasinohotel.com/" target="_blank">
                 visit the website
                 <div className="ico">
-                  <Icon name="document" />
+                  <Icon name="nextArrow" />
                 </div>
               </Text>
             </Box>
@@ -63,7 +63,7 @@ const Enterprises: React.FC = () => {
               >
                 visit the website
                 <div className="ico">
-                  <Icon name="document" />
+                  <Icon name="nextArrow" />
                 </div>
               </Text>
             </Box>
@@ -76,6 +76,12 @@ const Enterprises: React.FC = () => {
           />
         </S.Enterprise>
       </Flex>
+      <Box
+        width={1}
+        bg="primary"
+        py={`calc(${theme.headerHeight} / 2)`}
+        style={{ borderTop: theme.border }}
+      />
     </S.Enterprises>
   )
 }

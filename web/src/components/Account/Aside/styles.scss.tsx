@@ -63,6 +63,32 @@ export const Aside = styled(Flex)`
         width: ${theme.space[5]};
       }
     }
+
+    &.sign-out {
+      background: ${theme.colors.quaternary};
+      color: ${theme.colors.text};
+
+      &:hover {
+        background: ${theme.colors.background};
+        color: ${theme.colors.text};
+
+        .ico {
+          background: ${theme.colors.black};
+
+          svg {
+            fill: ${theme.colors.primary};
+          }
+        }
+      }
+
+      .ico {
+        background: ${theme.colors.black};
+
+        svg {
+          fill: ${theme.colors.primary};
+        }
+      }
+    }
   }
 `
 
@@ -94,7 +120,6 @@ export const WelcomeBox = styled(Flex)`
   border-bottom: ${theme.border};
 
   @media ${theme.mq.small} {
-
   }
 
   .inner {

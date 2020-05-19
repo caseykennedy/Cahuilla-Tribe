@@ -66,6 +66,7 @@ const Account: React.FC = () => {
           <span>log in</span>
         ) : (
           <a
+            className="sign-out"
             href="#logout"
             onClick={e => {
               logout()

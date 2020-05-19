@@ -53,7 +53,7 @@ const Callout: React.FC = () => {
         <MountainLarge />
       </Box>
       <S.Inner>
-        <Box mb={4}>
+        <Box mb={8}>
           <Heading as="h3">Join our team</Heading>
         </Box>
         <Text as="p">
