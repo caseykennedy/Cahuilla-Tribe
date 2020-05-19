@@ -26,7 +26,7 @@ const EnterprisePage = () => {
   return (
     <Layout>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Enterprises />
       </AnimatedBox>
     </Layout>

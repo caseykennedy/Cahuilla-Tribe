@@ -26,7 +26,7 @@ const ResourcesPage = () => {
   return (
     <Layout>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Resources />
       </AnimatedBox>
     </Layout>

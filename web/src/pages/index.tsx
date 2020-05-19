@@ -30,7 +30,7 @@ const Index = () => {
   return (
     <Layout>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Home />
       </AnimatedBox>
     </Layout>

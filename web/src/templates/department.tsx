@@ -42,7 +42,7 @@ const DepartmentTemplate: React.FC<DepartmentShape> = ({ pageContext }) => {
         desc={`${page.pageTitle} | The Mission of the Cahuilla Tribal Administration is to bring about a better way of life for Cahuilla people, Tribal People, and the surrounding Communities by protecting and exercising self-governing rights.`}
         individual={false}
       />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Department pageContext={pageContext} />
       </AnimatedBox>
     </Layout>

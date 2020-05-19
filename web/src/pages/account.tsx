@@ -41,7 +41,7 @@ const AccountPage = () => {
   return (
     <Layout>
       <SEO />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <Account />
       </AnimatedBox>
     </Layout>

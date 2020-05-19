@@ -31,7 +31,7 @@ const AboutPage = () => {
         desc="The Mission of the Cahuilla Tribal Administration is to bring about a better way of life for Cahuilla people, Tribal People, and the surrounding Communities by protecting and exercising self-governing rights."
         individual={true}
       />
-      <AnimatedBox style={pageAnimation}>
+      <AnimatedBox>
         <About />
       </AnimatedBox>
     </Layout>
