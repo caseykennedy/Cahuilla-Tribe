@@ -2,8 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 
 import Aside from './Aside'
 import FormsApplications from './Sections/FormsApplications'
@@ -30,20 +29,14 @@ const Account: React.FC = () => {
     <S.AccountPage>
       <Aside />
       <S.Main width={[1, 7 / 10]}>
-        {/* <ImgMatch src="pagetitle.jpg" altText="" /> */}
-        <Box width={1} pt={10} pb={4} px={4} bg="black">
+        <Box bg="black" width={1} pt={10} pb={4} px={4}>
           <Text as="p" fontSize={1} color="background" mb={0}>
             Your forms and resources:
           </Text>
         </Box>
-        {/* <Text as="p" fontSize={2} px={4} py={6} mb={0}>
-          Welcome to your account. Please find all forms and resources below.
-        </Text> */}
 
         <FormsApplications />
-
         <EdcDocs />
-
         <Roads />
 
         <Accordion
@@ -58,10 +51,6 @@ const Account: React.FC = () => {
                 Incoming.
               </Text>
             </Flex>
-
-            {/* <Box bg="black" width={[1, 2 / 8]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
-            </Box> */}
           </S.Section>
         </Accordion>
       </S.Main>

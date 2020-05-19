@@ -30,26 +30,12 @@ export const Section = styled(Flex)`
   }
 
   .content {
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     border-top: ${theme.border};
     border-left: 0;
     padding: ${theme.space[4]};
-
-    ul {
-      flex-wrap: wrap;
-      justify-content: space-between;
-      width: 100%;
-      list-style: none;
-
-      div {
-        padding: ${theme.space[4]} 0;
-      }
-    }
-  }
-
-  .image {
-    border-top: ${theme.border};
   }
 `

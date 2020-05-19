@@ -19,7 +19,7 @@ const Enterprises: React.FC = () => {
   return (
     <S.Enterprises>
       <Flex width={1} flexWrap="wrap">
-        <S.EnterpriseBox bg="bloodshot" width={[1, 1 / 2]}>
+        <S.Card bg="bloodshot" width={[1, 1 / 2]}>
           <div className="decorator">
             <MountainLarge />
           </div>
@@ -39,17 +39,13 @@ const Enterprises: React.FC = () => {
               </Text>
             </Box>
           </div>
-        </S.EnterpriseBox>
-        <S.Enterprise width={[1, 1 / 2]}>
+        </S.Card>
+        <S.Banner width={[1, 1 / 2]}>
           <ImgMatch src="cahuilla-casino.jpg" altText="Cahuilla Casino Hotel" />
-        </S.Enterprise>
+        </S.Banner>
       </Flex>
       <Flex width={1} flexDirection={['row', 'row-reverse']} flexWrap="wrap">
-        <S.EnterpriseBox
-          bg="secondary"
-          width={[1, 1 / 2]}
-          className="mountain-sky"
-        >
+        <S.Card bg="secondary" width={[1, 1 / 2]} className="mountain-sky">
           <div className="inner">
             <Box />
             <Box width={1}>
@@ -68,13 +64,13 @@ const Enterprises: React.FC = () => {
               </Text>
             </Box>
           </div>
-        </S.EnterpriseBox>
-        <S.Enterprise width={[1, 1 / 2]}>
+        </S.Card>
+        <S.Banner width={[1, 1 / 2]}>
           <ImgMatch
             src="mountain-sky-travel-center.png"
             altText="Mountain Sky Travel Center"
           />
-        </S.Enterprise>
+        </S.Banner>
       </Flex>
       <Box
         width={1}

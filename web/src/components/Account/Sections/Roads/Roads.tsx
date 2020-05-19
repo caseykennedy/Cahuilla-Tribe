@@ -28,12 +28,13 @@ const Roads: React.FC = () => {
       {...AccordionProps}
     >
       <S.Section>
-        <Flex width={[1]} className="content">
+        <Flex className="content">
           <Text as="p" fontSize={3}>
             This program is responsible for maintaining and updating the Indian
             Reservation Roads inventory (IRR), which is submitted to the BIA in
             order to receive funding for Tribal and BIA roads.
           </Text>
+          
           <Text as="p">
             The IRR is comprised of Tribal, BIA, County and State owned roads
             that are within the boundary of the reservation or roads that
@@ -42,11 +43,13 @@ const Roads: React.FC = () => {
             and improving surface conditions on the Tribal and BIA owned
             roadways.
           </Text>
+
           <Text as="p">
             As of January 2020 we will be enacting a new Road Maintenance
             Program that performs year round road maintenance on regularly
             scheduled days. The following is the road maintenance schedule:
           </Text>
+
           <div className="maint-date">
             <Text as="p" fontSize={2}>
               FIRST Tues, Weds &amp; Thurs
@@ -61,6 +64,7 @@ const Roads: React.FC = () => {
               Complete east reservation
             </Text>
           </div>
+
           <div className="maint-date">
             <Text as="p" fontSize={2}>
               SECOND Tues, Weds &amp; Thurs
@@ -75,6 +79,7 @@ const Roads: React.FC = () => {
               Puck-It, South Boundry, Pu’uish Rd
             </Text>
           </div>
+
           <Text as="p">
             Work Order Requests for driveway grading will need to be submitted
             48 hours prior to the scheduled road maintenance day, if work is
@@ -82,10 +87,6 @@ const Roads: React.FC = () => {
             time permits.
           </Text>
         </Flex>
-
-        {/* <Box bg="black" width={[1, 2 / 8]} className="image">
-              <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
-            </Box> */}
       </S.Section>
     </Accordion>
   )

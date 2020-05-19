@@ -17,17 +17,11 @@ export const Enterprises = styled(Flex)`
   width: 100%;
 `
 
-export const Enterprise = styled(Flex)`
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+export const Banner = styled(Box)`
   min-height: 300px;
-
-  @media ${theme.mq.small} {
-  }
 `
 
-export const EnterpriseBox = styled(Flex)`
+export const Card = styled(Flex)`
   justify-content: stretch;
   position: relative;
   border-right: none;

@@ -38,16 +38,15 @@ export const AccordionInner = styled.div`
   }
 `
 
-export const AccordionToggle = styled(Box)<{ bg: string, colorActive: string, color: string }>`
-  align-items: center;
+export const AccordionToggle = styled(Flex)<{ bg: string, colorActive: string, color: string }>`
+  align-items: flex-end;
   background: ${p => p.bg};
   color: ${p => p.color};
   cursor: pointer;
 
-  display: flex;
   border: none;
   outline: none;
-  padding: ${theme.space[7]} ${theme.space[4]};
+  padding: ${theme.space[8]} ${theme.space[4]} ${theme.space[4]};
   transition: background-color 0.6s ease;
 
   &:last-child {

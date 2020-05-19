@@ -2,9 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import { Router } from '@reach/router'
+import React from 'react'
 
 // @ts-ignore
 import { login, logout, isAuthenticated, getProfile } from '../../../utils/auth'
@@ -28,7 +26,6 @@ const Account: React.FC = () => {
             <MountainLarge />
           </div>
           <div className="inner">
-            {/* <Text as="p" color="secondary">You are signed in</Text> */}
             <Heading as="h3" mt={10} mb={0}>
               Welcome{user.nickname && `, ${user.nickname}`}
             </Heading>
@@ -36,13 +33,13 @@ const Account: React.FC = () => {
         </S.WelcomeBox>
 
         <Flex width={1} px={4} py={4}>
-          <Box as="img" src={user.picture} alt="" width={1 / 4} pr={4} />
-          <Text fontSize={1} width={3 / 4}>
+          <Box as="img" src={user.picture} alt="avatar" width={1 / 4} pr={4} />
+          <Text as="p" fontSize={1} lineHeight={1.8} width={3 / 4}>
             {user.nickname}
             <br />
             {user.email}
-            {/* <br />
-            {user.updated_at} */}
+            <br />
+            <Text fontSize={1}>Joined: {user.updated_at}</Text>
           </Text>
         </Flex>
       </S.User>

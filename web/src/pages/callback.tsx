@@ -14,7 +14,7 @@ import { logout } from '../utils/auth'
 const CallbackPage = () => {
   return (
     <>
-      <p>Callback</p>
+      <p>Redirecting...</p>
       {/* <nav>
         <Link to="/">Home</Link> <Link to="/account/">My Account</Link>{' '}
         <a
