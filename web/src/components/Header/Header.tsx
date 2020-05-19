@@ -38,12 +38,11 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
         className={`nav-bg ${isNavOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
       >
         <NavLinks
-          navData={navData}
           handleExit={() => setNavOpen(false)}
           isNavOpen={isNavOpen}
         />
       </Overlay>
-      <Headroom style={{ zIndex: 999 }}>
+      <S.Headroom style={{ zIndex: 999 }}>
         <S.Header as="header">
           <Link to="/" aria-label="Cahuilla, back to home">
             <S.Symbol as="span">
@@ -61,66 +60,9 @@ const Header: React.FC<HeaderShape> = ({ mainRef }) => {
             </S.Toggle>
           </Flex>
         </S.Header>
-      </Headroom>
+      </S.Headroom>
     </>
   )
 }
 
 export default Header
-
-const navData = [
-  {
-    name: 'About',
-    link: '/about'
-  },
-  {
-    name: 'Government',
-    subPage: [
-      {
-        name: 'Cahuilla Gaming Agency',
-        link: '/government/cahuilla-gaming-agency'
-      },
-      {
-        name: 'Economic Development',
-        link: '/government/economic-development'
-      },
-      {
-        name: 'Tribal Council',
-        link: '/government/tribal-council'
-      }
-    ]
-  },
-  {
-    name: 'Departments',
-    subPage: [
-      {
-        name: 'Cultural',
-        link: '/departments/cultural'
-      },
-      {
-        name: 'Environmental Protection',
-        link: '/departments/environmental-protection-agency'
-      },
-      {
-        name: 'Family & Social Services',
-        link: '/departments/family-social-services'
-      },
-      {
-        name: 'Public Works',
-        link: '/departments/public-works'
-      },
-      {
-        name: 'Tribal Administration',
-        link: '/departments/tribal-admin'
-      }
-    ]
-  },
-  {
-    name: 'Enterprises',
-    link: '/enterprises'
-  },
-  {
-    name: 'Resources',
-    link: '/resources'
-  }
-]

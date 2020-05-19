@@ -60,6 +60,8 @@ export const ImageBox = styled(Flex)`
   border-right: ${theme.border};
   border-bottom: ${theme.border};
 
+  
+
   @media ${theme.mq.small} {
     border-top: none;
     border-bottom: none;

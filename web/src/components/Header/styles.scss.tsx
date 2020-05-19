@@ -15,6 +15,12 @@ import { Box, Flex, AnimatedFlex } from '../../elements'
 
 // ___________________________________________________________________
 
+export const Headroom = styled(AnimatedFlex)`
+  display: block;
+  position: sticky;
+  top: 0;
+`
+
 export const Header = styled(AnimatedFlex)`
   flex-direction: row;
   justify-content: space-between;
@@ -108,6 +114,10 @@ export const Toggle = styled.div`
   height: ${theme.headerHeight};
   padding: 0 ${theme.space[4]};
   border-left: ${theme.border};
+
+  @media ${theme.mq.small} {
+    padding: ${theme.space[2]} ${theme.space[4]};
+  }
 
   @media ${theme.mq.medium} {
     display: none;

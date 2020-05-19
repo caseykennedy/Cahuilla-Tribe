@@ -55,13 +55,9 @@ const Navigation: React.FC = () => {
         <S.SignIn to="/account">Sign In</S.SignIn>
       ) : (
         <S.SignIn
-          to="/"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
+          to="/account"
         >
-          Sign out
+          My Account
         </S.SignIn>
       )}
     </>

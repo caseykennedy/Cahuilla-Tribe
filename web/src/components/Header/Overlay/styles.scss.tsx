@@ -23,7 +23,7 @@ export const Overlay = styled(Flex)`
   width: ${overlayWidth};
   height: calc(100vh - ${theme.headerHeight});
 
-  top: 85px;
+  top: 69px;
   right: 0;
   bottom: 0;
 
@@ -32,6 +32,10 @@ export const Overlay = styled(Flex)`
   opacity: 0;
   transition: all 0.333s ease-in-out;
   z-index: 9999;
+
+  @media ${theme.mq.small} {
+    top: calc(77px + ${theme.space[2]});
+  }
 
   /* @media ${theme.mq.small} {
     width: calc(${overlayWidth} / 2);
