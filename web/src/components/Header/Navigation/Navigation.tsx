@@ -35,14 +35,14 @@ const Navigation: React.FC = () => {
                 {item.subPage && <Icon name="carat" />}
               </span>
             ) : (
-              <Link to={item.link} className="nav-link__title">
+              <Link to={item.link} className="nav-link__title" activeClassName="active">
                 {item.name}
               </Link>
             )}
             {item.subPage && (
               <Box className="sub-nav">
                 {item.subPage.map((subItem, idx) => (
-                  <Link to={subItem.link} key={idx}>
+                  <Link to={subItem.link} key={idx} activeClassName="active">
                     {subItem.name}
                   </Link>
                 ))}

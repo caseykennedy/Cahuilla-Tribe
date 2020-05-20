@@ -4,6 +4,8 @@
 
 import React from 'react'
 
+import Moment from 'react-moment'
+
 // @ts-ignore
 import { login, logout, isAuthenticated, getProfile } from '../../../utils/auth'
 
@@ -39,7 +41,9 @@ const Account: React.FC = () => {
             <br />
             {user.email}
             <br />
-            <Text fontSize={1}>Joined: {user.updated_at}</Text>
+            <Text as="span" fontSize={1}>
+              Joined: <Moment format="MM/DD/YYYY">{user.updated_at}</Moment>
+            </Text>
           </Text>
         </Flex>
       </S.User>

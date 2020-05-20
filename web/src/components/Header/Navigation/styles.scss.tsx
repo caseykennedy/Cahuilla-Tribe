@@ -48,6 +48,7 @@ export const Nav = styled.nav`
     }
 
     a {
+      &.active,
       &:hover {
         color: ${theme.colors.primary};
       }
@@ -99,6 +100,7 @@ export const Nav = styled.nav`
         padding: calc(${theme.space[2]} * 1.2) ${theme.space[3]};
         white-space: nowrap;
 
+        &.active,
         &:hover {
           background: ${theme.colors.primary};
           /* color: ${theme.colors.white}; */
