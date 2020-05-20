@@ -7,9 +7,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image/withIEPolyfill'
 
 import { Text, Heading, Box, Flex } from '../../elements'
-import ImgMatch from '../ImgMatch'
-import PageTitle from '../PageTitle'
-import Main from '../Main'
+
+import BlockContent from '../BlockContent'
 import Accordion from '../Accordion'
 
 import * as S from './styles.scss'
@@ -17,42 +16,12 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type AboutQueryShape = {
-  allSanityAboutSection: {
-    edges: {
-      node: {
-        title: string
-        lead: string
-        id: string
-        content: string
-        _rawBlockContent: string
-        image: {
-          asset: {
-            fluid: {
-              srcWebp: string
-              srcSetWebp: string
-              srcSet: string
-              src: string
-              sizes: string
-              base64: string
-              aspectRatio: number
-            }
-          }
-        }
-        bgColor: string
-      }
-    }[]
-  }
-}
-
 const AccordionProps = {
   chevronColor: theme.colors.text,
   color: theme.colors.text,
   colorActive: theme.colors.text,
   borderColor: theme.colors.text
 }
-
-// ___________________________________________________________________
 
 const AboutSection: React.FC = () => {
   const data: AboutQueryShape = useStaticQuery(graphql`
@@ -85,10 +54,8 @@ const AboutSection: React.FC = () => {
     }
   `)
   const aboutQuery = data.allSanityAboutSection.edges
-
-  console.log('---|- About -|---')
-  console.log(data.allSanityAboutSection.edges[2].node.bgColor)
-
+  // console.log('---|- About -|---')
+  // console.log(data.allSanityAboutSection.edges[2].node.bgColor)
   return (
     <Box width={1}>
       {aboutQuery.map(({ node: section }) => (
@@ -100,10 +67,15 @@ const AboutSection: React.FC = () => {
         >
           <S.Section flexDirection="row-reverse">
             <Flex width={[1, 6 / 8]} className="content">
-              <Text as="p" fontSize={3}>
-                {section.lead}
-              </Text>
-              <Text as="p">{section.content}</Text>
+              {section.lead && (
+                <Text as="p" fontSize={3}>
+                  {section.lead}
+                </Text>
+              )}
+              {section.content && <Text as="p">{section.content}</Text>}
+              {section._rawBlockContent && (
+                <BlockContent blocks={section._rawBlockContent || []} />
+              )}
             </Flex>
 
             <Box bg="black" width={[1, 2 / 8]} className="image">

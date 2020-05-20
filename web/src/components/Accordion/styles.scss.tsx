@@ -95,5 +95,3 @@ export const Carat = styled(Icon)<{ chevronColor: string }>`
     }
   }
 `
-
-// ___________________________________________________________________ Styles

@@ -143,3 +143,34 @@ type PeopleShape = {
     }[]
   }
 }
+
+// About page sections shape
+// ___________________________________________________________________
+
+type AboutQueryShape = {
+  allSanityAboutSection: {
+    edges: {
+      node: {
+        title: string
+        lead: string
+        id: string
+        content: string
+        _rawBlockContent: string
+        image: {
+          asset: {
+            fluid: {
+              srcWebp: string
+              srcSetWebp: string
+              srcSet: string
+              src: string
+              sizes: string
+              base64: string
+              aspectRatio: number
+            }
+          }
+        }
+        bgColor: string
+      }
+    }[]
+  }
+}
