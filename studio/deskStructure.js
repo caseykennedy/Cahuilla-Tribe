@@ -21,6 +21,18 @@ export default () =>
             .documentId('siteSettings')
         )
         .icon(MdSettings),
+
+      // About Page
+      // _________________________________________________________________
+
+      S.listItem()
+        .title('About Page')
+        .schemaType('aboutSection')
+        .child(S.documentTypeList('aboutSection').title('About Section')),
+
+      // Announcement
+      // _________________________________________________________________
+
       S.listItem()
         .title('Announcements')
         .schemaType('announcement')

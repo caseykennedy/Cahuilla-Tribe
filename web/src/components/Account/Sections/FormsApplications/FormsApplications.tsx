@@ -4,7 +4,6 @@
 
 import React, { useRef } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Router } from '@reach/router'
 
 import { Flex } from '../../../../elements'
 import Icon from '../../../Icons'

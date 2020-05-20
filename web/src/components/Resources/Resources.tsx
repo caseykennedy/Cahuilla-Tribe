@@ -2,7 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import GoogleMapReact from 'google-map-react'
@@ -13,8 +13,6 @@ import { Text, Heading, Box, Flex } from '../../elements'
 import Marker from './Marker'
 import ImgMatch from '../ImgMatch'
 import Icon from '../Icons'
-import PageTitle from '../PageTitle'
-import Main from '../Main'
 
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
@@ -92,9 +90,6 @@ const Resources: React.FC = () => {
             <Heading as="h3" mt={3} mb={8}>
               Contact Us
             </Heading>
-            {/* <Text as="p" fontSize={2}>
-              <a href="#">info@cahuilla.net</a>
-            </Text> */}
           </Box>
           <Flex width={1} flexWrap="wrap">
             <Box width={[1, 1 / 3]} mb={[6, 0]}>

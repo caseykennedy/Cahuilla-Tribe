@@ -16,8 +16,7 @@ export const About = styled(Flex)`
   width: 100%;
 `
 
-export const Careers = styled(Flex)`
-  flex-direction: row-reverse;
+export const Section = styled(Flex)`
   flex-wrap: wrap;
   width: 100%;
 
@@ -41,30 +40,6 @@ export const Careers = styled(Flex)`
       div {
         padding: ${theme.space[4]} 0;
       }
-    }
-  }
-
-  .image {
-    border-top: ${theme.border};
-    mix-blend-mode: luminosity;
-  }
-`
-
-export const Contact = styled(Flex)`
-  flex-wrap: wrap;
-  width: 100%;
-
-  .content {
-    flex-direction: column;
-    justify-content: space-between;
-    border-top: ${theme.border};
-    border-right: ${theme.border};
-    padding: ${theme.space[4]};
-
-    a {
-      color: ${theme.colors.text};
-      font-size: calc(${theme.fontSizes[3]} / 1.2);
-      text-decoration: underline;
     }
   }
 

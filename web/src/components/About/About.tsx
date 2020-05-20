@@ -3,7 +3,8 @@
 // ___________________________________________________________________
 
 import React, { useRef } from 'react'
-import { Link } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image/withIEPolyfill'
 
 import { Text, Heading, Box, Flex } from '../../elements'
 import ImgMatch from '../ImgMatch'
@@ -16,6 +17,34 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
+type AboutQueryShape = {
+  allSanityAboutSection: {
+    edges: {
+      node: {
+        title: string
+        lead: string
+        id: string
+        content: string
+        _rawBlockContent: string
+        image: {
+          asset: {
+            fluid: {
+              srcWebp: string
+              srcSetWebp: string
+              srcSet: string
+              src: string
+              sizes: string
+              base64: string
+              aspectRatio: number
+            }
+          }
+        }
+        bgColor: string
+      }
+    }[]
+  }
+}
+
 const AccordionProps = {
   chevronColor: theme.colors.text,
   color: theme.colors.text,
@@ -23,151 +52,82 @@ const AccordionProps = {
   borderColor: theme.colors.text
 }
 
+// ___________________________________________________________________
+
+const AboutSection: React.FC = () => {
+  const data: AboutQueryShape = useStaticQuery(graphql`
+    query AboutQuery {
+      allSanityAboutSection(sort: { order: ASC, fields: title }) {
+        edges {
+          node {
+            title
+            lead
+            id
+            content
+            _rawBlockContent
+            image {
+              asset {
+                fluid {
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  src
+                  sizes
+                  base64
+                  aspectRatio
+                }
+              }
+            }
+            bgColor
+          }
+        }
+      }
+    }
+  `)
+  const aboutQuery = data.allSanityAboutSection.edges
+
+  console.log('---|- About -|---')
+  console.log(data.allSanityAboutSection.edges[2].node.bgColor)
+
+  return (
+    <Box width={1}>
+      {aboutQuery.map(({ node: section }) => (
+        <Accordion
+          title={section.title}
+          bg={section.bgColor}
+          key={section.id}
+          {...AccordionProps}
+        >
+          <S.Section flexDirection="row-reverse">
+            <Flex width={[1, 6 / 8]} className="content">
+              <Text as="p" fontSize={3}>
+                {section.lead}
+              </Text>
+              <Text as="p">{section.content}</Text>
+            </Flex>
+
+            <Box bg="black" width={[1, 2 / 8]} className="image">
+              {section.image && (
+                <Img
+                  fluid={section.image.asset.fluid}
+                  objectFit="cover"
+                  objectPosition="50% 50%"
+                  alt={section.title}
+                />
+              )}
+            </Box>
+          </S.Section>
+        </Accordion>
+      ))}
+    </Box>
+  )
+}
+
 const About: React.FC = () => {
   return (
     <S.About>
       <Box bg="background" width={1}>
-        <Accordion
-          title="About Us"
-          bg={theme.colors.background}
-          {...AccordionProps}
-        >
-          <S.Careers>
-            <Flex width={[1, 6 / 8]} className="content">
-              <Text as="p" fontSize={3}>
-                The Cahuilla Band of Indians are Mountain Cahuilla (Qawishpa
-                Cahuillangnah), one of the original peoples of Southern
-                California. The Mountain Cahuilla lived in the high mountain
-                valleys and canyons, running up from the Coachella Valley, San
-                Gorgonio Pass, and San Jacinto Mountains region of Southern
-                California.
-              </Text>
-              <Text as="p">
-                Cahuilla history in stories and songs tells how the Cahuilla
-                were given these lands as their homeland since the beginning of
-                time by their Creator. The Cahuilla reservation of approximately
-                20,000 acres of Trust Land was established in 1875 and is
-                located near Anza, California in what is now western Riverside
-                County.
-              </Text>
-            </Flex>
-
-            <Box bg="black" width={[1, 2 / 8]} className="image">
-              <ImgMatch src="ca-vintage-water.jpg" altText="Cahuilla Casino Hotel" />
-            </Box>
-          </S.Careers>
-        </Accordion>
-        <Accordion
-          title="Our Mission"
-          bg={theme.colors.tertiary}
-          {...AccordionProps}
-        >
-          <S.Contact>
-            <Flex width={[1, 5 / 8]} className="content">
-              <Text as="p" fontSize={3}>
-                The Mission of the Cahuilla Tribal Administration is to bring
-                about a better way of life for Cahuilla people, Tribal People,
-                and the surrounding Communities by protecting and exercising
-                self-governing rights.
-              </Text>
-              <Text as="p">
-                The Cahuilla Band of Indians believes that it must function for
-                the greater benefit of the largest possible number People.
-              </Text>
-            </Flex>
-
-            <Box bg="black" width={[1, 3 / 8]} className="image">
-              <ImgMatch src="ca-vintage-man.jpg" altText="Cahuilla Casino Hotel" />
-            </Box>
-          </S.Contact>
-        </Accordion>
-        <Accordion
-          title="Our Values"
-          bg={theme.colors.primary}
-          {...AccordionProps}
-        >
-          <S.Careers>
-            <Flex width={[1, 2 / 3]} className="content">
-              <Flex width={1} flexWrap="wrap">
-                <Flex as="ul">
-                  <Box>
-                    <Heading as="h3" mb={4}>
-                      We are interdependent
-                    </Heading>
-                    We trust one another and work as a team toward our common
-                    goals. We recognize that each of us has an equally important
-                    role in the community, and that we are stronger together
-                    than as individuals.
-                  </Box>
-                  <Box>
-                    <Heading as="h3" mb={4}>
-                      We are resilient
-                    </Heading>
-                    We look to the future with steadfast optimism, hope and
-                    faith in Our People. We adapt to change with persistence and
-                    determination. We engage in creative solutions and endure
-                    adversity with courage.
-                  </Box>
-                  <Box>
-                    <Heading as="h3" mb={4}>
-                      We are accountable
-                    </Heading>
-                    We are ultimately responsible for fulfilling our mission and
-                    serving Our People. We are reliable, work with integrity and
-                    lead by example. We honor our obligations and correct our
-                    mistakes.
-                  </Box>
-                  <Box>
-                    <Heading as="h3" mb={4}>
-                      We are respectful
-                    </Heading>
-                    We treat one another with dignity and kindness. We value and
-                    embrace our diversity, respect ourselves and understand
-                    boundaries. We approach each experience with gratitude and
-                    humility.
-                  </Box>
-                </Flex>
-              </Flex>
-            </Flex>
-
-            <Box bg="black" width={[1, 1 / 3]} className="image">
-              <ImgMatch src="ca-vintage-woman.jpg" altText="Cahuilla Casino Hotel" />
-            </Box>
-          </S.Careers>
-        </Accordion>
-        <Accordion
-          title="A Sovereign People"
-          bg={theme.colors.royaldank}
-          {...AccordionProps}
-        >
-          <S.Contact id="careers">
-            <Flex width={[1, 6 / 8]} className="content">
-              <Text as="p" fontSize={3}>
-                The Cahuilla Band of Indians exercises its authority as a
-                sovereign nation in order to provide for the welfare of its
-                community of Members and future generations. The Tribal
-                Government consists of the General Council and an elected five
-                Member Tribal Council who represents Tribal matters.
-              </Text>
-              <Text as="p">
-                The Tribe seeks economic self- sufficiency in order to support
-                social and economic well-being of its Tribal Members. Some of
-                the programs that have been implemented include a Tribal
-                Library, Cultural classes, Scholarship, Fire Prevention,
-                Environmental Protection, and Inter-Tribal Sports. Cahuilla
-                operates a Casino and Mountain Sky Travel Center located of
-                Highway 371 that provides some income to the programs and
-                services Cahuilla offers. Stock raising and cattle ranching is a
-                traditional enterprise on the reservation that some Members have
-                continued in their families for decades.
-              </Text>
-            </Flex>
-
-            <Box bg="black" width={[1, 2 / 8]} className="image">
-              <ImgMatch src="native-man.jpg" altText="Cahuilla Casino Hotel" />
-            </Box>
-          </S.Contact>
-        </Accordion>
+        <AboutSection />
       </Box>
     </S.About>
   )

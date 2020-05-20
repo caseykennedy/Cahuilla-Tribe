@@ -12,11 +12,10 @@ import homePage from './homePage'
 import page from './page'
 import person from './person'
 import siteSettings from './siteSettings'
-
-// Pages
 import department from './department'
 import form from './form'
 import jobPost from './jobPost'
+import aboutSection from './aboutSection'
 
 import blockText from './blockText'
 import companyInfo from './companyInfo'
@@ -35,6 +34,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    aboutSection,
     announcement,
     blockContent,
     department,

@@ -1,13 +1,15 @@
 // Footer:
 // Global site footer
+// TODO: use global nav data
 
 // ___________________________________________________________________
 
 import * as React from 'react'
 import { Link } from 'gatsby'
 
-import { Heading, Text, Box, Flex } from '../../elements'
+import { Text, Box, Flex } from '../../elements'
 import Callout from './Callout'
+import Icon from '../Icons'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
