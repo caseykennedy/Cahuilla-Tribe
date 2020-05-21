@@ -7,8 +7,6 @@ declare module '*.woff2'
 
 declare module 'gatsby-image/withIEPolyfill'
 declare module 'react-anchor-link-smooth-scroll'
-declare module 'react-text-scrambler'
-declare module 'react-id-swiper'
 declare module 'smooth-scrollbar-react'
 declare module 'utils/auth'
 declare module '@sanity/block-content-to-react'

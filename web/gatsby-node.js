@@ -2,10 +2,9 @@
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-
   const departmentTemplate = require.resolve('./src/templates/department.tsx')
 
-  // Government pages
+  // Department pages
   // ___________________________________________________________________
   const department = graphql(`
     {

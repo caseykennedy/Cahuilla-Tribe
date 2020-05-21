@@ -62,7 +62,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
 
       cb()
 
-      // navigateTo to the home route
+      // navigateTo to home after login
       // TODO: this seems hacky........
       navigateTo('/account')
     })
