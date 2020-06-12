@@ -26,7 +26,7 @@ export const Button = styled(Link)`
   width: 100%;
 
   background: ${theme.colors.secondary};
-  color: ${theme.colors.background};
+  color: ${theme.colors.primary};
   font-family: MediaSans;
   font-size: ${theme.fontSizes[2]};
   letter-spacing: 2px;
