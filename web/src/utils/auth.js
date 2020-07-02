@@ -36,24 +36,16 @@ export const login = () => {
 }
 
 const setSession = (cb = () => {}) => (err, authResult) => {
-  // if (err) {
-  //   if (err.error === 'login_required') {
-  //     login()
-  //   }
-  // }
   if (err) {
-    navigateTo('/')
-    cb()
-    return
+    if (err.error === 'login_required') {
+      login()
+    }
   }
   if (authResult && authResult.accessToken && authResult.idToken) {
     tokens.idToken = authResult.idToken
     tokens.accessToken = authResult.accessToken
 
     auth.client.userInfo(tokens.accessToken, (_err, userProfile) => {
-      // if (_err) {
-      //   console.log(_err)
-      // }
       user = userProfile
       window.localStorage.setItem('isLoggedIn', true)
 
@@ -83,6 +75,7 @@ export const handleAuthentication = () => {
     return
   }
   auth.parseHash(setSession())
+  navigateTo('/account')
 }
 
 export const getProfile = () => {

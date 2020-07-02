@@ -4,7 +4,7 @@ import { checkSession } from './src/utils/auth'
 const SessionCheck = ({ children }) => {
   const [loading, stillLoading] = useState(true)
   useEffect(() => checkSession(() => stillLoading(false)))
-  return loading === false && <>{children}</>
+  return loading === false ? <>{children}</> : <>{children}</>
 }
 
 export const wrapRootElement = ({ element }) => (
