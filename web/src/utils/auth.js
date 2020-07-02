@@ -41,6 +41,11 @@ const setSession = (cb = () => {}) => (err, authResult) => {
       login()
     }
   }
+  // if (err) {
+  //   navigateTo('/')
+  //   cb()
+  //   return
+  // }
   if (authResult && authResult.accessToken && authResult.idToken) {
     tokens.idToken = authResult.idToken
     tokens.accessToken = authResult.accessToken
@@ -49,6 +54,7 @@ const setSession = (cb = () => {}) => (err, authResult) => {
       user = userProfile
       window.localStorage.setItem('isLoggedIn', true)
 
+      navigateTo('/account')
       cb()
     })
   }
@@ -75,7 +81,6 @@ export const handleAuthentication = () => {
     return
   }
   auth.parseHash(setSession())
-  navigateTo('/account')
 }
 
 export const getProfile = () => {
