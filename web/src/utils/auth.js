@@ -60,11 +60,10 @@ const setSession = (cb = () => {}) => (err, authResult) => {
   }
 }
 
-export const checkSession = callback => {
-  const isLoggedIn = window.localStorage.getItem('isLoggedIn')
-  if (isLoggedIn === 'false' || isLoggedIn === null) {
-    callback()
-  }
+export const silentAuth = callback => {
+  if (!isAuthenticated()) return callback()
+  auth.checkSession({}, setSession(callback))
+
   const protectedRoutes = [`/account`, `/callback`]
   const isProtectedRoute = protectedRoutes
     .map(route => window.location.pathname.includes(route))
@@ -72,8 +71,21 @@ export const checkSession = callback => {
   if (isProtectedRoute) {
     auth.checkSession({}, setSession(callback))
   }
-  // if (!isAuthenticated()) return callback()
-  // auth.checkSession({}, setSession(callback))
+}
+
+export const checkSession = callback => {
+  const isLoggedIn = window.localStorage.getItem('isLoggedIn')
+  if (isLoggedIn === 'false' || isLoggedIn === null) {
+    callback()
+  }
+
+  const protectedRoutes = [`/account`, `/callback`]
+  const isProtectedRoute = protectedRoutes
+    .map(route => window.location.pathname.includes(route))
+    .some(route => route)
+  if (isProtectedRoute) {
+    auth.checkSession({}, setSession(callback))
+  }
 }
 
 export const handleAuthentication = () => {
@@ -83,9 +95,7 @@ export const handleAuthentication = () => {
   auth.parseHash(setSession())
 }
 
-export const getProfile = () => {
-  return user
-}
+export const getProfile = () => user
 
 export const logout = () => {
   tokens.accessToken = false
