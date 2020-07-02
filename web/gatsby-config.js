@@ -1,5 +1,5 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
 })
 
 const config = require('./config')
@@ -24,7 +24,7 @@ module.exports = {
     ogLanguage: config.ogLanguage,
     author: config.author,
     twitter: config.userTwitter,
-    facebook: config.ogSiteName,
+    facebook: config.ogSiteName
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -46,15 +46,15 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'config',
-        path: `${__dirname}/config`,
-      },
+        path: `${__dirname}/config`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     // {
     //   resolve: 'gatsby-source-instagram',
@@ -66,8 +66,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: config.googleAnalyticsID,
-      },
+        trackingId: config.googleAnalyticsID
+      }
     },
     {
       resolve: `gatsby-plugin-nprogress`,
@@ -75,8 +75,8 @@ module.exports = {
         // Setting a color is optional.
         color: `goldenrod`,
         // Disable the loading spinner.
-        showSpinner: false,
-      },
+        showSpinner: false
+      }
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -91,16 +91,16 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
-        icon: 'src/favicon.png',
-      },
+        icon: 'src/favicon.png'
+      }
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',
     {
       resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/account/*`] },
-    },
-  ],
+      options: { prefixes: [`/account/*`] }
+    }
+  ]
 }
 
 /**
@@ -110,7 +110,7 @@ module.exports = {
  * with directions to enter the info manually or in the environment.
  */
 
-function requireConfig (path) {
+function requireConfig(path) {
   try {
     return require('../studio/sanity.json')
   } catch (e) {
