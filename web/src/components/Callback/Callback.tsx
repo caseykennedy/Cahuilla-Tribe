@@ -19,11 +19,6 @@ import theme from '../../../config/theme'
 type Props = {}
 
 const Callback: React.FC<Props> = () => {
-  // Check if authenticated
-  if (!isAuthenticated()) {
-    login()
-    return <p>Redirecting to login...</p>
-  }
   // const user = getProfile()
   return (
     <S.HomePage>

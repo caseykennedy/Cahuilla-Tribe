@@ -7,19 +7,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // @ts-ignore
-import { login, isAuthenticated } from '../utils/auth'
+import { login, handleAuthentication } from '../utils/auth'
 
 // ___________________________________________________________________
 
 const CallbackPage = () => {
-  // Check if authenticated
-  if (!isAuthenticated()) {
-    login()
-    return <p>Redirecting to login...</p>
-  }
+  // Handle authentication
+  handleAuthentication()
+  
   return (
     <>
-      <p>Redirecting...</p>
+      <p>loading...</p>
       {/* <nav>
         <Link to="/">Home</Link> <Link to="/account/">My Account</Link>{' '}
         <a

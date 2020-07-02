@@ -35,37 +35,29 @@ export const login = () => {
   auth.authorize()
 }
 
-export const logout = () => {
-  tokens.accessToken = false
-  tokens.idToken = false
-  user = {}
-  window.localStorage.setItem('isLoggedIn', false)
-
-  auth.logout({
-    returnTo: window.location.origin
-  })
-}
-
 const setSession = (cb = () => {}) => (err, authResult) => {
+  // if (err) {
+  //   if (err.error === 'login_required') {
+  //     login()
+  //   }
+  // }
   if (err) {
-    if (err.error === 'login_required') {
-      // login()
-      console.log('fuck')
-    }
+    navigateTo('/')
+    cb()
+    return
   }
   if (authResult && authResult.accessToken && authResult.idToken) {
     tokens.idToken = authResult.idToken
     tokens.accessToken = authResult.accessToken
 
     auth.client.userInfo(tokens.accessToken, (_err, userProfile) => {
+      // if (_err) {
+      //   console.log(_err)
+      // }
       user = userProfile
       window.localStorage.setItem('isLoggedIn', true)
 
       cb()
-
-      // navigateTo to home after login
-      // TODO: this seems hacky........
-      navigateTo('/account')
     })
   }
 }
@@ -82,12 +74,28 @@ export const checkSession = callback => {
   if (isProtectedRoute) {
     auth.checkSession({}, setSession(callback))
   }
+  // if (!isAuthenticated()) return callback()
+  // auth.checkSession({}, setSession(callback))
 }
 
 export const handleAuthentication = () => {
+  if (!isBrowser) {
+    return
+  }
   auth.parseHash(setSession())
 }
 
 export const getProfile = () => {
   return user
+}
+
+export const logout = () => {
+  tokens.accessToken = false
+  tokens.idToken = false
+  user = {}
+  window.localStorage.setItem('isLoggedIn', false)
+
+  auth.logout({
+    returnTo: window.location.origin
+  })
 }
