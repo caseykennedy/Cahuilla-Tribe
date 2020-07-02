@@ -19,7 +19,12 @@ import theme from '../../../config/theme'
 type Props = {}
 
 const Callback: React.FC<Props> = () => {
-  const user = getProfile()
+  // Check if authenticated
+  if (!isAuthenticated()) {
+    login()
+    return <p>Redirecting to login...</p>
+  }
+  // const user = getProfile()
   return (
     <S.HomePage>
       <S.WelcomeBox width={[1, 1 / 3]}>
@@ -29,7 +34,7 @@ const Callback: React.FC<Props> = () => {
         <nav>
           <Link to="/account">My Account</Link>{' '}
         </nav>
-        <pre>{JSON.stringify(user, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
       </S.WelcomeBox>
     </S.HomePage>
   )

@@ -49,7 +49,8 @@ export const logout = () => {
 const setSession = (cb = () => {}) => (err, authResult) => {
   if (err) {
     if (err.error === 'login_required') {
-      login()
+      // login()
+      console.log('fuck')
     }
   }
   if (authResult && authResult.accessToken && authResult.idToken) {
