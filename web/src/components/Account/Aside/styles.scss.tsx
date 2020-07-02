@@ -65,12 +65,12 @@ export const Aside = styled(Flex)`
     }
 
     &.sign-out {
-      background: ${theme.colors.quaternary};
+      background: ${theme.colors.background};
       color: ${theme.colors.text};
 
       &:hover {
-        background: ${theme.colors.background};
-        color: ${theme.colors.text};
+        background: ${theme.colors.quaternary};
+        color: ${theme.colors.primary};
 
         .ico {
           background: ${theme.colors.black};
