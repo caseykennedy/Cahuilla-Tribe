@@ -108,7 +108,7 @@ const Resources: React.FC = () => {
             </Box>
             <Box width={[1, 1 / 3]}>
               <Heading as="h5">Email</Heading>
-              <a href="#">info@cahuilla.net</a>
+              <a href="#">administration@cahuilla.net</a>
             </Box>
           </Flex>
         </Flex>

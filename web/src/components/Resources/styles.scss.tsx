@@ -87,7 +87,7 @@ export const Contact = styled(Flex)`
 
     a {
       color: ${theme.colors.text};
-      font-size: calc(${theme.fontSizes[3]} / 1.2);
+      font-size: calc(${theme.fontSizes[3]} / 1.75);
       text-decoration: underline;
     }
   }
