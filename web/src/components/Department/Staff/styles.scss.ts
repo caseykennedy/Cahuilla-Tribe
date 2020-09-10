@@ -33,6 +33,17 @@ export const StaffMember = styled(Flex)`
     }
   }
 
+  .bio-link {
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: calc(${theme.fontSizes[1]} / 1.15);
+    display: inline-block;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .team-member__detail {
     flex-direction: column;
     justify-content: space-between;

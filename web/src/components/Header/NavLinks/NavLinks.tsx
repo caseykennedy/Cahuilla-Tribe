@@ -98,10 +98,6 @@ const navData = [
     name: 'Government',
     subPage: [
       {
-        name: 'Cahuilla Gaming Agency',
-        link: '/government/cahuilla-gaming-agency'
-      },
-      {
         name: 'Economic Development',
         link: '/government/economic-development'
       },
@@ -115,6 +111,10 @@ const navData = [
     name: 'Departments',
     subPage: [
       {
+        name: 'Cahuilla Gaming Agency',
+        link: '/government/cahuilla-gaming-agency'
+      },
+      {
         name: 'Cultural',
         link: '/departments/cultural'
       },
@@ -125,6 +125,10 @@ const navData = [
       {
         name: 'Family & Social Services',
         link: '/departments/family-social-services'
+      },
+      {
+        name: 'Fire Department',
+        link: '/departments/fire-department'
       },
       {
         name: 'Public Works',

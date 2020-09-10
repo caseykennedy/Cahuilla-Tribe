@@ -114,6 +114,10 @@ const data = [
         link: '/departments/family-social-services'
       },
       {
+        name: 'Fire Department',
+        link: '/departments/fire-department'
+      },
+      {
         name: 'Public Works',
         link: '/departments/public-works'
       },

@@ -103,11 +103,7 @@ const Staff: React.FC<{
 
               {person.bio && (
                 <Box onClick={toggleModal}>
-                  <Text
-                    fontSize={1}
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => setBio(person)}
-                  >
+                  <Text className="bio-link" onClick={() => setBio(person)}>
                     Read Bio
                   </Text>
                 </Box>
