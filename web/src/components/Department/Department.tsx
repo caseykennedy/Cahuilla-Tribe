@@ -20,7 +20,9 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-const Department: React.FC<DepartmentShape> = ({ pageContext }) => {
+const Department: React.FC<{ pageContext: DepartmentShape }> = ({
+  pageContext
+}) => {
   const page = pageContext.page
   // console.log('—————|— PAGE —|—————')
   // console.log(page)

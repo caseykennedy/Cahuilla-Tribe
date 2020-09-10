@@ -9,7 +9,7 @@ import theme from '../../../../config/theme'
 
 // ___________________________________________________________________
 
-const PrevNext: React.FC<DepartmentShape> = ({ pageContext }) => {
+const PrevNext: React.FC<{ pageContext: DepartmentShape }> = ({ pageContext }) => {
   const page = pageContext.page
   const prev = pageContext.prev
   const next = pageContext.next

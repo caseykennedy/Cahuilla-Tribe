@@ -100,6 +100,8 @@ export default {
           {title: 'Public Works', value: 'Public Works'},
           {title: 'Cultural', value: 'Cultural'},
           {title: 'Public Safety', value: 'Public Safety'},
+          {title: 'CCVAP', value: 'CCVAP'},
+          {title: 'Fire Department', value: 'Fire Department'},
         ]
       }
     },

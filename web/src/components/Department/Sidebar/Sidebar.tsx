@@ -14,7 +14,7 @@ import theme from '../../../../config/theme'
 
 // ___________________________________________________________________
 
-const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
+const Staff: React.FC<{ pageContext: DepartmentShape }> = ({ pageContext }) => {
   const page = pageContext.page
   // console.log('—————|— Sidebar —|—————')
   // console.log(pageContext)

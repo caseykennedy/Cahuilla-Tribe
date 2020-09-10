@@ -8,12 +8,18 @@ import Img from 'gatsby-image/withIEPolyfill'
 
 import { Text, Box, Flex } from '../../../elements'
 
+import Overlay from '../../Overlay'
+import Bio from '../Bio'
+
 import * as S from './styles.scss'
 import theme from '../../../../config/theme'
 
 // ___________________________________________________________________
 
-const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
+const Staff: React.FC<{
+  pageContext: DepartmentShape
+  mainRef?: React.RefObject<HTMLDivElement>
+}> = ({ pageContext, mainRef }) => {
   const data: PeopleShape = useStaticQuery(graphql`
     query PeopleQuery {
       people: allSanityPerson {
@@ -61,29 +67,62 @@ const Staff: React.FC<DepartmentShape> = ({ pageContext }) => {
   // console.log('—————|— People —|—————')
   // console.log(pageDep)
   // console.log(data.people)
+
+  // Set bio context
+  const [bio, setBio] = useState(data.people.edges[0].node)
+  // Navigation toggle
+  const [isModalOpen, setModalOpen] = useState(false)
+  const toggleModal = () => setModalOpen(!isModalOpen)
   return (
-    <S.Staff>
-      {filteredPeople.map(person => (
-        <S.StaffMember width={[1, 1 / 2]} key={person.node.id}>
-          <Box width={1 / 3}>
-            <Img
-              fluid={person.node.image.asset.fluid}
-              objectFit="cover"
-              objectPosition="50% 50%"
-              alt={person.node.name}
-            />
-          </Box>
-          <Flex width={2 / 3} className="team-member__detail">
-            <Text as="p" fontSize={2}>{person.node.name}</Text>
-            <Text mt={7}>
-              {person.node.title}
-              <br />
-              {person.node.seated ? `Seated: ${person.node.seated}` : null}
-            </Text>
-          </Flex>
-        </S.StaffMember>
-      ))}
-    </S.Staff>
+    <>
+      <Overlay
+        id="overlay-root"
+        root="root"
+        isOpen={isModalOpen}
+        handleExit={() => setModalOpen(false)}
+        mainRef={mainRef}
+        className={`nav-bg ${isModalOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
+      >
+        {isModalOpen && <Bio bio={bio} setModalOpen={setModalOpen} />}
+      </Overlay>
+      <S.Staff>
+        {filteredPeople.map(({ node: person }) => (
+          <S.StaffMember width={[1, 1 / 2]} key={person.id}>
+            <Box width={1 / 3}>
+              <Img
+                fluid={person.image.asset.fluid}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                alt={person.name}
+              />
+            </Box>
+            <Flex width={2 / 3} className="team-member__detail">
+              <Text as="p" fontSize={2} mb={0}>
+                {person.name}
+              </Text>
+
+              {person.bio && (
+                <Box onClick={toggleModal}>
+                  <Text
+                    fontSize={1}
+                    style={{ cursor: 'pointer' }}
+                    onClick={() => setBio(person)}
+                  >
+                    Read Bio
+                  </Text>
+                </Box>
+              )}
+
+              <Text mt={7}>
+                {person.title}
+                <br />
+                {person.seated ? `Seated: ${person.seated}` : null}
+              </Text>
+            </Flex>
+          </S.StaffMember>
+        ))}
+      </S.Staff>
+    </>
   )
 }
 

@@ -35,7 +35,11 @@ const Navigation: React.FC = () => {
                 {item.subPage && <Icon name="carat" />}
               </span>
             ) : (
-              <Link to={item.link} className="nav-link__title" activeClassName="active">
+              <Link
+                to={item.link}
+                className="nav-link__title"
+                activeClassName="active"
+              >
                 {item.name}
               </Link>
             )}
@@ -55,9 +59,13 @@ const Navigation: React.FC = () => {
         <S.SignIn to="/account">Sign In</S.SignIn>
       ) : (
         <S.SignIn
-          to="/account"
+          to="#logout"
+          onClick={e => {
+            logout()
+            e.preventDefault()
+          }}
         >
-          My Account
+          Sign Out
         </S.SignIn>
       )}
     </>
@@ -77,10 +85,6 @@ const data = [
     name: 'Government',
     subPage: [
       {
-        name: 'Cahuilla Gaming Agency',
-        link: '/government/cahuilla-gaming-agency'
-      },
-      {
         name: 'Economic Development',
         link: '/government/economic-development'
       },
@@ -93,7 +97,10 @@ const data = [
   {
     name: 'Departments',
     subPage: [
-
+      {
+        name: 'Cahuilla Gaming Agency',
+        link: '/departments/cahuilla-gaming-agency'
+      },
       {
         name: 'Cultural',
         link: '/departments/cultural'

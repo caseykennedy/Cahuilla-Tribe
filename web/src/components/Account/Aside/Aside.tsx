@@ -57,8 +57,8 @@ const Account: React.FC = () => {
             Text "Cahuilla" to <span className="t-underline">31996</span>
           </Text>
         </Box>
-        <a href="#logout">
-          Take a survey
+        <a href="https://www.surveymonkey.com/r/LV9F8HP" target="_blank">
+          Survey link
           <div className="ico">
             <Icon name="document" />
           </div>
