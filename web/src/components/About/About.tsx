@@ -2,7 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image/withIEPolyfill'
 
@@ -15,13 +15,6 @@ import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
 // ___________________________________________________________________
-
-const AccordionProps = {
-  chevronColor: theme.colors.text,
-  color: theme.colors.text,
-  colorActive: theme.colors.text,
-  borderColor: theme.colors.text
-}
 
 const AboutSection: React.FC = () => {
   const data: AboutQueryShape = useStaticQuery(graphql`
@@ -54,8 +47,7 @@ const AboutSection: React.FC = () => {
     }
   `)
   const aboutQuery = data.allSanityAboutSection.edges
-  // console.log('---|- About -|---')
-  // console.log(data.allSanityAboutSection.edges[2].node.bgColor)
+
   return (
     <Box width={1}>
       {aboutQuery.map(({ node: section }) => (
@@ -106,3 +98,12 @@ const About: React.FC = () => {
 }
 
 export default About
+
+// ___________________________________________________________________
+
+const AccordionProps = {
+  chevronColor: theme.colors.text,
+  color: theme.colors.text,
+  colorActive: theme.colors.text,
+  borderColor: theme.colors.text
+}

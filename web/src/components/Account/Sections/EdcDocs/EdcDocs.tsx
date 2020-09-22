@@ -2,9 +2,8 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Router } from '@reach/router'
 
 import { Flex } from '../../../../elements'
 import Icon from '../../../Icons'
@@ -26,13 +25,6 @@ type FormsQueryShape = {
       }
     }[]
   }
-}
-
-const AccordionProps = {
-  chevronColor: theme.colors.text,
-  color: theme.colors.text,
-  colorActive: theme.colors.text,
-  borderColor: theme.colors.text
 }
 
 // ___________________________________________________________________
@@ -88,3 +80,12 @@ const EdcDocs: React.FC = () => {
 }
 
 export default EdcDocs
+
+// ___________________________________________________________________
+
+const AccordionProps = {
+  chevronColor: theme.colors.text,
+  color: theme.colors.text,
+  colorActive: theme.colors.text,
+  borderColor: theme.colors.text
+}

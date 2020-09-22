@@ -1,4 +1,4 @@
-// Account:
+// Aside:
 
 // ___________________________________________________________________
 
@@ -7,7 +7,7 @@ import React from 'react'
 import Moment from 'react-moment'
 
 // @ts-ignore
-import { login, logout, isAuthenticated, getProfile } from '../../../utils/auth'
+import { logout, isAuthenticated, getProfile } from '../../../utils/auth'
 
 import { Text, Heading, Box, Flex } from '../../../elements'
 import Icon from '../../Icons'

@@ -19,7 +19,9 @@ import theme from '../../config/theme'
 
 // ___________________________________________________________________
 
-const DepartmentTemplate: React.FC<DepartmentShape> = ({ pageContext }) => {
+const DepartmentTemplate: React.FC<{ pageContext: DepartmentShape }> = ({
+  pageContext
+}) => {
   const page = pageContext.page
   let path
   if (!page.government) {
