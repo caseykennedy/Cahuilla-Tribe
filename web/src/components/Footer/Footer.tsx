@@ -55,13 +55,14 @@ const Footer: React.FC = () => {
                 <Link to="/departments/tribal-admin">Tribal Admin</Link>
                 <Link to="/departments/family-social-services">Family &amp; Social Services</Link>
                 <Link to="/departments/environmental-protection-agency">EPA</Link>
+                <Link to="/departments/fire-department">Fire Department</Link>
                 <Link to="/departments/public-works">Public Works</Link>
                 <Link to="/departments/cultural">Cultural</Link>
               </ul>
               <ul>
                 <Link to="/government/tribal-council">Tribal Council</Link>
                 <Link to="/government/economic-development">Economic Development</Link>
-                <Link to="/government/cahuilla-gaming-agency">Cahuilla Gaming Agency</Link>
+                <Link to="/departments/cahuilla-gaming-agency">Cahuilla Gaming Agency</Link>
                 <Link to="/enterprises">Enterprises</Link>
               </ul>
             </Flex>
