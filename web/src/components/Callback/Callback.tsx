@@ -2,14 +2,10 @@
 
 // ___________________________________________________________________
 
-import React, { useRef } from 'react'
-import { Router } from '@reach/router'
+import React from 'react'
 import { Link } from 'gatsby'
 
-// @ts-ignore
-import { login, logout, isAuthenticated, getProfile } from '../../utils/auth'
-
-import { Text, Heading, Box, Flex } from '../../elements'
+import { Heading } from '../../elements'
 
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
@@ -19,7 +15,6 @@ import theme from '../../../config/theme'
 type Props = {}
 
 const Callback: React.FC<Props> = () => {
-  // const user = getProfile()
   return (
     <S.HomePage>
       <S.WelcomeBox width={[1, 1 / 3]}>

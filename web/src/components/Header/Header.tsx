@@ -5,7 +5,6 @@
 
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import Headroom from 'react-headroom'
 
 import { Box, Flex, Text } from '../../elements'
 

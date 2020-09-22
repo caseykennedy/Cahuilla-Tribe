@@ -8,7 +8,6 @@ import { ThemeProvider } from 'styled-components'
 
 import Header from '../Header'
 import Footer from '../Footer'
-import { Box } from '../../elements'
 
 import theme from '../../../config/theme'
 import GlobalStyles from '../../styles/global'
