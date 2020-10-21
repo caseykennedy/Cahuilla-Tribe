@@ -14,24 +14,8 @@ import { login, handleAuthentication } from '../utils/auth'
 const CallbackPage = () => {
   // Handle authentication
   handleAuthentication()
-  
-  return (
-    <>
-      <p>loading...</p>
-      {/* <nav>
-        <Link to="/">Home</Link> <Link to="/account/">My Account</Link>{' '}
-        <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-      </nav> */}
-    </>
-  )
+
+  return <p>loading...</p>
 }
 
 export default CallbackPage

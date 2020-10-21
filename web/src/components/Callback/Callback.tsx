@@ -1,4 +1,4 @@
-// Callback:
+// Callback Page:
 
 // ___________________________________________________________________
 
@@ -12,11 +12,9 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-type Props = {}
-
-const Callback: React.FC<Props> = () => {
+const Callback = () => {
   return (
-    <S.HomePage>
+    <S.CallbackPage>
       <S.WelcomeBox width={[1, 1 / 3]}>
         <Heading as="h2" color="primary" mt={10}>
           Callback
@@ -26,7 +24,7 @@ const Callback: React.FC<Props> = () => {
         </nav>
         {/* <pre>{JSON.stringify(user, null, 2)}</pre> */}
       </S.WelcomeBox>
-    </S.HomePage>
+    </S.CallbackPage>
   )
 }
 

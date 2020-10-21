@@ -11,7 +11,7 @@ import theme from '../../../config/theme'
 
 // ___________________________________________________________________
 
-export const HomePage = styled(Flex)`
+export const CallbackPage = styled(Flex)`
   flex-wrap: wrap;
   width: 100%;
   border-left: none;
@@ -35,18 +35,4 @@ export const ImageBox = styled(Flex)`
       border-top: ${theme.border};
     }
   }
-`
-
-export const BulletinBox = styled(Flex)`
-  background: ${theme.colors.black};
-  padding: ${theme.space[4]};
-`
-
-export const IntroBox = styled(Flex)`
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: ${theme.space[4]};
-  background: ${theme.colors.background};
-  border-top: ${theme.border};
 `

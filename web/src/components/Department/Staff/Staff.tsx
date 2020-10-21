@@ -89,16 +89,18 @@ const Staff: React.FC<{
         {filteredPeople.map(({ node: person }) => (
           <S.StaffMember width={[1, 1 / 2]} key={person.id}>
             <Box width={1 / 3}>
-              <Img
-                fluid={person.image.asset.fluid}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                alt={person.name}
-              />
+              {person.image && (
+                <Img
+                  fluid={person.image.asset.fluid}
+                  objectFit="cover"
+                  objectPosition="50% 50%"
+                  alt={person.name}
+                />
+              )}
             </Box>
             <Flex width={2 / 3} className="team-member__detail">
               <Text as="p" fontSize={2} mb={0}>
-                {person.name}
+                {person.name && person.name}
               </Text>
 
               {person.bio && (
@@ -110,7 +112,7 @@ const Staff: React.FC<{
               )}
 
               <Text mt={7}>
-                {person.title}
+                {person.title && person.title}
                 <br />
                 {person.seated ? `Seated: ${person.seated}` : null}
               </Text>
