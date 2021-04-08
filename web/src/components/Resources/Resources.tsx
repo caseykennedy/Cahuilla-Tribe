@@ -46,7 +46,7 @@ const JobPost: React.FC = () => {
     }
   `)
   const jobs = data.allSanityJobPost.edges
-  return (
+  return jobs.length > 0 ? (
     <>
       {jobs.map(({ node: job }) => (
         <S.JobPost
@@ -63,6 +63,8 @@ const JobPost: React.FC = () => {
         </S.JobPost>
       ))}
     </>
+  ) : (
+    <Box>There are no job openeings at this time.</Box>
   )
 }
 
