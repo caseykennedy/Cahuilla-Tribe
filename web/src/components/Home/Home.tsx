@@ -71,13 +71,13 @@ const Home: React.FC = () => {
         </div>
       </S.WelcomeBox>
       <S.ImageBox width={[1, 1 / 3]}>
-      <Img
-            fluid={page.figures[0].asset.fluid}
-            objectFit="cover"
-            objectPosition="50% 50%"
-            alt={page.figures[0].alt}
-            className="img"
-          />
+        <Img
+          fluid={{ ...page.figures[0].asset.fluid, aspectRatio: 1 / 1 }}
+          objectFit="cover"
+          objectPosition="50% 50%"
+          alt={page.figures[0].alt}
+          className="img"
+        />
       </S.ImageBox>
       <S.BulletinBoard width={[1, 1 / 3]}>
         <Announcements />
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
       <S.ImageBox width={[1, 1 / 3]} className="border--top">
         {page.figures[1] && (
           <Img
-            fluid={page.figures[1].asset.fluid}
+            fluid={{ ...page.figures[1].asset.fluid, aspectRatio: 1 / 1 }}
             objectFit="cover"
             objectPosition="50% 50%"
             alt={page.figures[1].alt}

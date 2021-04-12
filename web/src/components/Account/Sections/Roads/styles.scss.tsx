@@ -3,10 +3,8 @@
 // ___________________________________________________________________
 
 import styled from 'styled-components'
-import { darken, lighten } from 'polished'
-
-import { Box, Flex, Heading } from '../../../../elements'
-
+import { darken } from 'polished'
+import { Flex } from '../../../../elements'
 import theme from '../../../../../config/theme'
 
 // ___________________________________________________________________
@@ -17,11 +15,10 @@ export const Section = styled(Flex)`
   .maint-date {
     width: 100%;
     padding: ${theme.space[4]};
-    margin-top: ${theme.space[4]};
-    margin-bottom: ${theme.space[6]};
+    margin-top: ${theme.space[6]};
 
     border: ${theme.border};
-    background: ${darken(0, `${theme.colors.secondary}`)};
+    background: ${darken(0, theme.colors.secondary)};
     color: ${theme.colors.background};
 
     @media ${theme.mq.small} {

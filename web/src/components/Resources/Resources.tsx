@@ -17,6 +17,8 @@ import Icon from '../Icons'
 import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
+import useContact from '../../hooks/useContact'
+
 // ___________________________________________________________________
 
 type QueryShape = {
@@ -69,6 +71,7 @@ const JobPost: React.FC = () => {
 }
 
 const Resources: React.FC = () => {
+  const contact = useContact()
   return (
     <S.Resources>
       <S.PageTitle width={[1]}>
@@ -89,28 +92,21 @@ const Resources: React.FC = () => {
       <S.Contact id="contact">
         <Flex width={[1, 2 / 3]} className="content">
           <Box>
-            <Heading as="h3" mt={3} mb={8}>
-              Contact Us
-            </Heading>
+            <Heading as="h3">Contact Us</Heading>
+            <Text fontSize={2} mb={8}>
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            </Text>
           </Box>
           <Flex width={1} flexWrap="wrap">
-            <Box width={[1, 1 / 3]} mb={[6, 0]}>
+            <Box width={[1, 1 / 2]} mb={[6, 0]}>
               <Heading as="h5">Tel / Fax</Heading>
-              <a href="#">951-763-5549</a> — Tel
+              <a href={`tel:${contact.telephone}`}>{contact.telephone}</a> — Tel
               <br />
-              <a href="#">951-763-2808</a> — Fax
+              <a href={`tel:${contact.fax}`}>{contact.fax}</a> — Fax
             </Box>
-            <Box width={[1, 1 / 3]} mb={[6, 0]}>
+            <Box width={[1, 1 / 2]} mb={[6, 0]}>
               <Heading as="h5">Address</Heading>
-              <a href="#">
-                52701 CA Hwy 371
-                <br />
-                Anza, CA 92539
-              </a>
-            </Box>
-            <Box width={[1, 1 / 3]}>
-              <Heading as="h5">Email</Heading>
-              <a href="#">administration@cahuilla.net</a>
+              <span dangerouslySetInnerHTML={{ __html: contact.address }} />
             </Box>
           </Flex>
         </Flex>

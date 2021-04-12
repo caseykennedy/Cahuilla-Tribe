@@ -93,6 +93,8 @@ export const Indent = styled(Flex)`
   background: ${theme.colors.primary};
 
   .marker {
+    display: flex;
+    align-items: center;
     color: ${theme.colors.text};
     font-size: ${theme.fontSizes[1]};
     font-weight: 500;

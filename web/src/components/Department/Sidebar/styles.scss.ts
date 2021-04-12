@@ -46,7 +46,7 @@ export const Inner = styled(Flex)`
 
   a {
     color: ${theme.colors.text};
-    font-size: calc(${theme.fontSizes[3]} / 1.2);
+    font-size: calc(${theme.fontSizes[2]});
     text-decoration: underline;
 
     &:hover {

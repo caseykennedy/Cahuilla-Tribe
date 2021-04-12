@@ -12,9 +12,12 @@ import MountainFlat from '../../MountainFlat'
 import * as S from './styles.scss'
 import theme from '../../../../config/theme'
 
+import useContact from '../../../hooks/useContact'
+
 // ___________________________________________________________________
 
 const Staff: React.FC<{ pageContext: DepartmentShape }> = ({ pageContext }) => {
+  const contact = useContact()
   const page = pageContext.page
   // console.log('—————|— Sidebar —|—————')
   // console.log(pageContext)
@@ -54,13 +57,9 @@ const Staff: React.FC<{ pageContext: DepartmentShape }> = ({ pageContext }) => {
         <Box>
           <Heading as="h5">Address</Heading>
           {!page.address ? (
-            <a href="#">
-              52701 CA Hwy 371
-              <br />
-              Anza, CA 92539
-            </a>
+            <span dangerouslySetInnerHTML={{ __html: contact.address }} />
           ) : (
-            <a href="#">{page.address}</a>
+            <span dangerouslySetInnerHTML={{ __html: page.address }} />
           )}
         </Box>
       </S.Inner>

@@ -2,8 +2,7 @@
 
 // ___________________________________________________________________
 
-import React, { useState } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 import Img from 'gatsby-image/withIEPolyfill'
 
 import { Text, Heading, Box, Flex } from '../../elements'
