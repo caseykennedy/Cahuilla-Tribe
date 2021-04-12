@@ -65,9 +65,7 @@ const Roads: React.FC = () => {
       <S.Section>
         <Flex className="content">
           <Text as="p" fontSize={3}>
-            This program is responsible for maintaining and updating the Indian
-            Reservation Roads inventory (IRR), which is submitted to the BIA in
-            order to receive funding for Tribal and BIA roads.
+            {roads.lead}
           </Text>
 
           {roads._rawBlockContent && (
