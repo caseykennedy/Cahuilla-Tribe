@@ -66,7 +66,7 @@ const JobPost: React.FC = () => {
       ))}
     </>
   ) : (
-    <Box>There are no job openeings at this time.</Box>
+    <Box>There are no job openings at this time.</Box>
   )
 }
 
