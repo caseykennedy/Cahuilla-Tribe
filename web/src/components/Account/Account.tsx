@@ -29,9 +29,9 @@ const Account: React.FC = () => {
     <S.AccountPage>
       <Aside />
       <S.Main width={[1, 7 / 10]}>
-        <Box bg="black" width={1} pt={10} pb={4} px={4}>
-          <Text as="p" fontSize={1} color="background" mb={0}>
-            Your forms and resources:
+        <Box bg="black" width={1} pt={7} pb={4} px={4}>
+          <Text as="p" fontSize={2} color="background" mb={0}>
+            Forms &amp; Resources
           </Text>
         </Box>
 

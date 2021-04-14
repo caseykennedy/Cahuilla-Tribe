@@ -49,14 +49,14 @@ const Account: React.FC = () => {
       </S.User>
       <S.Tools>
         {/* {JSON.stringify(user, null, 2)} */}
-        <Box className="updates">
+        {/* <Box className="updates">
           <Text as="p" fontSize={3}>
             Get alerts sent directly to your phone
           </Text>
           <Text as="p" fontSize={1} mt={8}>
             Text "Cahuilla" to <span className="t-underline">31996</span>
           </Text>
-        </Box>
+        </Box> */}
         <a href="https://www.surveymonkey.com/r/LV9F8HP" target="_blank">
           Survey link
           <div className="ico">

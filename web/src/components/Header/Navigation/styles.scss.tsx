@@ -17,8 +17,8 @@ export const Nav = styled.nav`
   align-items: center;
   z-index: 999;
 
+  margin-right: ${theme.space[4]};
   height: ${theme.headerHeight};
-  margin-right: ${theme.space[5]};
 
   @media ${theme.mq.medium} {
     display: flex;
@@ -112,7 +112,7 @@ export const Nav = styled.nav`
 
 export const SignIn = styled(Link)`
   color: ${theme.colors.text};
-  font-size: ${theme.fontSizes[1]};
+  font-size: calc(${theme.fontSizes[1]} / 1.35);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
@@ -121,14 +121,16 @@ export const SignIn = styled(Link)`
   box-sizing: content-box;
 
   height: ${theme.headerHeight};
-  padding: 0 ${theme.space[4]};
+  padding: 0 ${theme.space[3]};
   border-left: ${theme.border};
 
   @media ${theme.mq.small} {
+  font-size: ${theme.fontSizes[1]};
     padding: ${theme.space[2]} ${theme.space[4]};
   }
 
-  &:hover {
+  &:hover,
+  &.active {
     color: ${theme.colors.white};
     background: ${theme.colors.bloodshot};
   }
