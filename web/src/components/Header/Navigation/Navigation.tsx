@@ -57,7 +57,7 @@ const Navigation: React.FC = () => {
       </S.Nav>
       {isAuthenticated() && (
         <S.SignIn to={`/account`} activeClassName="active">
-          My Account
+          Account
         </S.SignIn>
       )}
       {!isAuthenticated() ? (

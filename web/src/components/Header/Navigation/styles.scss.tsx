@@ -20,7 +20,7 @@ export const Nav = styled.nav`
   margin-right: ${theme.space[4]};
   height: ${theme.headerHeight};
 
-  @media ${theme.mq.medium} {
+  @media (min-width: 1200px) {
     display: flex;
   }
 
@@ -125,13 +125,17 @@ export const SignIn = styled(Link)`
   border-left: ${theme.border};
 
   @media ${theme.mq.small} {
-  font-size: ${theme.fontSizes[1]};
+    font-size: ${theme.fontSizes[1]};
     padding: ${theme.space[2]} ${theme.space[4]};
   }
 
-  &:hover,
-  &.active {
+  &:hover {
     color: ${theme.colors.white};
     background: ${theme.colors.bloodshot};
+  }
+
+  &.active {
+    color: ${theme.colors.white};
+    background: ${theme.colors.black};
   }
 `

@@ -119,7 +119,7 @@ export const Toggle = styled.div`
     padding: ${theme.space[2]} ${theme.space[4]};
   }
 
-  @media ${theme.mq.medium} {
+  @media (min-width: 1200px) {
     display: none;
   }
 
