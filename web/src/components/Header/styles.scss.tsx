@@ -2,26 +2,23 @@
 
 // ___________________________________________________________________
 
-// Core
-import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { readableColor, darken } from 'polished'
 
 // Theme
 import theme from '../../../config/theme'
 
 // Elements
-import { Box, Flex, AnimatedFlex } from '../../elements'
+import { Box, Flex } from '../../elements'
 
 // ___________________________________________________________________
 
-export const Headroom = styled(AnimatedFlex)`
+export const Headroom = styled(Box)`
   display: block;
   position: sticky;
   top: 0;
 `
 
-export const Header = styled(AnimatedFlex)`
+export const Header = styled(Flex)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -52,7 +49,7 @@ export const Header = styled(AnimatedFlex)`
   }
 `
 
-export const Logo = styled(AnimatedFlex)`
+export const Logo = styled(Flex)`
   flex-direction: column;
   /* margin: ${theme.space[3]} ${theme.space[3]} ${theme.space[3]} 0; */
 
@@ -82,7 +79,7 @@ export const Logo = styled(AnimatedFlex)`
   }
 `
 
-export const Symbol = styled(AnimatedFlex)`
+export const Symbol = styled(Flex)`
   align-items: center;
   justify-content: center;
 

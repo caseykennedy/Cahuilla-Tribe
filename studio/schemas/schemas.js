@@ -19,6 +19,7 @@ import jobPost from './jobPost'
 import aboutSection from './aboutSection'
 import roadAlert from './roadAlert'
 import roadsAndTransport from './roadsAndTransport'
+import resourcesPage from './resourcesPage'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -42,7 +43,8 @@ export default createSchema({
     page,
     siteSettings,
     roadAlert,
-    roadsAndTransport
+    roadsAndTransport,
+    resourcesPage
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

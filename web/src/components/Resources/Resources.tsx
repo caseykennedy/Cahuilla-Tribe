@@ -4,6 +4,7 @@
 
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image/withIEPolyfill'
 
 import GoogleMapReact from 'google-map-react'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -18,36 +19,50 @@ import * as S from './styles.scss'
 import theme from '../../../config/theme'
 
 import useContact from '../../hooks/useContact'
+import useJobs from '../../hooks/useJobs'
 
 // ___________________________________________________________________
 
-type QueryShape = {
-  allSanityJobPost: {
+type ResourcesQueryShape = {
+  resources: {
     edges: {
       node: {
-        id: string
-        link: string
         title: string
+        heroFigure: {
+          asset: {
+            fluid: {
+              src: string
+              aspectRatio: number
+              base64: string
+              sizes: string
+              srcSet: string
+              srcSetWebp: string
+              srcWebp: string
+            }
+          }
+          alt: string
+        }
+        careersFigure: {
+          asset: {
+            fluid: {
+              src: string
+              aspectRatio: number
+              base64: string
+              sizes: string
+              srcSet: string
+              srcSetWebp: string
+              srcWebp: string
+            }
+          }
+          alt: string
+        }
       }
     }[]
   }
 }
 
 const JobPost: React.FC = () => {
-  const data: QueryShape = useStaticQuery(graphql`
-    query JobPostQuery {
-      allSanityJobPost {
-        edges {
-          node {
-            id
-            link
-            title
-          }
-        }
-      }
-    }
-  `)
-  const jobs = data.allSanityJobPost.edges
+  const jobs = useJobs()
   return jobs.length > 0 ? (
     <>
       {jobs.map(({ node: job }) => (
@@ -56,7 +71,7 @@ const JobPost: React.FC = () => {
           key={job.id}
           href={job.link}
           target="_blank"
-          width={[1, 1 / 3]}
+          width={1}
         >
           {job.title}
           <Text mt={7}>
@@ -71,6 +86,45 @@ const JobPost: React.FC = () => {
 }
 
 const Resources: React.FC = () => {
+  const data: ResourcesQueryShape = useStaticQuery(graphql`
+    query ResourcesQuery {
+      resources: allSanityResourcesPage {
+        edges {
+          node {
+            title
+            heroFigure {
+              asset {
+                fluid(maxWidth: 600) {
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  src
+                  sizes
+                  base64
+                  aspectRatio
+                }
+              }
+              alt
+            }
+            careersFigure {
+              asset {
+                fluid(maxWidth: 600) {
+                  srcWebp
+                  srcSetWebp
+                  srcSet
+                  src
+                  sizes
+                  base64
+                  aspectRatio
+                }
+              }
+              alt
+            }
+          }
+        }
+      }
+    }
+  `)
   const contact = useContact()
   return (
     <S.Resources>
@@ -85,7 +139,16 @@ const Resources: React.FC = () => {
           </Flex>
         </Box>
         <Box className="image" width={[1, 1 / 2]}>
-          <ImgMatch src="cactus.jpg" altText="Cahuilla Casino Hotel" />
+          <Img
+            fluid={{
+              ...data.resources.edges[0].node.heroFigure.asset.fluid,
+              aspectRatio: 1 / 1
+            }}
+            objectFit="cover"
+            objectPosition="50% 50%"
+            alt={data.resources.edges[0].node.heroFigure.alt}
+            className="img"
+          />
         </Box>
       </S.PageTitle>
 
@@ -138,9 +201,18 @@ const Resources: React.FC = () => {
           </Flex>
         </Flex>
 
-        <Box bg="black" width={[1, 2 / 8]} className="image">
-          <ImgMatch src="lone-mtn.jpg" altText="Cahuilla Casino Hotel" />
-        </Box>
+        <Flex bg="black" width={[1, 2 / 8]} className="image">
+          <Img
+            fluid={{
+              ...data.resources.edges[0].node.careersFigure.asset.fluid,
+              aspectRatio: 1 / 1
+            }}
+            objectFit="cover"
+            objectPosition="50% 50%"
+            alt={data.resources.edges[0].node.careersFigure.alt}
+            className="img"
+          />
+        </Flex>
       </S.Careers>
     </S.Resources>
   )

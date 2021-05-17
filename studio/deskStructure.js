@@ -43,14 +43,6 @@ export default () =>
         )
         .icon(MdBusiness),
 
-      // About Page
-      // _________________________________________________________________
-
-      S.listItem()
-        .title("About Page")
-        .schemaType("aboutSection")
-        .child(S.documentTypeList("aboutSection").title("About Section")),
-
       // Announcement
       // _________________________________________________________________
 
@@ -69,6 +61,27 @@ export default () =>
             .id("homePage")
             .schemaType("homePage")
             .documentId("homePage")
+        )
+        .icon(FaFile),
+
+      // About Page
+      // _________________________________________________________________
+
+      S.listItem()
+        .title("About Page")
+        .schemaType("aboutSection")
+        .child(S.documentTypeList("aboutSection").title("About Section")),
+
+      // Resources Page
+      // _________________________________________________________________
+
+      S.listItem()
+        .title("Resources Page")
+        .child(
+          S.editor()
+            .id("resourcesPage")
+            .schemaType("resourcesPage")
+            .documentId("resourcesPage")
         )
         .icon(FaFile),
 
