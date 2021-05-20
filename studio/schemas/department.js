@@ -1,115 +1,121 @@
-import { MdPerson, MdAccountBalance } from 'react-icons/md'
+import { MdPerson, MdAccountBalance } from "react-icons/md";
 
 export default {
-  name: 'department',
-  title: 'Department Page',
-  type: 'document',
+  name: "department",
+  title: "Department Page",
+  type: "document",
   icon: MdAccountBalance,
   liveEdit: false,
   fields: [
     {
-      name: 'name',
-      title: 'Name',
-      type: 'string'
+      name: "name",
+      title: "Name",
+      type: "string"
     },
     {
-      title: 'Is this a government department?',
-      name: 'government',
-      type: 'boolean'
+      title: "Is this a government department?",
+      name: "government",
+      type: "boolean"
     },
     {
-      name: 'pageTitle',
-      title: 'Page Title',
-      type: 'string'
+      name: "pageTitle",
+      title: "Page Title",
+      type: "string"
     },
     {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the person',
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      description: "Some frontend will require a slug to be set to be able to show the person",
       options: {
-        source: 'name',
+        source: "name",
         maxLength: 96,
         slugify: input => input.toLowerCase()
       }
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: "image",
+      title: "Image",
+      type: "image",
       options: {
         hotspot: true
       }
     },
     {
-      name: 'intro',
-      title: 'Introduction',
-      type: 'array',
+      name: "staff",
+      title: "Staff",
+      type: "array",
+      of: [{ type: "reference", to: { type: "person" } }]
+    },
+    {
+      name: "intro",
+      title: "Introduction",
+      type: "array",
       of: [
         {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
+          title: "Block",
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
           lists: []
         }
       ]
     },
     {
-      name: 'content',
-      title: 'Content',
-      type: 'blockContent',
+      name: "content",
+      title: "Content",
+      type: "blockContent"
     },
     {
-      name: 'email',
-      title: 'Email',
-      type: 'string'
+      name: "email",
+      title: "Email",
+      type: "string"
     },
     {
-      name: 'telephone',
-      title: 'Telephone',
-      type: 'string'
+      name: "telephone",
+      title: "Telephone",
+      type: "string"
     },
     {
-      name: 'cell',
-      title: 'Cell Phone',
-      type: 'string'
+      name: "cell",
+      title: "Cell Phone",
+      type: "string"
     },
     {
-      name: 'fax',
-      title: 'Fax',
-      type: 'string'
+      name: "fax",
+      title: "Fax",
+      type: "string"
     },
     {
-      name: 'address',
-      title: 'Address',
-      type: 'string'
+      name: "address",
+      title: "Address",
+      type: "string"
     },
     {
-      title: 'Department',
-      name: 'department',
-      type: 'array',
-      of: [{type: 'string'}],
+      title: "Department",
+      name: "department",
+      type: "array",
+      of: [{ type: "string" }],
       options: {
         list: [
-          {title: 'Tribal Council', value: 'Tribal Council'},
-          {title: 'Economic Development', value: 'Economic Development'},
-          {title: 'Cahuilla Gaming Agency', value: 'Cahuilla Gaming Agency'},
-          {title: 'Tribal Administration', value: 'Tribal Administration'},
-          {title: 'Family and Social Services', value: 'Family and Social Services'},
-          {title: 'Environmental Protection Agency', value: 'Environmental Protection Agency'},
-          {title: 'Public Works', value: 'Public Works'},
-          {title: 'Cultural', value: 'Cultural'},
-          {title: 'Public Safety', value: 'Public Safety'},
-          {title: 'CCVAP', value: 'CCVAP'},
-          {title: 'Fire Department', value: 'Fire Department'},
+          { title: "Tribal Council", value: "Tribal Council" },
+          { title: "Economic Development", value: "Economic Development" },
+          { title: "Cahuilla Gaming Agency", value: "Cahuilla Gaming Agency" },
+          { title: "Tribal Administration", value: "Tribal Administration" },
+          { title: "Family and Social Services", value: "Family and Social Services" },
+          { title: "Environmental Protection Agency", value: "Environmental Protection Agency" },
+          { title: "Public Works", value: "Public Works" },
+          { title: "Cultural", value: "Cultural" },
+          { title: "Public Safety", value: "Public Safety" },
+          { title: "CCVAP", value: "CCVAP" },
+          { title: "Fire Department", value: "Fire Department" }
         ]
       }
-    },
+    }
   ],
   preview: {
     select: {
-      title: 'name',
-      media: 'image'
+      title: "name",
+      media: "image"
     }
   }
-}
+};

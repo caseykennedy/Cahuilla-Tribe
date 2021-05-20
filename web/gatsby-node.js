@@ -14,6 +14,40 @@ exports.createPages = ({ graphql, actions }) => {
       ) {
         edges {
           node {
+            staff {
+              cell
+              department
+              email
+              fax
+              id
+              image {
+                asset {
+                  fluid(maxWidth: 1080) {
+                    src
+                    aspectRatio
+                    base64
+                    sizes
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                  }
+                }
+              }
+              name
+              seated
+              telephone
+              title
+              slug {
+                current
+              }
+              _rawBio
+              bio {
+                _key
+                _type
+                style
+                list
+              }
+            }
             address
             cell
             department
@@ -86,6 +120,40 @@ exports.createPages = ({ graphql, actions }) => {
       ) {
         edges {
           node {
+            staff {
+              cell
+              department
+              email
+              fax
+              id
+              image {
+                asset {
+                  fluid(maxWidth: 1080) {
+                    src
+                    aspectRatio
+                    base64
+                    sizes
+                    srcSet
+                    srcSetWebp
+                    srcWebp
+                  }
+                }
+              }
+              name
+              seated
+              telephone
+              title
+              slug {
+                current
+              }
+              _rawBio
+              bio {
+                _key
+                _type
+                style
+                list
+              }
+            }
             address
             cell
             department

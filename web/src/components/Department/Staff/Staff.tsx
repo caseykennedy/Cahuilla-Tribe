@@ -20,56 +20,10 @@ const Staff: React.FC<{
   pageContext: DepartmentShape
   mainRef?: React.RefObject<HTMLDivElement>
 }> = ({ pageContext, mainRef }) => {
-  const data: PeopleShape = useStaticQuery(graphql`
-    query PeopleQuery {
-      people: allSanityPerson {
-        edges {
-          node {
-            cell
-            department
-            email
-            fax
-            id
-            image {
-              asset {
-                fluid(maxWidth: 1080) {
-                  ...GatsbySanityImageFluid
-                }
-              }
-            }
-            name
-            seated
-            telephone
-            title
-            slug {
-              current
-            }
-            _rawBio
-            bio {
-              _key
-              _type
-              style
-              list
-            }
-          }
-        }
-      }
-    }
-  `)
   const pageDep = pageContext.page.department
-  const filteredPeople = data.people.edges.filter(
-    person =>
-      // tslint:disable-next-line: triple-equals
-      pageDep == person.node.department[0] ||
-      // tslint:disable-next-line: triple-equals
-      pageDep == person.node.department[1]
-  )
-  // console.log('—————|— People —|—————')
-  // console.log(pageDep)
-  // console.log(data.people)
 
   // Set bio context
-  const [bio, setBio] = useState(data.people.edges[0].node)
+  const [bio, setBio] = useState(pageContext.page.staff[0])
   // Navigation toggle
   const [isModalOpen, setModalOpen] = useState(false)
   const toggleModal = () => setModalOpen(!isModalOpen)
@@ -81,12 +35,12 @@ const Staff: React.FC<{
         isOpen={isModalOpen}
         handleExit={() => setModalOpen(false)}
         mainRef={mainRef}
-        className={`nav-bg ${isModalOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
+        className={`${isModalOpen ? 'nav-bg--open' : 'nav-bg--closed'}`}
       >
         {isModalOpen && <Bio bio={bio} setModalOpen={setModalOpen} />}
       </Overlay>
       <S.Staff>
-        {filteredPeople.map(({ node: person }) => (
+        {pageContext.page.staff.map(person => (
           <S.StaffMember width={[1, 1 / 2]} key={person.id}>
             <Box width={1 / 3}>
               {person.image && (

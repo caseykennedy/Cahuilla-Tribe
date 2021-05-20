@@ -70,16 +70,17 @@ const AboutSection: React.FC = () => {
               )}
             </Flex>
 
-            <Box bg="black" width={[1, 2 / 8]} className="image">
+            <Flex bg="black" width={[1, 2 / 8]} className="image">
               {section.image && (
                 <Img
                   fluid={section.image.asset.fluid}
                   objectFit="cover"
                   objectPosition="50% 50%"
                   alt={section.title}
+                  className="img"
                 />
               )}
-            </Box>
+            </Flex>
           </S.Section>
         </Accordion>
       ))}

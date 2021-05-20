@@ -15,7 +15,20 @@ import * as S from './styles.scss'
 // ___________________________________________________________________
 
 type LinkProps = {
-  item: any
+  item:
+    | {
+        name: string
+        link: string
+        subPage?: undefined
+      }
+    | {
+        name: string
+        subPage: {
+          name: string
+          link: string
+        }[]
+        link?: undefined
+      }
   transition: any
   handleExitOnClick: () => any
 }
@@ -28,9 +41,6 @@ type NavLinksProps = {
 // ___________________________________________________________________
 
 const NavLink = ({ item, transition, handleExitOnClick }: LinkProps) => {
-  // console.log('—————|— Navigation —|—————')
-  // console.log(item.subPage)
-
   return (
     <S.NavLink onClick={handleExitOnClick} style={transition}>
       {!item.subPage ? (
@@ -47,6 +57,15 @@ const NavLink = ({ item, transition, handleExitOnClick }: LinkProps) => {
               {subItem.name}
             </Link>
           ))}
+          {item.name === `Departments` && (
+            <a
+              href="https://www.cahuillaconsortium.org/"
+              target="_blank"
+              className="nav-mobile-sub__link"
+            >
+              Cahuilla Consortium
+            </a>
+          )}
         </Box>
       )}
     </S.NavLink>

@@ -6,11 +6,11 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 // @ts-ignore
-import { login, logout, isAuthenticated, getProfile } from '../../../utils/auth'
+import { logout, isAuthenticated } from '../../../utils/auth'
 import useToggle from '../../../hooks/useToggle'
 
 import Icon from '../../Icons'
-import { Box, Text } from '../../../elements'
+import { Box } from '../../../elements'
 
 import theme from '../../../../config/theme'
 import * as S from './styles.scss'
@@ -50,6 +50,11 @@ const Navigation: React.FC = () => {
                     {subItem.name}
                   </Link>
                 ))}
+                {item.name === `Departments` && (
+                  <a href="https://www.cahuillaconsortium.org/" target="_blank">
+                    Cahuilla Consortium
+                  </a>
+                )}
               </Box>
             )}
           </Box>

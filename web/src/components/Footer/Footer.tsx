@@ -9,7 +9,6 @@ import { Link } from 'gatsby'
 
 import { Text, Box, Flex } from '../../elements'
 import Callout from './Callout'
-import Icon from '../Icons'
 
 import theme from '../../../config/theme'
 import * as S from './styles.scss'
@@ -53,16 +52,27 @@ const Footer: React.FC = () => {
               </ul>
               <ul>
                 <Link to="/departments/tribal-admin">Tribal Admin</Link>
-                <Link to="/departments/family-social-services">Family &amp; Social Services</Link>
-                <Link to="/departments/environmental-protection-agency">EPA</Link>
+                <Link to="/departments/family-social-services">
+                  Family &amp; Social Services
+                </Link>
+                <Link to="/departments/environmental-protection-agency">
+                  EPA
+                </Link>
                 <Link to="/departments/fire-department">Fire Department</Link>
                 <Link to="/departments/public-works">Public Works</Link>
                 <Link to="/departments/cultural">Cultural</Link>
+                <a href="https://www.cahuillaconsortium.org/" target="_blank">
+                  Cahuilla Consortium
+                </a>
               </ul>
               <ul>
                 <Link to="/government/tribal-council">Tribal Council</Link>
-                <Link to="/government/economic-development">Economic Development</Link>
-                <Link to="/departments/cahuilla-gaming-agency">Cahuilla Gaming Agency</Link>
+                <Link to="/government/economic-development">
+                  Economic Development
+                </Link>
+                <Link to="/departments/cahuilla-gaming-agency">
+                  Cahuilla Gaming Agency
+                </Link>
                 <Link to="/enterprises">Enterprises</Link>
               </ul>
             </Flex>

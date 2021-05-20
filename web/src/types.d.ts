@@ -31,6 +31,7 @@ type HomePageShape = {
 
 type DepartmentShape = {
   page: {
+    staff: PersonNode[]
     address: string
     cell: string
     department: string
