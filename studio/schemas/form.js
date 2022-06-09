@@ -17,6 +17,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'pdf',
+      title: 'PDF URL',
+      type: 'file'
+    },
+    {
       title: 'Is this an EDC document?',
       name: 'edc',
       type: 'boolean'

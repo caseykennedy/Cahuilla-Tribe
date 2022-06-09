@@ -11,6 +11,7 @@ import Accordion from '../../../Accordion'
 
 import * as S from './styles.scss'
 import theme from '../../../../../config/theme'
+import { assert } from 'console'
 
 // ___________________________________________________________________
 
@@ -18,6 +19,14 @@ type FormsQueryShape = {
   allSanityForm: {
     edges: {
       node: {
+        pdf: {
+          asset: {
+            description: string
+            id: string
+            title: string
+            url: string
+          }
+        }
         edc: boolean
         link: string
         title: string
@@ -42,6 +51,14 @@ const FormItems: React.FC = () => {
       allSanityForm(sort: { fields: title, order: ASC }) {
         edges {
           node {
+            pdf {
+              asset {
+                description
+                id
+                title
+                url
+              }
+            }
             edc
             link
             title
@@ -55,7 +72,7 @@ const FormItems: React.FC = () => {
   return (
     <Flex width={[1]} className="content">
       {formQuery.map(({ node: item }) => (
-        <S.FormItem href={item.link} target="_blank" key={item.id}>
+        <S.FormItem href={item.link || item.pdf?.asset.url} target="_blank" key={item.id}>
           <Icon name="document" />
           {item.title}
         </S.FormItem>
